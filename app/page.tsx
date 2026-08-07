@@ -23,15 +23,6 @@ const news = [
   },
 ];
 
-const flavours = [
-  ["Ananas", "/media/simpara/tropicoul/ananas/ananas-card.png", "soleil"],
-  ["Mangue", "/media/simpara/tropicoul/mangue/mangue-card.png", "mangue"],
-  ["Orange", "/media/simpara/tropicoul/orange/orange-card.png", "orange"],
-  ["Goyave", "/media/simpara/tropicoul/goyave/goyave-card.png", "goyave"],
-  ["Tamarin", "/media/simpara/tropicoul/tamarin/tamarin-card.png", "tamarin"],
-  ["Cocktail", "/media/simpara/tropicoul/cocktail/cocktail-card.png", "cocktail"],
-] as const;
-
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
@@ -115,26 +106,9 @@ export default function Home() {
         <div className="section-heading section-heading--light">
           <p className="section-kicker">NOS MARQUES</p>
           <h2>Une réponse pour chaque moment.</h2>
-          <a className="text-link" href="#saveurs">Découvrir les produits <Arrow /></a>
+          <a className="text-link" href="#marques">Découvrir les produits <Arrow /></a>
         </div>
-        <div className="brand-showcase">
-          <article className="brand-panel brand-panel--tropicoul">
-            <div>
-              <p>Tropicoul</p>
-              <h3>Le goût du partage.</h3>
-              <a href="#saveurs">Explorer Tropicoul <Arrow /></a>
-            </div>
-            <img src="/media/simpara/tropicoul/mangue/mangue-hero.png" alt="Tropicoul Mangue" loading="lazy" />
-          </article>
-          <article className="brand-panel brand-panel--triplex">
-            <div>
-              <p>Triplex</p>
-              <h3>L&apos;énergie qui tient le rythme.</h3>
-              <a href="#actualites">Explorer Triplex <Arrow /></a>
-            </div>
-            <img src="/media/simpara/triplex/triplex-hero.png" alt="Boisson énergisante Triplex" loading="lazy" />
-          </article>
-        </div>
+        <ProductExplorer />
       </section>
 
       <section className="news" id="actualites">
@@ -163,22 +137,6 @@ export default function Home() {
           <a className="text-link" href="#contact">Ce qui nous anime <Arrow /></a>
         </div>
         <img src="/media/simpara/tropicoul/goyave/goyave-lifestyle.png" alt="Moment de partage Tropicoul" loading="lazy" />
-      </section>
-
-      <section className="flavour-wall" id="saveurs">
-        <div className="section-heading">
-          <p className="section-kicker">DÉCOUVRIR TROPICOUL</p>
-          <h2>Des saveurs qui ont chacune leur histoire.</h2>
-        </div>
-        <div className="flavour-wall__grid">
-          {flavours.map(([name, image, tone]) => (
-            <a className={`flavour flavour--${tone}`} href="#contact" key={name}>
-              <img src={image} alt={`Tropicoul ${name}`} loading="lazy" />
-              <span>{name}</span>
-              <small>Explorer <Arrow /></small>
-            </a>
-          ))}
-        </div>
       </section>
 
       <section className="contact-cta" id="contact">
@@ -210,4 +168,5 @@ export default function Home() {
     </main>
   );
 }
+import { ProductExplorer } from "./ProductExplorer";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";

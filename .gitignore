@@ -42,3 +42,4 @@ yarn-error.log*
 # Product source originals and local preview output
 /Direction/
 /.sites-dev*.log
+/.sites-preview-local*.log
