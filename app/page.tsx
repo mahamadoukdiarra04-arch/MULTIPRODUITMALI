@@ -37,6 +37,7 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 export default function Home() {
   return (
     <main>
+      <ScrollAtmosphere />
       <header className="site-header">
         <a className="wordmark" href="#accueil" aria-label="Simpara Distribution, accueil">
           <span className="wordmark__stamp">S</span>
@@ -209,3 +210,4 @@ export default function Home() {
     </main>
   );
 }
+import { ScrollAtmosphere } from "./ScrollAtmosphere";
