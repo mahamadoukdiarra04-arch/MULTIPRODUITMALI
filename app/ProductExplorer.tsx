@@ -1,35 +1,4 @@
-const products = [
-  {
-    brand: "Tropicoul",
-    name: "Ananas",
-    image: "/media/simpara/tropicoul/ananas/ananas-hero.png",
-  },
-  {
-    brand: "Tropicoul",
-    name: "Mangue",
-    image: "/media/simpara/tropicoul/mangue/mangue-hero.png",
-  },
-  {
-    brand: "Tropicoul",
-    name: "Orange",
-    image: "/media/simpara/tropicoul/orange/orange-card.png",
-  },
-  {
-    brand: "Tropicoul",
-    name: "Goyave",
-    image: "/media/simpara/tropicoul/goyave/goyave-card.png",
-  },
-  {
-    brand: "Tropicoul",
-    name: "Cocktail",
-    image: "/media/simpara/tropicoul/cocktail/cocktail-card.png",
-  },
-  {
-    brand: "Triplex",
-    name: "Original",
-    image: "/media/simpara/triplex/triplex-hero.png",
-  },
-] as const;
+import { products } from "./products";
 
 const continuousProducts = [...products, ...products];
 
@@ -39,7 +8,7 @@ function ProductLoop({ reverse = false }: { reverse?: boolean }) {
       {continuousProducts.map((product, index) => (
         <a
           className="product-loop__item"
-          href="#contact"
+          href={`/produits/${product.slug}`}
           key={`${product.name}-${index}`}
           aria-label={`Découvrir ${product.brand} ${product.name}`}
         >
