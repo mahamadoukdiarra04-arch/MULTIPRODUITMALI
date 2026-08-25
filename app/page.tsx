@@ -65,28 +65,7 @@ export default function Home() {
         </details>
       </header>
 
-      <section className="hero" id="accueil">
-        <div className="hero__copy">
-          <p className="eyebrow">SIMPARA DISTRIBUTION — AFRIQUE DE L&apos;OUEST</p>
-          <h1>Des boissons qui créent des moments.</h1>
-          <p className="hero__lead">
-            Nous distribuons des marques généreuses, colorées et proches des gens pour accompagner chaque instant de la journée.
-          </p>
-          <a className="text-link" href="#entreprise">
-            Découvrir Simpara <Arrow />
-          </a>
-        </div>
-
-        <div className="hero__visual" aria-label="Tropicoul Ananas">
-          <div className="hero__disc">GOÛTER<br />PARTAGER<br />RECOMMENCER</div>
-          <img
-            src="/media/simpara/tropicoul/ananas/ananas-hero.png"
-            alt="Boisson Tropicoul Ananas"
-            fetchPriority="high"
-          />
-          <p className="hero__caption">Tropicoul<br /><em>Le fruit au cœur</em></p>
-        </div>
-      </section>
+      <HeroShowcase />
 
       <section className="company-intro" id="entreprise">
         <p className="section-kicker">NOTRE ENTREPRISE</p>
@@ -169,4 +148,5 @@ export default function Home() {
   );
 }
 import { ProductExplorer } from "./ProductExplorer";
+import { HeroShowcase } from "./HeroShowcase";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";
