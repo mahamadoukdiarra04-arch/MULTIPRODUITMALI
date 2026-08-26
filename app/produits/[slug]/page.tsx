@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 
 import { findProduct } from "../../products";
 
@@ -13,7 +14,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) {
     return (
       <main className="product-not-found">
-        <a href="/#marques">← Retour aux produits</a>
+        <Link href="/#marques">← Retour aux produits</Link>
         <h1>Ce produit n’est pas disponible.</h1>
       </main>
     );
@@ -28,22 +29,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <main className="product-page" style={productTheme}>
       <header className="product-page__header">
-        <a className="wordmark" href="/" aria-label="Simpara Distribution, accueil">
+        <Link className="wordmark" href="/" aria-label="Simpara Distribution, accueil">
           <span className="wordmark__stamp">S</span>
           <span>
             <strong>SIMPARA</strong>
             <small>DISTRIBUTION</small>
           </span>
-        </a>
+        </Link>
         <nav aria-label="Navigation produit">
-          <a href="/#marques">Toutes les saveurs</a>
-          <a href="/#contact">Contact</a>
+          <Link href="/#marques">Toutes les saveurs</Link>
+          <Link href="/#contact">Contact</Link>
         </nav>
-        <a className="product-page__back" href="/#marques">← Retour</a>
+        <Link className="product-page__back" href="/#marques">← Retour</Link>
       </header>
 
       <section className="product-hero">
-        <div className="product-hero__visual">
+        <div className={`product-hero__visual${product.packshot ? " product-hero__visual--packshot" : ""}`}>
           <img src={product.image} alt={`${product.brand} ${product.name}`} fetchPriority="high" />
           <span>{product.brand}</span>
         </div>
@@ -51,8 +52,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="product-hero__copy">
           <p className="product-hero__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</p>
           <h1>{product.headline}</h1>
-          <a className="product-button" href="#formule">Découvrir la saveur <b aria-hidden="true">↓</b></a>
-          <div className="product-hero__mini" aria-label={`${product.brand} ${product.name}`}>
+          <Link className="product-button" href="#formule">Découvrir la saveur <b aria-hidden="true">↓</b></Link>
+          <div
+            className={`product-hero__mini${product.packshot ? " product-hero__mini--packshot" : ""}`}
+            aria-label={`${product.brand} ${product.name}`}
+          >
             <img src={product.image} alt="" />
             <span>{product.name}</span>
           </div>
@@ -64,7 +68,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <aside>
           <span>{product.benefitTitle}</span>
           <strong>{product.benefit}</strong>
-          <a href="/#contact">Nous contacter <b aria-hidden="true">↗</b></a>
+          <Link href="/#contact">Nous contacter <b aria-hidden="true">↗</b></Link>
         </aside>
       </section>
     </main>

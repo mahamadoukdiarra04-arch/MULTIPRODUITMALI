@@ -8,6 +8,7 @@ export type Product = {
   benefitTitle: string;
   benefit: string;
   image: string;
+  packshot?: boolean;
   accent: string;
   deep: string;
   soft: string;
@@ -65,7 +66,8 @@ export const products: readonly Product[] = [
     description: "La goyave Tropicoul révèle une personnalité délicate, pour celles et ceux qui aiment sortir des sentiers battus.",
     benefitTitle: "UNE SAVEUR À PART",
     benefit: "Sa fraîcheur douce transforme un moment ordinaire en une parenthèse inattendue, à savourer sans se presser.",
-    image: "/media/simpara/tropicoul/goyave/goyave-card.png",
+    image: "/media/mpm/hero/tropicoul-goyave/poster.png",
+    packshot: true,
     accent: "#e65074",
     deep: "#8e1744",
     soft: "#ffd5df",

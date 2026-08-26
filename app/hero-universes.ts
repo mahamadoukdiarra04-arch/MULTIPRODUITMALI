@@ -77,9 +77,15 @@ export const HERO_UNIVERSES: readonly HeroUniverse[] = [
     productName: "Goyave",
     accessibleLabel: "Tropicoul Goyave",
     posterSrc: "/media/mpm/hero/tropicoul-goyave/poster.png",
+    modelSrc: "/models/mpm/tropicoul-goyave.glb",
     palette: { background: "#f08aa5", backgroundDeep: "#c93f69", accent: "#365f31", foreground: "dark" },
     assets: [],
-    model: posterModel,
+    model: {
+      enabled: true,
+      scale: 1,
+      rotationOffset: -0.08,
+      mobileScale: 0.9,
+    },
   },
   {
     id: "tropicoul-cocktail",
