@@ -50,42 +50,8 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
     let renderer: import("three").WebGLRenderer | null = null;
     let environmentTarget: import("three").WebGLRenderTarget | null = null;
     let resizeObserver: ResizeObserver | null = null;
-    let frameId = 0;
-    let running = false;
-    let inView = true;
-    let pageVisible = !document.hidden;
-    let lastRenderAt = 0;
-    let presentationRoot: import("three").Group | null = null;
     let scene: import("three").Scene | null = null;
     let camera: import("three").PerspectiveCamera | null = null;
-
-    const stop = () => {
-      running = false;
-      window.cancelAnimationFrame(frameId);
-    };
-
-    const renderFrame = (now: number) => {
-      if (!running || !renderer || !scene || !camera || !presentationRoot) return;
-      const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-      const frameIntervalMs = lowPowerDevice ? 1000 / 24 : 1000 / 30;
-      if (lastRenderAt && now - lastRenderAt < frameIntervalMs) {
-        frameId = window.requestAnimationFrame(renderFrame);
-        return;
-      }
-
-      const elapsed = lastRenderAt ? Math.min((now - lastRenderAt) / 1000, 0.06) : 0;
-      lastRenderAt = now;
-      presentationRoot.rotation.y += elapsed * 0.14;
-      renderer.render(scene, camera);
-      frameId = window.requestAnimationFrame(renderFrame);
-    };
-
-    const start = () => {
-      if (running || !inView || !pageVisible || !renderer || !presentationRoot) return;
-      running = true;
-      lastRenderAt = 0;
-      frameId = window.requestAnimationFrame(renderFrame);
-    };
 
     const initialise = async () => {
       try {
@@ -125,11 +91,11 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
         const size = bounds.getSize(new THREE.Vector3());
         const center = bounds.getCenter(new THREE.Vector3());
         const maxDimension = Math.max(size.x, size.y, size.z) || 1;
-        const fittedScale = (3.05 / maxDimension) * 0.94;
+        const fittedScale = (3.05 / maxDimension) * 0.74;
         modelRoot.scale.setScalar(fittedScale);
         modelRoot.position.copy(center).multiplyScalar(-fittedScale);
 
-        presentationRoot = new THREE.Group();
+        const presentationRoot = new THREE.Group();
         // The source GLB opens on its information panel; turn it to the Triplex face first.
         presentationRoot.rotation.y = Math.PI * 0.57;
         presentationRoot.rotation.z = -0.085;
@@ -153,36 +119,16 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
         renderer.render(scene, camera);
         setReady(true);
         onReady();
-        start();
       } catch {
         // The lightweight packshot remains visible if WebGL or the GLB is unavailable.
       }
     };
 
-    const visibilityObserver = new IntersectionObserver(
-      ([entry]) => {
-        inView = entry.isIntersecting && entry.intersectionRatio > 0.02;
-        if (inView) start();
-        else stop();
-      },
-      { threshold: [0, 0.02] },
-    );
-    visibilityObserver.observe(canvas);
-
-    const handleVisibilityChange = () => {
-      pageVisible = !document.hidden;
-      if (pageVisible) start();
-      else stop();
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
     void initialise();
 
     return () => {
       cancelled = true;
-      stop();
-      visibilityObserver.disconnect();
       resizeObserver?.disconnect();
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
       environmentTarget?.dispose();
       renderer?.dispose();
       renderer?.forceContextLoss();

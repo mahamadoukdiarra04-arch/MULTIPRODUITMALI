@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useState } from "react";
 
 import { TriplexBrandCan3D } from "./TriplexBrandCan3D";
@@ -12,16 +13,19 @@ const brands = [
     id: "tropicoul" as const,
     label: "Tropicoul",
     signature: "Le soleil se partage, bien frais.",
+    href: "/#marques",
   },
   {
     id: "triplex" as const,
     label: "Triplex",
     signature: "L’énergie pour garder le rythme.",
+    href: "/produits/triplex",
   },
   {
     id: "vimto" as const,
     label: "Vimto Sparkling",
     signature: "Le goût pétillant des moments réunis.",
+    href: "/produits/vimto",
   },
 ] as const;
 
@@ -112,27 +116,23 @@ function VimtoVisual() {
 
 export function BrandTriptych() {
   const [hoveredBrand, setHoveredBrand] = useState<BrandId | null>(null);
-  const [selectedBrand, setSelectedBrand] = useState<BrandId | null>(null);
-  const activeBrand = hoveredBrand ?? selectedBrand;
 
   return (
     <div
       className="brand-triptych"
-      data-active-brand={activeBrand ?? "none"}
+      data-active-brand={hoveredBrand ?? "none"}
       onMouseLeave={() => setHoveredBrand(null)}
     >
       {brands.map((brand, index) => (
-        <button
+        <Link
           className="brand-triptych__panel"
           data-brand={brand.id}
-          type="button"
+          href={brand.href}
           key={brand.id}
           onMouseEnter={() => setHoveredBrand(brand.id)}
           onFocus={() => setHoveredBrand(brand.id)}
           onBlur={() => setHoveredBrand(null)}
-          onClick={() => setSelectedBrand((current) => current === brand.id ? null : brand.id)}
-          aria-pressed={selectedBrand === brand.id}
-          aria-label={`${brand.label} — ${brand.signature}. Cliquer pour ${selectedBrand === brand.id ? "réduire" : "agrandir"} ce panneau.`}
+          aria-label={`Découvrir ${brand.label} — ${brand.signature}`}
         >
           <span className="brand-triptych__visual" aria-hidden="true">
             {brand.id === "tropicoul" && <TropicoulVisual />}
@@ -146,7 +146,7 @@ export function BrandTriptych() {
             <span className="brand-triptych__signature">{brand.signature}</span>
             <span className="brand-triptych__hint">Découvrir <span aria-hidden="true">↗</span></span>
           </span>
-        </button>
+        </Link>
       ))}
     </div>
   );
