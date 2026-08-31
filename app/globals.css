@@ -291,6 +291,7 @@ main { isolation: isolate; overflow: clip; }
 .product-facts dl > div:first-child { border-left: 0; }
 .product-facts dt { margin-bottom: 0.35rem; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
 .product-facts dd { margin: 0; font-size: 1rem; font-weight: 900; }
+.product-facts__nowrap { white-space: nowrap; }
 .product-signature { display: grid; min-height: 31rem; align-content: center; padding: 5.5rem 9vw; background: var(--product-deep); color: #ffffff; }
 .product-signature > p { color: var(--product-accent); }
 .product-signature h2, .product-focus h2, .product-macro h2, .product-lifestyle h2, .product-range h2, .product-final-cta h2 { max-width: min(16ch, 100%); margin: 0; font-size: clamp(2.55rem, 4vw, 3.85rem); font-weight: 950; line-height: 0.98; overflow-wrap: normal; word-break: normal; hyphens: none; text-wrap: balance; }

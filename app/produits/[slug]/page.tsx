@@ -218,7 +218,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <ProductPageHero product={product} content={content} />
 
         <section className="product-facts" aria-label="Informations sur le produit" data-product-section="facts">
-          <dl>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+          <dl>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{label === "Format" ? <>Canette <span className="product-facts__nowrap">330 ml</span></> : value}</dd></div>)}</dl>
         </section>
 
         <section className="product-signature" id="signature" data-product-section="signature" aria-labelledby="signature-title">
