@@ -206,6 +206,11 @@ main { isolation: isolate; overflow: clip; }
 .brand-triptych__tropicoul-cans img:nth-child(1) { z-index: 3; width: 49%; transform: translateX(10%) rotate(2deg); }
 .brand-triptych__tropicoul-cans img:nth-child(2) { z-index: 2; width: 40%; margin-right: -12%; transform: translateY(5%) rotate(-7deg); }
 .brand-triptych__tropicoul-cans img:nth-child(3) { z-index: 1; width: 40%; margin-left: -14%; transform: translateY(8%) rotate(8deg); }
+.brand-triptych__triplex-fallback { position: absolute; z-index: 3; right: 4%; bottom: -7%; width: min(62%, 23rem); height: auto; object-fit: contain; filter: drop-shadow(-.8rem 1.2rem 1.1rem rgba(0,0,0,.45)); transform: rotate(-5deg); opacity: 1; transition: opacity 180ms ease; }
+.brand-triptych__triplex-fallback.is-model-ready { opacity: 0; }
+.brand-triptych__triplex-can { position: absolute; z-index: 4; inset: 0; display: block; pointer-events: none; }
+.brand-triptych__triplex-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transform: translateZ(0); transition: opacity 180ms ease; }
+.brand-triptych__triplex-can.is-ready .brand-triptych__triplex-canvas { opacity: 1; }
 .brand-triptych__steel { position: absolute; z-index: 1; inset: 0; background: linear-gradient(120deg, transparent 20%, rgba(218,226,228,.3) 42%, transparent 49%); mix-blend-mode: screen; opacity: .7; transform: translateX(-72%); transition: transform 900ms cubic-bezier(.2,.8,.2,1); }
 .brand-triptych__vimto-glow { position: absolute; z-index: 1; inset: 0; background: linear-gradient(120deg, rgba(253,213,45,.36), transparent 48%), radial-gradient(circle at 76% 18%, rgba(255,255,255,.45), transparent 28%); }
 .brand-triptych__vimto-can { position: absolute; z-index: 3; right: 5%; bottom: -8%; width: min(61%, 23rem); height: auto; filter: drop-shadow(-.8rem 1.25rem 1rem rgba(95,10,10,.42)); transform: rotate(4deg); transition: transform 700ms cubic-bezier(.2,.8,.2,1), right 700ms cubic-bezier(.2,.8,.2,1); }
@@ -220,6 +225,7 @@ main { isolation: isolate; overflow: clip; }
 .brand-triptych[data-active-brand="tropicoul"] .brand-triptych__panel[data-brand="tropicoul"] .brand-triptych__splash { transform: rotate(-2deg) scale(1.04); }
 .brand-triptych[data-active-brand="tropicoul"] .brand-triptych__panel[data-brand="tropicoul"] .brand-triptych__tropicoul-cans { transform: translateX(-2%); }
 .brand-triptych[data-active-brand="triplex"] .brand-triptych__panel[data-brand="triplex"] .brand-triptych__steel { transform: translateX(72%); }
+.brand-triptych[data-active-brand="triplex"] .brand-triptych__panel[data-brand="triplex"] .brand-triptych__triplex-fallback { transform: translateX(-5%) rotate(-3deg) scale(1.04); }
 .brand-triptych[data-active-brand="vimto"] .brand-triptych__panel[data-brand="vimto"] .brand-triptych__vimto-can { right: 12%; transform: rotate(1deg) scale(1.05); }
 
 .brands { padding: 7.2rem 4.5vw 5rem; background: transparent; color: var(--ink); }
