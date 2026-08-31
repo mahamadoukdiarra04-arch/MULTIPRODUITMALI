@@ -157,6 +157,7 @@ export function ProductRangeTurntable() {
         }
         activeRenderer.render(activeScene, activeCamera);
         activeScene.remove(model.outer);
+        item.element.dataset.turntableRendered = "true";
       }
 
       activeRenderer.setScissorTest(false);
@@ -400,7 +401,10 @@ export function ProductRangeTurntable() {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       viewport.removeEventListener("scroll", handleScroll);
       viewport.classList.remove("has-3d-turntables");
-      items.forEach((item) => delete item.element.dataset.turntableReady);
+      items.forEach((item) => {
+        delete item.element.dataset.turntableReady;
+        delete item.element.dataset.turntableRendered;
+      });
       environmentTarget?.dispose();
       renderer?.dispose();
       renderer?.forceContextLoss();

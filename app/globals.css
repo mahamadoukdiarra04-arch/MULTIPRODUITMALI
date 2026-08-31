@@ -347,7 +347,7 @@ main { isolation: isolate; overflow: clip; }
 .product-range a { display: grid; min-height: 13rem; grid-template-rows: 8rem auto; align-items: center; padding: 1rem; transition: background 180ms ease; }
 .product-range a:hover, .product-range a[aria-current="page"] { background: color-mix(in srgb, var(--product-accent) 24%, transparent); }
 .product-range picture { display: grid; height: 8rem; place-items: center; opacity: 1; transition: opacity 180ms ease; }
-.product-range nav.has-3d-turntables .product-range__fallback[data-turntable-ready="true"] { opacity: 0; }
+.product-range nav.has-3d-turntables .product-range__fallback[data-turntable-ready="true"][data-turntable-rendered="true"] { opacity: 0; }
 .product-range img { width: 5rem; height: 7.5rem; object-fit: contain; }
 .product-range small, .product-range strong { display: block; }
 .product-range small { margin-bottom: 0.3rem; font-size: 0.68rem; text-transform: uppercase; }
