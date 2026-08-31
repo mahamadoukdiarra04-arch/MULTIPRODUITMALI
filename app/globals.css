@@ -341,7 +341,7 @@ main { isolation: isolate; overflow: clip; }
 .product-range__turntable-trigger { position: absolute; inset: 0; visibility: hidden; pointer-events: none; }
 .product-range__turntable { position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 220ms ease; }
 .product-range__turntable.is-ready { opacity: 1; }
-.product-range ul { position: relative; z-index: 2; display: flex; min-width: max-content; margin: 0; padding: 0 clamp(2rem, 6vw, 5rem) 0 0; border-top: 1px solid color-mix(in srgb, var(--product-foreground) 20%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--product-foreground) 20%, transparent); list-style: none; }
+.product-range ul { position: relative; z-index: 2; display: flex; min-width: max-content; margin: 0; padding: 0; border-top: 1px solid color-mix(in srgb, var(--product-foreground) 20%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--product-foreground) 20%, transparent); list-style: none; }
 .product-range li { width: 12rem; scroll-snap-align: start; scroll-snap-stop: always; }
 .product-range li + li { border-left: 1px solid color-mix(in srgb, var(--product-foreground) 20%, transparent); }
 .product-range a { display: grid; min-height: 13rem; grid-template-rows: 8rem auto; align-items: center; padding: 1rem; transition: background 180ms ease; }
