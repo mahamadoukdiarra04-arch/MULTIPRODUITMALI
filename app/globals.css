@@ -206,8 +206,7 @@ main { isolation: isolate; overflow: clip; }
 .brand-triptych__tropicoul-cans img:nth-child(1) { z-index: 3; width: 49%; transform: translateX(10%) rotate(2deg); }
 .brand-triptych__tropicoul-cans img:nth-child(2) { z-index: 2; width: 40%; margin-right: -12%; transform: translateY(5%) rotate(-7deg); }
 .brand-triptych__tropicoul-cans img:nth-child(3) { z-index: 1; width: 40%; margin-left: -14%; transform: translateY(8%) rotate(8deg); }
-.brand-triptych__triplex-fallback { position: absolute; z-index: 3; right: 4%; bottom: -7%; width: min(62%, 23rem); height: auto; object-fit: contain; filter: drop-shadow(-.8rem 1.2rem 1.1rem rgba(0,0,0,.45)); transform: rotate(-5deg); opacity: 1; transition: opacity 180ms ease; }
-.brand-triptych__triplex-fallback.is-model-ready { opacity: 0; }
+.brand-triptych__triplex-fallback { position: absolute; z-index: 3; right: 13%; bottom: 4%; width: auto; height: 70%; object-fit: contain; filter: drop-shadow(-.8rem 1.2rem 1.1rem rgba(0,0,0,.45)); transform: rotate(-5deg); }
 .brand-triptych__triplex-can { position: absolute; z-index: 4; inset: 0; display: block; pointer-events: none; }
 .brand-triptych__triplex-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transform: translateZ(0); transition: opacity 180ms ease; }
 .brand-triptych__triplex-can.is-ready .brand-triptych__triplex-canvas { opacity: 1; }

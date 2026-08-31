@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useState } from "react";
-
-import { TriplexBrandCan3D } from "./TriplexBrandCan3D";
+import { useState } from "react";
 
 type BrandId = "tropicoul" | "triplex" | "vimto";
 
@@ -65,9 +63,6 @@ function TropicoulVisual() {
 }
 
 function TriplexVisual() {
-  const [modelReady, setModelReady] = useState(false);
-  const handleModelReady = useCallback(() => setModelReady(true), []);
-
   return (
     <>
       <Image
@@ -78,14 +73,13 @@ function TriplexVisual() {
         sizes="(max-width: 720px) 100vw, 52vw"
       />
       <Image
-        className={`brand-triptych__triplex-fallback${modelReady ? " is-model-ready" : ""}`}
+        className="brand-triptych__triplex-fallback"
         src="/media/mpm/products/triplex/packshot.webp"
         alt=""
         width={1200}
         height={1600}
         sizes="(max-width: 720px) 48vw, 23vw"
       />
-      <TriplexBrandCan3D onReady={handleModelReady} />
       <span className="brand-triptych__steel" aria-hidden="true" />
     </>
   );

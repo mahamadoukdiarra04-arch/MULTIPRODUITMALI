@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type CSSProperties, type FocusEvent } from "react";
+import Link from "next/link";
 
 import { HeroProductStage } from "./HeroProductStage";
 import { HERO_UNIVERSES } from "./hero-universes";
@@ -57,12 +58,12 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
         <h1>{copy.headline}</h1>
         <p className="hero__lead">{copy.introduction}</p>
         <div className="hero__actions">
-          <a className="hero__cta hero__cta--primary" href="#marques" onClick={() => emitHeroEvent("hero_products_click", locale)}>
+          <Link className="hero__cta hero__cta--primary" href="/#marques" onClick={() => emitHeroEvent("hero_products_click", locale)}>
             {copy.primaryCta} <span aria-hidden="true">↗</span>
-          </a>
-          <a className="hero__cta hero__cta--secondary" href="/contact?mode=general&source=hero" onClick={() => emitHeroEvent("hero_contact_click", locale)}>
+          </Link>
+          <Link className="hero__cta hero__cta--secondary" href="/contact?mode=general&source=hero" onClick={() => emitHeroEvent("hero_contact_click", locale)}>
             {copy.secondaryCta} <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
       </div>
 
