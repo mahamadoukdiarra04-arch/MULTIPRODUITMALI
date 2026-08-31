@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { createPbrEnvironment, getThreeRuntime, loadModelClone, preloadModels } from "./three-model-cache";
+import { createPbrEnvironment, getThreeRuntime, loadModelClone } from "./three-model-cache";
 
 type TurntableStatus = "waiting" | "loading" | "ready" | "fallback";
 type NavigatorWithConnection = Navigator & { connection?: { saveData?: boolean } };
@@ -307,12 +307,13 @@ export function ProductRangeTurntable() {
         const { THREE, RoomEnvironment } = await getThreeRuntime();
         if (cancelled) return;
         const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-        const pixelRatioCap = lowPowerDevice ? 1 : 1.1;
+        const mobileViewport = window.innerWidth <= 720;
+        const pixelRatioCap = mobileViewport ? 1 : lowPowerDevice ? 1 : 1.1;
 
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: !lowPowerDevice,
+          antialias: mobileViewport || !lowPowerDevice,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
@@ -332,10 +333,19 @@ export function ProductRangeTurntable() {
         key.position.set(3.5, 4.5, 5.5);
         scene.add(key);
 
-        // The static packshots stay visible while models are prepared sequentially,
-        // avoiding a burst of GLB parsing as this section appears.
-        await preloadModels(modelSources, 1);
-        if (cancelled) return;
+        const resize = () => {
+          if (!renderer) return;
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
+          renderer.setSize(Math.max(viewport.clientWidth, 1), Math.max(viewport.clientHeight, 1), false);
+          canvas.style.transform = `translate3d(${viewport.scrollLeft}px, 0, 0)`;
+          requestFrame();
+        };
+        resize();
+        resizeObserver = new ResizeObserver(resize);
+        resizeObserver.observe(viewport);
+
+        // Decode models one at a time to avoid a mobile main-thread spike, but
+        // reveal each can as soon as its model is ready.
         for (const src of modelSources) {
           const root = await loadModelClone(src);
           if (cancelled) return;
@@ -352,28 +362,20 @@ export function ProductRangeTurntable() {
           const outer = new THREE.Group();
           outer.add(spinner);
           models.set(src, { outer, spinner });
+          items.forEach((item) => {
+            if (item.modelSrc === src) item.element.dataset.turntableReady = "true";
+          });
           canvas.dataset.loadedModels = String(models.size);
-        }
-
-        if (cancelled || !renderer) return;
-        if (models.size !== modelSources.length) {
-          setStatus("fallback");
-          return;
-        }
-        const resize = () => {
-          if (!renderer) return;
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
-          renderer.setSize(Math.max(viewport.clientWidth, 1), Math.max(viewport.clientHeight, 1), false);
-          canvas.style.transform = `translate3d(${viewport.scrollLeft}px, 0, 0)`;
+          if (!modelsReady) {
+            modelsReady = true;
+            viewport.classList.add("has-3d-turntables");
+            setStatus("ready");
+            startEntry();
+          }
           requestFrame();
-        };
-        resize();
-        resizeObserver = new ResizeObserver(resize);
-        resizeObserver.observe(viewport);
-        modelsReady = true;
-        startEntry();
+        }
       } catch {
-        if (!cancelled) setStatus("fallback");
+        if (!cancelled && models.size === 0) setStatus("fallback");
       }
     };
 
@@ -390,6 +392,7 @@ export function ProductRangeTurntable() {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       viewport.removeEventListener("scroll", handleScroll);
       viewport.classList.remove("has-3d-turntables");
+      items.forEach((item) => delete item.element.dataset.turntableReady);
       environmentTarget?.dispose();
       renderer?.dispose();
       renderer?.forceContextLoss();

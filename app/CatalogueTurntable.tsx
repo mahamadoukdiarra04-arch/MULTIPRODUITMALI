@@ -6,7 +6,6 @@ import {
   createPbrEnvironment,
   getThreeRuntime,
   loadModelClone,
-  preloadModels,
 } from "./three-model-cache";
 
 type TurntableStatus = "waiting" | "loading" | "ready" | "fallback";
@@ -84,6 +83,8 @@ export function CatalogueTurntable() {
       }),
     ).filter((item) => item.modelSrc);
     const modelSources = [...new Set(items.map((item) => item.modelSrc))];
+    canvas.dataset.expectedModels = String(modelSources.length);
+    canvas.dataset.loadedModels = "0";
     let renderer: import("three").WebGLRenderer | null = null;
     let scene: import("three").Scene | null = null;
     let camera: import("three").PerspectiveCamera | null = null;
@@ -94,6 +95,7 @@ export function CatalogueTurntable() {
     let inView = false;
     let pageVisible = !document.hidden;
     let lastRenderAt = 0;
+    let firstModelReady = false;
     const models = new Map<string, TurntableModel>();
 
     const stop = () => {
@@ -108,7 +110,9 @@ export function CatalogueTurntable() {
       const activeCamera = camera;
       if (!running || !activeRenderer || !activeScene || !activeCamera) return;
       const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-      const frameIntervalMs = lowPowerDevice ? 1000 / 24 : 1000 / 30;
+      // Keep motion perceptibly smooth on phones while still capping work on
+      // older desktop hardware.
+      const frameIntervalMs = window.innerWidth <= 720 ? 1000 / 30 : lowPowerDevice ? 1000 / 24 : 1000 / 30;
       if (lastRenderAt && now - lastRenderAt < frameIntervalMs) {
         frameId = window.requestAnimationFrame(renderFrame);
         return;
@@ -132,8 +136,9 @@ export function CatalogueTurntable() {
           || rect.top >= canvasRect.bottom
         ) continue;
 
-        const overscanX = Math.min(34, rect.width * 0.22);
-        const overscanY = Math.min(22, rect.height * 0.1);
+        const mobileViewport = window.innerWidth <= 720;
+        const overscanX = mobileViewport ? Math.min(16, rect.width * 0.1) : Math.min(34, rect.width * 0.22);
+        const overscanY = mobileViewport ? Math.min(10, rect.height * 0.06) : Math.min(22, rect.height * 0.1);
         const viewportLeft = rect.left - canvasRect.left - overscanX;
         const viewportTop = rect.top - canvasRect.top - overscanY;
         const viewportWidth = rect.width + (overscanX * 2);
@@ -209,12 +214,13 @@ export function CatalogueTurntable() {
         const { THREE, RoomEnvironment } = await getThreeRuntime();
         if (cancelled) return;
         const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-        const pixelRatioCap = lowPowerDevice ? 1 : 1.1;
+        const mobileViewport = window.innerWidth <= 720;
+        const pixelRatioCap = mobileViewport ? 1 : lowPowerDevice ? 1 : 1.1;
 
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: !lowPowerDevice,
+          antialias: mobileViewport || !lowPowerDevice,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
@@ -234,28 +240,6 @@ export function CatalogueTurntable() {
         key.position.set(3.5, 4.5, 5.5);
         scene.add(key);
 
-        // Loading and decoding all GLB files together produces a short but visible
-        // main-thread spike. Build the cache and clone them one by one instead.
-        await preloadModels(modelSources, 1);
-        if (cancelled) return;
-        for (const src of modelSources) {
-          const root = await loadModelClone(src);
-          if (cancelled) return;
-          const bounds = new THREE.Box3().setFromObject(root);
-          const size = bounds.getSize(new THREE.Vector3());
-          const center = bounds.getCenter(new THREE.Vector3());
-          const maxDimension = Math.max(size.x, size.y, size.z) || 1;
-          const fittedScale = (3.05 / maxDimension) * 0.82;
-          root.scale.setScalar(fittedScale);
-          root.position.copy(center).multiplyScalar(-fittedScale);
-          const spinner = new THREE.Group();
-          spinner.add(root);
-          const outer = new THREE.Group();
-          outer.add(spinner);
-          models.set(src, { outer, spinner });
-        }
-
-        if (cancelled || !renderer) return;
         const resize = () => {
           if (!renderer) return;
           renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
@@ -264,11 +248,39 @@ export function CatalogueTurntable() {
         resize();
         resizeObserver = new ResizeObserver(resize);
         resizeObserver.observe(viewport);
-        viewport.classList.add("has-3d-turntables");
-        setStatus("ready");
-        start();
+
+        // Decode models sequentially to avoid a mobile main-thread spike, but
+        // reveal each model as soon as it is ready instead of waiting for the
+        // complete catalogue.
+        canvas.dataset.loadedModels = "0";
+        for (const src of modelSources) {
+          const root = await loadModelClone(src);
+          if (cancelled) return;
+          const bounds = new THREE.Box3().setFromObject(root);
+          const size = bounds.getSize(new THREE.Vector3());
+          const center = bounds.getCenter(new THREE.Vector3());
+          const maxDimension = Math.max(size.x, size.y, size.z) || 1;
+          const fittedScale = (3.05 / maxDimension) * (window.innerWidth <= 720 ? 0.74 : 0.82);
+          root.scale.setScalar(fittedScale);
+          root.position.copy(center).multiplyScalar(-fittedScale);
+          const spinner = new THREE.Group();
+          spinner.add(root);
+          const outer = new THREE.Group();
+          outer.add(spinner);
+          models.set(src, { outer, spinner });
+          items.forEach((item) => {
+            if (item.modelSrc === src) item.element.dataset.turntableReady = "true";
+          });
+          canvas.dataset.loadedModels = String(models.size);
+          if (!firstModelReady) {
+            firstModelReady = true;
+            viewport.classList.add("has-3d-turntables");
+            setStatus("ready");
+            start();
+          }
+        }
       } catch {
-        if (!cancelled) setStatus("fallback");
+        if (!cancelled && models.size === 0) setStatus("fallback");
       }
     };
 
@@ -281,6 +293,7 @@ export function CatalogueTurntable() {
       resizeObserver?.disconnect();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       viewport.classList.remove("has-3d-turntables");
+      items.forEach((item) => delete item.element.dataset.turntableReady);
       environmentTarget?.dispose();
       renderer?.dispose();
       renderer?.forceContextLoss();
