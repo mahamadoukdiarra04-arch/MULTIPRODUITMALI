@@ -98,7 +98,7 @@ function VimtoVisual() {
       <span className="brand-triptych__vimto-glow" aria-hidden="true" />
       <Image
         className="brand-triptych__vimto-can"
-        src="/media/mpm/universes/vimto-sparkling/vimto-can-cutout-approved-v002.png"
+        src="/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.png"
         alt=""
         width={2400}
         height={3200}
