@@ -17,13 +17,13 @@ const brands = [
     id: "triplex" as const,
     label: "Triplex",
     signature: "L’énergie pour garder le rythme.",
-    href: "/produits/triplex",
+    href: "/produits/triplex-original",
   },
   {
     id: "vimto" as const,
     label: "Vimto Sparkling",
     signature: "Le goût pétillant des moments réunis.",
-    href: "/produits/vimto",
+    href: "/produits/vimto-sparkling",
   },
 ] as const;
 
