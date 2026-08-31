@@ -175,6 +175,12 @@ export function CatalogueTurntable() {
           activeCamera.aspect = aspect;
           activeCamera.updateProjectionMatrix();
         }
+        // Keep the color buffer from the other cards. WebGLRenderer clears the
+        // current scissor rectangle before every render by default, which can
+        // erase the overlapping part of a neighbouring can and leave a visible
+        // rectangular cutout on hover. Only the depth buffer needs resetting
+        // between the isolated card renders.
+        activeRenderer.clearDepth();
         activeRenderer.render(activeScene, activeCamera);
         activeScene.remove(model.outer);
       }
@@ -223,6 +229,7 @@ export function CatalogueTurntable() {
           antialias: mobileViewport || !lowPowerDevice,
           powerPreference: "high-performance",
         });
+        renderer.autoClear = false;
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;

@@ -99,6 +99,8 @@ test("server-renders the Multiproduit Mali homepage and progressive product expe
   assert.match(catalogueSource, /dataset\.turntablePhase/);
   assert.match(catalogueSource, /rootMargin: "480px 0px"/);
   assert.match(catalogueSource, /frameIntervalMs/);
+  assert.match(catalogueSource, /renderer\.autoClear = false/);
+  assert.match(catalogueSource, /activeRenderer\.clearDepth\(\)/);
 
   const heroSource = await readFile(new URL("../app/hero-universes.ts", import.meta.url), "utf8");
   assert.doesNotMatch(heroSource, /palmAsset/);
