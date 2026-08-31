@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-goyave",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-goyave",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-goyave\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-goyave/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 3751720,
+      "sourceSha256": "9ee488e1b733fcbc8f493799964622ad2077847a659f78ffcf762f3e9703fb1b",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 16075,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "536ec6b2b24287d699d534176d48dcc87834cf2ac0d3924d89bb3045743df159"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 26120,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "bb64de0adaeb58b6f6abb211722fe00745f20813fb738a9821d61c1e84c606f1"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 29519,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "543f00a093136736e0c619ff6952d2b14d454ba5906e159c3b5ce5146d700519"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 48640,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "c76edd971bd23640ac057ea7a7f9e81c5f5ca55ab6a5f5954bb38ec26d1dcf8a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 43761,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "0f293d36e0d9b32effe5d05f1d0ecfd4ba187a60c779eb610078e4742427f03d"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 73420,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "1aa5a1fa75e3b6e065bfbcb28b10d1f44263ec1fb7f5f4e46e276caaeb111024"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 59503,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "89382ae64dbebfce3f3fbf899feabc7c1046878716e7b4c364b1495ec4de26ef"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 99888,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "5f66129c571dce7fa52d982dd28862345ccfa24732613fce9d3f183ae4bb0b21"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 73910,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "82041b723fb0cee238e1b97c2caaa24187e44050403fa852c43ef18ae6bab2ee"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 125420,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "c44733af03d797d98ff0312315c72920cf0f478003bef72073023de3a2c554bc"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-goyave\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-goyave/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 3215430,
+      "sourceSha256": "161ff2dfa32849559804925535c3c1e13a7c7e8f633f05df9343842c3274cb34",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 13362,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "28ff0ee82daf8e6940bf0e962b94bfb23c8d57279eb0ce7ebbec143d6381f1d7"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 20486,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "77e9b15ba7291306dbaf61dad0ca52ce67048ece5c8b0495249d8c49e61612db"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 20982,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "33a2fe8a4f16a0050f0e418afb8304ea1c279a3e58daccb666fa4bd7d8658ea5"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 31648,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "45b507b838f194a8c4982fc641b3e7a16a8ac66407bd3a7c4e54c7c4979da487"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 38496,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "3a83e0014fae032d5e169a61bf49fd959503ded0ab5ff58bff82983b02ca593a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 60740,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "ba15ac49ba589e8724112a8e5d4712b6c67bf23876c93290a80f22a464669ef5"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 61441,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "fc1c86e4a4f78cb89b40b3fc2320ccb04b1784b08d622a41ea447471982d0e4e"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 97666,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "0e9e3464b3841fa1ae2f67ca54e7bf9bc989da357520cd2da50028fccd826290"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 97537,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "3db0ebfa5572fa1757f6add3db6c5e410aecbd0e1534e6e07b3c0abadf82ce3b"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-goyave/images/tropicoul-goyave__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 153748,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "904a0004e23861a2845153442e17fc40b80bcd06569e8f562cff41405f3e4ef3"
+        }
+      ]
+    }
+  }
+}

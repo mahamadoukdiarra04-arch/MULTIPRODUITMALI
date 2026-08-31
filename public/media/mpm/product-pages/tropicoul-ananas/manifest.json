@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-ananas",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-ananas",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-ananas\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-ananas/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 3211440,
+      "sourceSha256": "ea03f9120b17717eeb35d81789015ca99b00fb211728bfac71d4a3a505c088a2",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 16707,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "91591ec0bcf5857946064b038c6272534b03960251ef3fc0c519ef5bbd65ae55"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 27192,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "50e655ac5dbbc18340513e434d6dcf5ccdeab60f2cc84052d5e78a28362d9514"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 29169,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "9e9f60ba0b12a667aed2bc582b846ef5bfe12bcaa5b0889d817bae55061e67fb"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 48454,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "e7e039bbee869a0dc61d1f47df0ed937ddb2104d5c91f18d13cd0f097928dea9"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 42213,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "ead6181714079805dd7c319492c50febef9c424431879dbf33e438544c32ab81"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 71006,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "3e9f8577133ad4616a74602fe5c871b9d7a017ac72b5c8fbeed17727ea251453"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 56398,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "a2772eee9a66aa83576946eed733816e8225c9eb561bc0608d34fad892b3756a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 94872,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "8f3b3c0d5884fa7dc6edec16ad6ebff639dbce55afc4d84eff794d44b592e0fd"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 70100,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "516503dacb5236a6de269275ac1c4b64ac6a4f8f7df820f4682294c08af5f7f2"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 117668,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "a8ce3b367783e2ffd15b6bae0c84146d0af1f3fedb86825dad9407256014ecf8"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-ananas\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-ananas/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 2855736,
+      "sourceSha256": "81fe469c45e875bfd93a763ba79fa0651a55fe2bd8f6c3d5a1204edf9f4c09ee",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 15133,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "d4414e6b286f81189f753e9cfe19ba8e509c968f6b0e6b02e21b5378beceac80"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 23422,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "347638eacd91c6f62451d3b11d5211e9c7b86d9a24bd78628c1c3a321c7906b0"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 22814,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "3ab7c19544c372ce55978774f23b1ca770ed72a5a8efc34847b748fb2d5a7519"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 35206,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "bb5d667a9619bd31b9b133df2fb3287bf9d9f0706bdd601f64bb64c53e5d3b39"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 39983,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "e85d88f567586e5c288956661e73d66a0a870283bdcc1878fdd93a155e328c72"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 63336,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "b17b3720c4a85ca1a66265bfbf2f6cb9b9945bbc8284c9bacd50f34c8c073413"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 61103,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "d9c7863f3f4a2f9bd61d45a29c00429d1cc2aced84a6de877c59c766ffabb7f1"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 96944,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "de8dc30b0c0f560215b4f2e334a94de4d59b0386ce272f1c7da0400e16e202f4"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 94773,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "334e7fc392d03532756805a6dfc8464cb9a4e395884adf1df773de87b0a83717"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-ananas/images/tropicoul-ananas__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 149058,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "cdb143d1607fdb5723fb54fd9b271f09653f68b13ccd178ba74cde6cb0f3ed01"
+        }
+      ]
+    }
+  }
+}

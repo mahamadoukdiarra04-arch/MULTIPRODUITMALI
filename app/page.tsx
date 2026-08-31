@@ -1,41 +1,34 @@
+import { listPublications } from "../db/editorial";
+import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
+import { BrandTriptych } from "./BrandTriptych";
+import { FeaturedPublication } from "./actualites/FeaturedPublication";
+import { HeroShowcase } from "./HeroShowcase";
+import { MobileMenu } from "./MobileMenu";
+import { ProductExplorer } from "./ProductExplorer";
+import { ScrollAtmosphere } from "./ScrollAtmosphere";
+import { SiteExperienceLoader } from "./SiteExperienceLoader";
+
 const navigation = [
   ["Notre entreprise", "#entreprise"],
   ["Nos marques", "#marques"],
-  ["Actualités", "#actualites"],
-  ["Contact", "#contact"],
+  ["Actualités", "/actualites", "Actualités & événements"],
+  ["Contact", "/contact"],
 ] as const;
-
-const news = [
-  {
-    type: "Distribution",
-    title: "Simpara se rapproche des lieux de vie qui font vibrer la ville.",
-    image: "/media/simpara/tropicoul/mangue/mangue-market.png",
-  },
-  {
-    type: "Marques",
-    title: "Tropicoul : des recettes fruitées à partager à tout moment.",
-    image: "/media/simpara/tropicoul/cocktail/cocktail-market.png",
-  },
-  {
-    type: "Communauté",
-    title: "Triplex accompagne les défis qui font avancer toute une génération.",
-    image: "/media/simpara/triplex/triplex-champions.png",
-  },
-];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
-export default function Home() {
+export default async function Home() {
+  const publications = await listPublications();
+  const featuredPublication = publications.find((publication) => publication.isFeatured) ?? publications[0];
+
   return (
-    <main>
+    <main id="main-content">
+      <SiteExperienceLoader />
       <ScrollAtmosphere />
       <header className="site-header">
-        <a className="wordmark" href="#accueil" aria-label="Simpara Distribution, accueil">
-          <span className="wordmark__stamp">S</span>
-          <span>
-            <strong>SIMPARA</strong>
-            <small>DISTRIBUTION</small>
-          </span>
+        <a className="wordmark wordmark--logo" href="#accueil" aria-label="Multiproduit Mali, retour à l’accueil">
+          <BrandLogo />
         </a>
 
         <nav className="desktop-nav" aria-label="Navigation principale">
@@ -46,107 +39,73 @@ export default function Home() {
           ))}
         </nav>
 
-        <div className="header-actions">
-          <a href="#contact">FR</a>
-          <a className="header-actions__search" href="#actualites" aria-label="Rechercher sur le site">
-            <span aria-hidden="true">⌕</span>
-          </a>
-        </div>
-
-        <details className="mobile-menu">
-          <summary aria-label="Ouvrir la navigation"><i /><i /></summary>
-          <nav aria-label="Navigation mobile">
-            {navigation.map(([label, href]) => (
-              <a href={href} key={href}>
-                {label}
-              </a>
-            ))}
-          </nav>
-        </details>
+        <MobileMenu navigation={navigation} />
       </header>
 
       <HeroShowcase />
 
       <section className="company-intro" id="entreprise">
-        <p className="section-kicker">NOTRE ENTREPRISE</p>
-        <div>
-          <h2>Une énergie locale, distribuée avec exigence.</h2>
-          <p>
-            Simpara Distribution rend les boissons Tropicoul et Triplex accessibles là où les rencontres, les efforts et les célébrations se vivent vraiment.
-          </p>
-          <a className="text-link" href="#marques">En savoir plus <Arrow /></a>
+        <div className="company-intro__heading">
+          <p className="section-kicker">NOTRE ENTREPRISE</p>
+          <div>
+            <h2>Trois marques. Trois façons de se faire plaisir.</h2>
+            <p>
+              Tropicoul apporte l’évasion fruitée, Triplex accompagne les journées qui s’accélèrent et Vimto Sparkling rassemble autour de son goût pétillant.
+            </p>
+          </div>
         </div>
-        <div className="company-intro__image">
-          <img src="/media/simpara/triplex/triplex-work.png" alt="Univers Triplex" loading="lazy" />
-        </div>
+        <BrandTriptych />
+        <Link className="text-link company-intro__cta" href="/contact">Nous contacter <Arrow /></Link>
       </section>
 
       <section className="brands" id="marques">
         <div className="section-heading section-heading--light">
           <p className="section-kicker">NOS MARQUES</p>
-          <h2>Une réponse pour chaque moment.</h2>
-          <a className="text-link" href="#marques">Découvrir les produits <Arrow /></a>
+          <h2>À chaque envie, sa canette.</h2>
         </div>
         <ProductExplorer />
       </section>
 
-      <section className="news" id="actualites">
-        <div className="section-heading">
-          <p className="section-kicker">À LA UNE</p>
-          <h2>Les histoires qui animent Simpara.</h2>
-          <a className="text-link" href="#contact">Toutes les actualités <Arrow /></a>
-        </div>
-        <div className="news-grid">
-          {news.map((item) => (
-            <article className="news-card" key={item.title}>
-              <img src={item.image} alt="" loading="lazy" />
-              <p>{item.type}</p>
-              <h3>{item.title}</h3>
-              <a href="#contact" aria-label={`Lire : ${item.title}`}><Arrow /></a>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="purpose">
-        <div className="purpose__word">ENSEMBLE</div>
+        <div className="purpose__word" aria-hidden="true">FORUM</div>
         <div className="purpose__copy">
-          <p className="section-kicker">NOTRE RAISON D&apos;ÊTRE</p>
-          <h2>Faire circuler la fraîcheur, l&apos;optimisme et les possibilités.</h2>
-          <a className="text-link" href="#contact">Ce qui nous anime <Arrow /></a>
+          <p className="section-kicker">ACTUALITÉS &amp; DISCUSSIONS</p>
+          <h2>Les marques se vivent aussi ici.</h2>
+          <p>Le forum Multiproduit Mali réunit nos actualités, nos événements et les échanges autour de Tropicoul, Triplex et Vimto. Découvrez la publication à la une, puis rejoignez la conversation sans créer de compte.</p>
+          <Link className="purpose__forum-cta" href="/actualites">
+            <span>Le forum Multiproduit Mali</span>
+            <strong>Accéder aux actualités <i aria-hidden="true">↗</i></strong>
+          </Link>
         </div>
-        <img src="/media/simpara/tropicoul/goyave/goyave-lifestyle.png" alt="Moment de partage Tropicoul" loading="lazy" />
+        {featuredPublication ? <FeaturedPublication publication={featuredPublication} /> : null}
       </section>
 
-      <section className="contact-cta" id="contact">
+      <section className="contact-cta">
         <div>
-          <p className="section-kicker">TRAVAILLONS ENSEMBLE</p>
-          <h2>Votre prochain moment Simpara commence ici.</h2>
+          <p className="section-kicker">PARLONS ENSEMBLE</p>
+          <h2>Envie de faire découvrir nos boissons ?</h2>
         </div>
-        <a className="button-link" href="mailto:contact@simpara-distribution.com">Nous contacter <Arrow /></a>
+        <Link className="button-link" href="/contact?mode=partnership&source=home-contact">Construire un partenariat <Arrow /></Link>
       </section>
 
       <footer className="site-footer">
         <div className="site-footer__brand">
-          <span className="wordmark__stamp">S</span>
-          <strong>SIMPARA<br />DISTRIBUTION</strong>
+          <BrandLogo />
+          <strong>MULTIPRODUIT<br />MALI</strong>
         </div>
         <div>
           <p>EXPLORER</p>
           <a href="#entreprise">Notre entreprise</a>
           <a href="#marques">Nos marques</a>
-          <a href="#actualites">Actualités</a>
+          <Link href="/actualites">Actualités &amp; événements</Link>
         </div>
         <div>
-          <p>RESTONS EN CONTACT</p>
-          <a href="mailto:contact@simpara-distribution.com">contact@simpara-distribution.com</a>
+          <p>CONTACT</p>
+          <Link href="/contact">Écrire à l’équipe</Link>
           <a href="#accueil">Retour en haut ↑</a>
         </div>
-        <small>© 2026 Simpara Distribution. Tous droits réservés.</small>
+        <small>© 2026 Multiproduit Mali. Tous droits réservés.</small>
       </footer>
     </main>
   );
 }
-import { ProductExplorer } from "./ProductExplorer";
-import { HeroShowcase } from "./HeroShowcase";
-import { ScrollAtmosphere } from "./ScrollAtmosphere";

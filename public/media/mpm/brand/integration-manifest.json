@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sourcePolicy": "Exact source copy. Exterior checkerboard is masked only by CSS.",
+  "assets": [
+    {
+      "id": "multiproduit-mali-logo-master",
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\Questionnaire séance 1\\LOGO MULTI PRODUIT MALI.png",
+      "destination": "/media/mpm/brand/multiproduit-mali-logo.png",
+      "format": "png",
+      "bytes": 1235429,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sha256": "22c6fff0773dc8cf1c9620c7cdf54a4419b26eb64f7540e80fe8b4fea7d0e959",
+      "immutable": true
+    },
+    {
+      "id": "multiproduit-mali-logo-web-512",
+      "derivedFrom": "/media/mpm/brand/multiproduit-mali-logo.png",
+      "destination": "/media/mpm/brand/multiproduit-mali-logo-512.webp",
+      "format": "webp",
+      "encoding": "lossless",
+      "resize": "512x512 Lanczos3",
+      "bytes": 210884,
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "sha256": "ffc09b9c8baedf2968c2278cbd74d7550d042b1b81eec6283b6fbdb5e6286bea"
+    }
+  ]
+}

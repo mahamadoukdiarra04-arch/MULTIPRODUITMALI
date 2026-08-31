@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-cocktail",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-cocktail",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-cocktail\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-cocktail/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 4063976,
+      "sourceSha256": "aae28c68885ac744e74cf8d8fdb868fe95d9b9e30aa13ab120cfe5655993e203",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 23892,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "29048344bedd970b9dcf780e582050f6ba4dbafdd504350d39e2f1fb03a67772"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 39058,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "56c29e5aefe2fa2b36d39b7b0dabddbebd23312a8bf5a7d18228e3088b2d4f83"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 41825,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "76577bab0f35f9b898a2b7abd5b72f1616d13320c1658253f10180bb752bd110"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 70782,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "d8e1317eb797ac1632cb2e2ade7d8a67d5f7aa91e5bebe7c354f08123dc86868"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 60429,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "c977adf13699ceb575b4a76fd217068d4e2ebe208521f2fa920b154278e2fc62"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 103778,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "0700906c46c10802b5613ebc82e2ac40e56f66ed56185abb8f13bca9dbff7d44"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 80193,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "99a23da02b459ac90c1f1dbe6d2fef7ff90841d5f0813e61e1a7c86778b91ca0"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 138776,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "f5353b59338c22b5baf329dd65aefec9e1585d3a60ea17cfe24d07fff4468c80"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 98718,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "f74353eb6e9b9bb380bc24a8df044adb1c1ec424564cf5fcdda673c09d473bbd"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 171250,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "d4b604ba576f0bb4dcc8ce155685c1f9db974cb28278902493ade81fce499ab6"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-cocktail\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-cocktail/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 3457762,
+      "sourceSha256": "29e47c3d0fb1a5a8102f99b39ab01efbe804c94d66faad874dc02b192f7acc32",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 21005,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "0c3493824efde67c825f375d1aee954c7f1a40c630f71a61f0eb99f1edaaab26"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 33538,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "1f1ed94993d85e2876205f45b33924d378a28ed6a67a9e133dbb0d1f3424128e"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 31497,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "6bfef82489f9f6c170e3ac147b976f00385f6138ce71ebfb768f0e30c376ae0a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 52588,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "75a123a98ea5f042300cf343bf1a84d306144bc30e44611849aece88459ef3c5"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 55044,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "c1d10a2096bdd3ba07bd1d72912ffc3b41bf59134b49a9f2786a35e912726c90"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 95298,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "43eb00faefe11f000db67a5eae3d85efaf830276422f971a16b335279dadf3ca"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 83337,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "a8a8e418e8f23eab0bdaa9fa78633aac04cc23f2230c0b40534baef900b3c2da"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 147804,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "83b1daf1927b0c6ac7cc3c354eb4ddff58d3916665c88605487f891dd99b4dc4"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 129967,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "c3eec0beea47b485d58a281430c1aa787c3d2b65f84e83f0376350112afb6259"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-cocktail/images/tropicoul-cocktail__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 223662,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "80bbc2bd0d5c3ee6fa88476dccb8d61dbeb510b4c35e51fffc9ca70e9c151775"
+        }
+      ]
+    }
+  }
+}

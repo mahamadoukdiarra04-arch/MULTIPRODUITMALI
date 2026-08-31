@@ -1,0 +1,266 @@
+{
+  "product": "triplex-original",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\triplex-original",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\triplex-original\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/triplex-original/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 2753291,
+      "sourceSha256": "d3923f729fc73a05af70c96503b5dde6581ca64ce8d60463dbbfad89f44e9cf8",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 15181,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "b164a628160e496b2cead7e52f25100723de84c9fb8025570e9880e8e33ad935"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 22934,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "e07a721e1ade1ec9b65f49e669ee5433c5bc6b8b769bf78e03ca5ce698c6919b"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 27198,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "de3b5ef51d9b5defd4463c3472306e9c92363c4831019d6ae419920f7d2e7fc1"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 43240,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "f1b7b57466f14a0398e274f57f0aa92067fad3af74e8669283e2e3749877f5b9"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 39446,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "72e11f93d1a811a2b6329eb3c839be0de48027e597d2585ba9df5bb1a14648dd"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 66758,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "f89fe4b82f81a08483e72d8514bbe4ec2c9d55a2b88b3f4d087ab466203ff415"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 53283,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "b247e1ec967b5662ab8f6790b736f3cf91e8281b2b3a6494c17dbc27b7471bf7"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 89808,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "97c6fe15895a34b0757c3b0db0dbf859df554bd597c66d6faddb2e5b37338fa9"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 64745,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "c621176cb7f9772e8f514acf79a2c39ea2fa46119baf0bab8a2cf134a572ff9d"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 113200,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "6966873f98880f3212f7633dd4b32f611984d587959b9334dc39eeff60e1a9f3"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\triplex-original\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/triplex-original/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 3130597,
+      "sourceSha256": "dee4c8114b9b06183969ebc433a471911d3ff0316bff0bcdaad31e69f92f4343",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 14618,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "8697933f1ec0a5930b922dec7184cecec7f3205be4d65328fb50c41214d7dbc2"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 21550,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "57664609dda4df9fcfade1c5cbdae4d913742f69ef37f918f5b7d68e52205afb"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 22743,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "106573a280cf6c4093efca9633cd85a7bd85d7faddedc071f8464b59e9a9786f"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 34332,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "f77eb1efa7135a07fe72baf46c35691236e033331bf01c29ba2b73f8b32c5773"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 39553,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "88fca9f584da463066a6ffcdad03ae530d415cee95532f619de0149fb4f8654d"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 63924,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "9af215d6a51af67bf257489eb04b06a2ec04d5a71e510b865aae367491e65206"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 61641,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "e38d41af59a5d047c817a8b6857d23de332c5b165c9710512d95636ada3fbd9c"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 102538,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "266fd4c53d4017b374562fcd83b121a239bc304f5bce119b0470f65f23b147f4"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 95586,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "9ba043a8610ee615270c0c3344ba384783872080d8c72a6d15586674abecfc1f"
+        },
+        {
+          "path": "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 159244,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "100e4d83760754e0b060c0319aabee0bb73ebf12c46a55906888aca9ecd8bc42"
+        }
+      ]
+    }
+  }
+}

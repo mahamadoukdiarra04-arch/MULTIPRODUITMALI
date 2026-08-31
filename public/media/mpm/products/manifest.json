@@ -1,0 +1,1558 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-29T12:45:42.949Z",
+  "posterPolicy": {
+    "desktop": {
+      "avifMaximumBytes": 250000,
+      "webpMaximumBytes": 400000
+    },
+    "mobile": {
+      "avifMaximumBytes": 180000,
+      "webpMaximumBytes": 300000
+    }
+  },
+  "packshotPolicy": {
+    "width": 1600,
+    "avifMaximumBytes": 250000,
+    "webpMaximumBytes": 400000,
+    "alphaRequired": true
+  },
+  "products": [
+    {
+      "id": "tropicoul-ananas",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-ananas/packshot.png",
+          "bytes": 1712603,
+          "sha256": "69f47a7c3f5ef78bc5e3b5f85020accbaa4b1a31956fc8e281e3cdefc56d9072",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-ananas/packshot.avif",
+          "bytes": 77465,
+          "sha256": "0ca9be62b63eb563f89f1c9164654d63d862892183d71d4eb3fd9a51f4682489",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-ananas/packshot.webp",
+          "bytes": 99982,
+          "sha256": "27408035aaf0d7be3ea85971b21a47da2c82d1c832eb13396b591755e12314fe",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster.png",
+          "bytes": 1164953,
+          "sha256": "9e1604aef184d4278272317537b39fa2c7589e6a6e995246da1c0fda79df72c0",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster.avif",
+          "bytes": 81423,
+          "sha256": "f66a6f569fb79775f5e02cbeafa08b10acdf43685fbd73093e313038d21b2cd2",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster.webp",
+          "bytes": 77702,
+          "sha256": "ddb365108c49a5059a3441b17f32a9825ec6b5050ab0f67e74fdfd153a8794e6",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster-mobile.png",
+          "bytes": 694613,
+          "sha256": "6846d020fb3f5fc6aabe937ea008afae5680903b8a0bdea2b6402bb6563de3ed",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster-mobile.avif",
+          "bytes": 53073,
+          "sha256": "73909fe09411fccf56400b6fe8632b4c010eb127b712946e66e525095cc4c29b",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-ananas/poster-mobile.webp",
+          "bytes": 52160,
+          "sha256": "a405f864da5c546ac7c808262138383db87d1010f02b301150837948c1e56571",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-ananas/product-hero.png",
+          "bytes": 1129875,
+          "sha256": "11b3e2dfe9279c123dc6069a45b7aeda66b62bc0b8c42c75616f7cda8aa80928",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-ananas/lifestyle-fallback.png",
+          "bytes": 587156,
+          "sha256": "512d6e930105c9d03901eb8f3de9473f42df17e97ac196caa502300f5857f610",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-ananas/qa/front.png",
+          "bytes": 1696743,
+          "sha256": "311076040f71f07d0f09370ef9f22f2fa4d1d0a1dd8913e344d7bccac14db00f",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-ananas/qa/left.png",
+          "bytes": 1428968,
+          "sha256": "52e39b2a53b4b5ca6ace58d907f734457d2683b2b6c4b6267d60ea8c00206a9a",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-ananas/qa/back.png",
+          "bytes": 1720412,
+          "sha256": "0977206f86560af5900a103f97f33c4a32c3eb210e646475ac28a37308b51e70",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-ananas/qa/right.png",
+          "bytes": 1351331,
+          "sha256": "96afd75f6f247118e514519c1a7c4da2886f0ac4bcd7c1823bc7364d7785e607",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 81423,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 77702,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 53073,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 52160,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 77465,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 99982,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "tropicoul-orange",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-orange/packshot.png",
+          "bytes": 1823546,
+          "sha256": "259b5a1df8224463e5630a4bd5f1e062538418fa8102e3963e7217adf8ab1ad4",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-orange/packshot.avif",
+          "bytes": 83300,
+          "sha256": "5352b8c77f18fa3f965b827e92dcc84614aa708d2c474c3f4660e6b2680491b1",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-orange/packshot.webp",
+          "bytes": 111320,
+          "sha256": "bcc5f61f73fa4acce62fbf5aa0289de3f9071ca2a095868fc436a2fa127bd33d",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-orange/poster.png",
+          "bytes": 1264783,
+          "sha256": "c33d72f2f9674551b545b0476daaf91a5adc8de08cc8341ad9c9750c03043b94",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-orange/poster.avif",
+          "bytes": 91457,
+          "sha256": "59dc447de111b87ff915e5e4e995bba49a8ab550d8bff025d3b714d71d253295",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-orange/poster.webp",
+          "bytes": 88798,
+          "sha256": "4f71359e30a3bab3e1424090961cfa4981180a625a0d20bd1211d6a2c1ab3119",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-orange/poster-mobile.png",
+          "bytes": 739088,
+          "sha256": "6e9a69ed089d7508c2f2e305ef60460fa892b78d97e414d242ad9a9f06202e61",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-orange/poster-mobile.avif",
+          "bytes": 58701,
+          "sha256": "90d9617790665940fcd7593c383c19d357155f01453bfb658713a618043e6dcf",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-orange/poster-mobile.webp",
+          "bytes": 58760,
+          "sha256": "1e6d0f3d48db8daf1410985d86c41cbd758a5c6fa6b31299271b8e7faaeb4df4",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-orange/product-hero.png",
+          "bytes": 1224947,
+          "sha256": "1c7b860c1fe446c158f1a57a9004ae83cfe4a7c90de3907a6f871d417ca094c2",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-orange/lifestyle-fallback.png",
+          "bytes": 622812,
+          "sha256": "2ed99e2d7ea24bb7d3236cf1096937d93c755cd598b138bb27864c5b875d6ac5",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-orange/qa/front.png",
+          "bytes": 1807955,
+          "sha256": "cc8eaf73bf91f46a9414afbb94aa200983bdd95cfab86d554f0ed37d82156211",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-orange/qa/left.png",
+          "bytes": 1505319,
+          "sha256": "5d0dc756ab006361d0aac961b049158665e9f0dfbdf41116b1ef9f3c580d5005",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-orange/qa/back.png",
+          "bytes": 1814545,
+          "sha256": "84036589bf7c4b7e61bb6a95fadb2a3578644aa78a9388bf01ffc745ecf87e60",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-orange/qa/right.png",
+          "bytes": 1573296,
+          "sha256": "f5637cc2335ed5dca7aaab653aad59e7d2cac6e0a809dd234b3e667816ac209d",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 91457,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 88798,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 58701,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 58760,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 83300,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 111320,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "tropicoul-mangue",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-mangue/packshot.png",
+          "bytes": 1620975,
+          "sha256": "da900ee0ae8cb2ee8e01c71fbbfdfbf4a70bc0d183dc7679452d93021bc88a84",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-mangue/packshot.avif",
+          "bytes": 68995,
+          "sha256": "752803ebfdc7079b51a42fc3e12a655b0042a2c5bbcd744e3346997793c0132d",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-mangue/packshot.webp",
+          "bytes": 89312,
+          "sha256": "eaf99a3eccf9c74ac3f4460e54ea81029fdeafb59e8a3235e5607087cf060b99",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster.png",
+          "bytes": 1110221,
+          "sha256": "2414a25fdb4127d997ad0ae255319fe824c2823ad259a5198caac52249daf262",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster.avif",
+          "bytes": 72905,
+          "sha256": "2c70d50dd90a22fec939923dbd8760e7415415a646104474884b26c64c719637",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster.webp",
+          "bytes": 68324,
+          "sha256": "c5a7ca4025f0a284987d5d05e9f0fff8a9552700f0858f328759f7e9d9ae7392",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster-mobile.png",
+          "bytes": 667452,
+          "sha256": "e60f030d2ce7b9886420361c7c3e71ee5bf36696aa2cb5b013a6b48d2b558e64",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster-mobile.avif",
+          "bytes": 48420,
+          "sha256": "007451d80e55129ca0949889c32ee8c4ebe3cd120f545cfb79ee403df8a3842a",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-mangue/poster-mobile.webp",
+          "bytes": 44048,
+          "sha256": "5682db65a5d6f20f88b21aea5404d20c54589a33a7880f7cde2023c2aae67f07",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-mangue/product-hero.png",
+          "bytes": 1077319,
+          "sha256": "ba1357abe2fee1f28349cd88d016cdbd1ecafec038a613fc6a18367b25071b3d",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-mangue/lifestyle-fallback.png",
+          "bytes": 567251,
+          "sha256": "6b998701b053c0acbd9364e36e2090bb208d9d54f925b01495fd656e4d28d483",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-mangue/qa/front.png",
+          "bytes": 1605271,
+          "sha256": "8a7a6e9d63fa3a944e88a685dac4385232389ac5e3a7ccd449d29d4ee87dd8f9",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-mangue/qa/left.png",
+          "bytes": 1434233,
+          "sha256": "c8ca5e170a3aa65c7a487318f7623e0b4c573497c6c7c201902a78772dcd5362",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-mangue/qa/back.png",
+          "bytes": 1592640,
+          "sha256": "e7d588c8085aade220eddc7d71e1e353f9cd1c37dab53fc976c939cf0a182512",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-mangue/qa/right.png",
+          "bytes": 1287105,
+          "sha256": "b01919395bd695a7dc79ba79084e2e158c9f743f8c00dc7cbfe2f7f299a62a2c",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 72905,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 68324,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 48420,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 44048,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 68995,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 89312,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "tropicoul-goyave",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-goyave/packshot.png",
+          "bytes": 1892633,
+          "sha256": "a5c0c14a5fdb6f607034d7cba4a9c9137a4123bffe810ad0d03ce0b63587daad",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-goyave/packshot.avif",
+          "bytes": 89856,
+          "sha256": "b1deefc97440f4e1e00d0555186ffee87c4beaf5c3479b28e8b947bb09409ce5",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-goyave/packshot.webp",
+          "bytes": 115788,
+          "sha256": "06b82728dc1130974c590696b7db80ecdd662b5181e637bfe20f1a98d588952e",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster.png",
+          "bytes": 1293748,
+          "sha256": "969c52f4c719caa38f385f607dc96cdb98e2869d0d206dbde244dc72a2fda15f",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster.avif",
+          "bytes": 92305,
+          "sha256": "c3bd8538b300eb745137cc11f9af9c387ff513bcb29cdb00aa83f9fe7cd4805d",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster.webp",
+          "bytes": 92440,
+          "sha256": "1b23c65ce0314ab1065a26b04c1a06ee725e9f5f951c424c58b4f461689d40f8",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster-mobile.png",
+          "bytes": 754985,
+          "sha256": "2ea2dc4a603f8f15d6610670a038ebf5562f148a266a8f4e0d83cd891cecb55d",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster-mobile.avif",
+          "bytes": 59641,
+          "sha256": "6d0d68e57f29d93bca9fcac23d6f54553d4fcca55109c233a93046b699e3a207",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-goyave/poster-mobile.webp",
+          "bytes": 58974,
+          "sha256": "8830c735769c263d5e1899ffa97d54dfe75f8ebc94e24b515b40a5a796788c4f",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-goyave/product-hero.png",
+          "bytes": 1252858,
+          "sha256": "35ae3edd59fd5b31853fd1cf2a763f5a9edbb7a20afb9f99f3bf56c53b4036bc",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-goyave/lifestyle-fallback.png",
+          "bytes": 635439,
+          "sha256": "3153bd54efc638aba0de15ea594e5300202b7616ee7386f750b9046dc30228bd",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-goyave/qa/front.png",
+          "bytes": 1877055,
+          "sha256": "a5b37e1eff53e2e2cbe7495799e99ddc19fc884734ec0fb0d6ee1555ff34a410",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-goyave/qa/left.png",
+          "bytes": 1204273,
+          "sha256": "7a501b2689978e68e07aa6028ec3f01d2abe6f34accd79205a62c6b5187e2a2f",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-goyave/qa/back.png",
+          "bytes": 1401451,
+          "sha256": "277ed3465ad19daa9aec9528fdd6a90ca3a16beaf0f4f4fde74300cb3976dfbb",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-goyave/qa/right.png",
+          "bytes": 1342326,
+          "sha256": "772b009275b02f9acf54239f4a643d64a951ee32ddd51be218eb79ed6a7974dd",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 92305,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 92440,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 59641,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 58974,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 89856,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 115788,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "tropicoul-cocktail",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-cocktail/packshot.png",
+          "bytes": 1767376,
+          "sha256": "507cc66239c415a05e062e3d2c59e3d924dc9df49dc097c44fd2e9b863a031d9",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-cocktail/packshot.avif",
+          "bytes": 80966,
+          "sha256": "c367df7df1408a9d6834a3d100f463cb34d9b8e661582ba5fa0c820d11b1b539",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-cocktail/packshot.webp",
+          "bytes": 102910,
+          "sha256": "e189f2d7e1edca3dbde49481921ecf68011a178f7872bdf2536f7b8c4113e45e",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster.png",
+          "bytes": 1204668,
+          "sha256": "c4752b21a22802070237e43d76b4586fa9f1ec76a4e068aa5a4902f3e22c69a6",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster.avif",
+          "bytes": 80843,
+          "sha256": "a616b0c0fb6de61b52b7a31e638e70e9c248a8cc08a8b3b118ef433e99362184",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster.webp",
+          "bytes": 79746,
+          "sha256": "a4ef4c564e3ab642d9709e84a220ce58c320b66ad3f47cb873c1688d0fb16cc8",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster-mobile.png",
+          "bytes": 712178,
+          "sha256": "abe2fbed8c7f032f68df2b38dfd13be43f54e79ce18ee2a0723f1723be8e1eda",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster-mobile.avif",
+          "bytes": 52925,
+          "sha256": "89ac14282775a0144310016778648ad3e5d17c3a0465c0452568fb0a26b57c26",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-cocktail/poster-mobile.webp",
+          "bytes": 53116,
+          "sha256": "174eebcf621983449f4037625b86ad3c140687b75cc86d398a9311c460bece04",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-cocktail/product-hero.png",
+          "bytes": 1168178,
+          "sha256": "e023a4529d0545eb3b1405763bc2392c71032478cdedff1fb5d186de42232aa2",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-cocktail/lifestyle-fallback.png",
+          "bytes": 600513,
+          "sha256": "64c8d5c770af24e721039704ed485d904f4882f89133e4c861b2ab86c679a028",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-cocktail/qa/front.png",
+          "bytes": 1750418,
+          "sha256": "eb69b0103d3eef8687437c90c3d3ebc309791dd326c6f77217829c6da538455a",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-cocktail/qa/left.png",
+          "bytes": 1471347,
+          "sha256": "6add1b330f758bf576ed2fac03f1a7eba61abd072d8d377cd28718b5edcbc4f3",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-cocktail/qa/back.png",
+          "bytes": 1768376,
+          "sha256": "cbb45ce365c5b8b706e6b6bbeb9e53c6dbbaa8f49cc4763698205024fea6993f",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-cocktail/qa/right.png",
+          "bytes": 1556325,
+          "sha256": "651a7252f719be600b73933aa2deec25303fecf61d0886c66cc7527f98b84c50",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 80843,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 79746,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 52925,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 53116,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 80966,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 102910,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "tropicoul-tamarin",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/tropicoul-tamarin/packshot.png",
+          "bytes": 1919198,
+          "sha256": "eb23b02f40453b733503fb2b76f3d1794ab5524f9827419db51c31cf0b3b667a",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/tropicoul-tamarin/packshot.avif",
+          "bytes": 91891,
+          "sha256": "9b3efc083dc87fe8201901cb7bf0ebbaec1254f8ee7c77a408ab76d90368e649",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/tropicoul-tamarin/packshot.webp",
+          "bytes": 119454,
+          "sha256": "640234f12120a3b12517f39bae0adb67d06160350061981dddd785417bb95ff2",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster.png",
+          "bytes": 1316015,
+          "sha256": "c80dd67df49f8d2a8b67b5450848d94d1756c22df3fb5ca30efb68e23f4f41ba",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster.avif",
+          "bytes": 92108,
+          "sha256": "37ff7bc3ddf6999c358b55635255986738daba039e806311052f8c2b1a299378",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster.webp",
+          "bytes": 93916,
+          "sha256": "8d556621305c144fe99f9f9cc5393162a98e05ab13fbc9a7b1443426cd98404f",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster-mobile.png",
+          "bytes": 761642,
+          "sha256": "b9d35508310d3d18fb56d2d6a1f620c4ceaca69ce6749f8aca43d1423c518e1b",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster-mobile.avif",
+          "bytes": 58976,
+          "sha256": "358f97e6f001d2444d4f7a443d50aa209a26a652a078e23992d368bb46764e23",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/tropicoul-tamarin/poster-mobile.webp",
+          "bytes": 60912,
+          "sha256": "f1fe246ccc4b7bca92a447e7947c9663ff5bb77e80345c69757fcabab45955f8",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/tropicoul-tamarin/product-hero.png",
+          "bytes": 1273140,
+          "sha256": "a27dfb5581cc397a86c7c606918b4f8e20ef8655adc50b32e8fdff5d77133ead",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/tropicoul-tamarin/lifestyle-fallback.png",
+          "bytes": 639410,
+          "sha256": "3f94d2f193584f97b009c15e583c87c2a2f777cbf139ec3d85f01c8cfb20d3eb",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/tropicoul-tamarin/qa/front.png",
+          "bytes": 1903777,
+          "sha256": "2f3b4fb0ebd1a1429206d4c030510905a212213e138d56807b2622c65237d615",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/tropicoul-tamarin/qa/left.png",
+          "bytes": 1536117,
+          "sha256": "da0d33e2725dd7854fa167b32f150ffc13d783a0452bab512acdb1e7a14357da",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/tropicoul-tamarin/qa/back.png",
+          "bytes": 1941634,
+          "sha256": "9d8c86bde8c517eababda5c63bbd34bcb734b4d998a9378834ccd8a4f8a424a3",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/tropicoul-tamarin/qa/right.png",
+          "bytes": 1646702,
+          "sha256": "49a216a6fc34ea899829aaa4899f5a4f6a4785becb5162b5c4c3af55232d136b",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 92108,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 93916,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 58976,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 60912,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 91891,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 119454,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "triplex",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/triplex/packshot.png",
+          "bytes": 1765989,
+          "sha256": "607ac2f519e510cf1c5a04f762ba3f2f01da634e872a38266cd7cbc6ba193992",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/triplex/packshot.avif",
+          "bytes": 75306,
+          "sha256": "bbda7a6bc0b311c82525efd995907b804061bd81e10051427a5a08c5464363d2",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/triplex/packshot.webp",
+          "bytes": 100412,
+          "sha256": "32c660133d3a25e37d4c98363d20e58d3f7e9037e2f82ff2099b0bbd3bba9caa",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/triplex/poster.png",
+          "bytes": 1205794,
+          "sha256": "703054f6e5b2fbc9425825ce2d76d9c489547a9d6ac37f0bcdac42a16eae17d2",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/triplex/poster.avif",
+          "bytes": 72871,
+          "sha256": "a62bf5129332a58f67fa322e56f31939566866f51b9511a2e64c5f84140cec2f",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/triplex/poster.webp",
+          "bytes": 78186,
+          "sha256": "f8f389efa40b3e1d014d0c04e9cd6ec3b8c225b9e8e5a87736b627bd0c011b4d",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/triplex/poster-mobile.png",
+          "bytes": 710845,
+          "sha256": "85fa12d8fe7b1393da9df9b7e9e1027134a514de3bd02ea235caadfaa2465a0b",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/triplex/poster-mobile.avif",
+          "bytes": 47556,
+          "sha256": "412a73297f5accbb83544e556e131db33977cebd5a029eb707e72a2593b3f770",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/triplex/poster-mobile.webp",
+          "bytes": 54754,
+          "sha256": "34eae36d8af34aeae2364a1a5f17495b81dc9041eb9ac844006d23af4c7e5f07",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/triplex/product-hero.png",
+          "bytes": 1173649,
+          "sha256": "0426eab0096fe9f98d6dffe54dcfc32de07757928a5c31d07c51ecea323e40db",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/triplex/lifestyle-fallback.png",
+          "bytes": 608108,
+          "sha256": "4eecd5d7bc43874a58207feb770ef50bfb9c29d01d27a5048a031639f322d0de",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/triplex/qa/front.png",
+          "bytes": 1750195,
+          "sha256": "9784c7642d971a4bbb87bc03a796149ad54473b88e6306fe572dd0351429dc89",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/triplex/qa/left.png",
+          "bytes": 1758562,
+          "sha256": "ac671563b0bb3c9e20ff37edfce11fb432393e9db1578c8cfbf23c94c24c2fab",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/triplex/qa/back.png",
+          "bytes": 1679989,
+          "sha256": "c9b32d2e8ca7e0d7b8aa0bed1b996ed2cdbd8b4bfad98b149548c931e4af9681",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/triplex/qa/right.png",
+          "bytes": 1383945,
+          "sha256": "68dbd2bad4decac9c26fba4083656f8ea26788fd56110d3159c0dccdc1a00b8f",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 72871,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 78186,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 47556,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 54754,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 75306,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 100412,
+          "quality": 86
+        }
+      }
+    },
+    {
+      "id": "vimto",
+      "roles": {
+        "packshot": {
+          "path": "/media/mpm/products/vimto/packshot.png",
+          "bytes": 1430391,
+          "sha256": "b5514b10f6f904d87b252c01645823f0ff7ba96b345a870dc4b118a54d1c29ed",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotAvif": {
+          "path": "/media/mpm/products/vimto/packshot.avif",
+          "bytes": 54183,
+          "sha256": "dc4a6066c448e51e93b7f22313b98909c77cce9f8bd603d683809bc4fd14fba9",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "packshotWebp": {
+          "path": "/media/mpm/products/vimto/packshot.webp",
+          "bytes": 76296,
+          "sha256": "289bd22778bfe87e661535b8acbcf0326f98ed27f27aa939a1a1e6632642f61a",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 0,
+            "max": 255
+          }
+        },
+        "poster": {
+          "path": "/media/mpm/products/vimto/poster.png",
+          "bytes": 962508,
+          "sha256": "2651f66cd904f3102a31eebd72378c3e844d79e637d8f9b777c77e694ad2030c",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterAvif": {
+          "path": "/media/mpm/products/vimto/poster.avif",
+          "bytes": 55478,
+          "sha256": "339cea09464c8683cd508b75bab1663120d8b386d312fdae1e566e988d1b1bc2",
+          "width": 1600,
+          "height": 1600,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterWebp": {
+          "path": "/media/mpm/products/vimto/poster.webp",
+          "bytes": 56998,
+          "sha256": "fee20da404c80385bb7b615a4f875de4c0ccb3fe1b2c9fe472cd5194064c500f",
+          "width": 1600,
+          "height": 1600,
+          "alpha": null
+        },
+        "posterMobile": {
+          "path": "/media/mpm/products/vimto/poster-mobile.png",
+          "bytes": 593146,
+          "sha256": "b6667ef9afbfa2995313433285b3430d982fa00721e38925d48b8b43c0cf5fb0",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileAvif": {
+          "path": "/media/mpm/products/vimto/poster-mobile.avif",
+          "bytes": 36065,
+          "sha256": "05018a0800add519afe5306395aeff6f5d090e215ed29c030251d20036a955fc",
+          "width": 1080,
+          "height": 1440,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "posterMobileWebp": {
+          "path": "/media/mpm/products/vimto/poster-mobile.webp",
+          "bytes": 38258,
+          "sha256": "8409b8f6a586f80814c0c6ae68a380c1244d24dcbb779e5b9f4ce3aa488e0e72",
+          "width": 1080,
+          "height": 1440,
+          "alpha": null
+        },
+        "productHero": {
+          "path": "/media/mpm/products/vimto/product-hero.png",
+          "bytes": 939627,
+          "sha256": "d1fd05f3911450fe82f58fb512160953e183336e741f44142cd29ef0d9ac3378",
+          "width": 1600,
+          "height": 1800,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "lifestyleFallback": {
+          "path": "/media/mpm/products/vimto/lifestyle-fallback.png",
+          "bytes": 508788,
+          "sha256": "9890de7eaebd348671cdec075a982e7835b1d16c9e70d7cfda7196bdc683f31d",
+          "width": 1600,
+          "height": 1000,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaFront": {
+          "path": "/media/mpm/products/vimto/qa/front.png",
+          "bytes": 1413723,
+          "sha256": "6ccb14d57b8b0242c1616d3aa50bd3b464d66ac6b625830115d8db97d7bbff10",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaLeft": {
+          "path": "/media/mpm/products/vimto/qa/left.png",
+          "bytes": 1296237,
+          "sha256": "acbbfa058c2655685acc769c7e109dd69f38a8d5445cece309f7a367a43260d2",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaBack": {
+          "path": "/media/mpm/products/vimto/qa/back.png",
+          "bytes": 1623146,
+          "sha256": "4f7ce4e77acedb6d468db833b5606b9c532a3048e8a92ef8a7a6f8518534fbd9",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        },
+        "qaRight": {
+          "path": "/media/mpm/products/vimto/qa/right.png",
+          "bytes": 1402995,
+          "sha256": "8969476cef71e28ed3aaedaef6eb8ee604c8e2dbc14c3a7c1e1131cd51f3e419",
+          "width": 2048,
+          "height": 2048,
+          "alpha": {
+            "min": 255,
+            "max": 255
+          }
+        }
+      },
+      "posterEncoding": {
+        "avif": {
+          "bytes": 55478,
+          "quality": 68
+        },
+        "webp": {
+          "bytes": 56998,
+          "quality": 84
+        },
+        "mobileAvif": {
+          "bytes": 36065,
+          "quality": 68
+        },
+        "mobileWebp": {
+          "bytes": 38258,
+          "quality": 84
+        }
+      },
+      "packshotEncoding": {
+        "avif": {
+          "bytes": 54183,
+          "quality": 74
+        },
+        "webp": {
+          "bytes": 76296,
+          "quality": 86
+        }
+      }
+    }
+  ]
+}

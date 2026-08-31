@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-mangue",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-mangue",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-mangue\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-mangue/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 3409710,
+      "sourceSha256": "3d88a06aff3668bdd4e9a38feda72d88579961c335864cd6347828b6ba3d106e",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 15040,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "b3b5257cc27992a8371a87d22c78020d725303dacde24c1c0f5d454b1d509b23"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 22630,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "2004950374dacac07b3494c222c0e54b1735cc75312b4d9ca6d65840bec6bd87"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 26020,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "ed61cacfefa20476eeea0eb6702fa50a1d90016a4f7af1458deb4e7ec2451202"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 40172,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "de2097b15d3c84fb9bd7f4de8a1affe9648b86655693b1910de759f5270aedd4"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 37949,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "56ab993567702ace2f0e93113fc9cbf60110e321b3c25ee03db3cd5e1e8baee0"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 60182,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "c5139b55defb54f3883ed4a938676d2cb4f4316cd031a185d20eef4a0bcf1966"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 50116,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "8022bd7216426fa66efd38b6b19153dc4ff153a15a4dde0ba2c0fa389abc37e7"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 80742,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "b08da27aa7ae1abcd93450bd6f2d460fc026ff55c5062fabcc4dcee6b10bf21e"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 61844,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "060fa613a5a53998039659791c49ac953cdbf9cf64de16e91bb21798a42113b8"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 100816,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "ec1759054ec29275efa29b2ce4f77fab955178e0b9ccf10e318ce2c5f9e4d4b1"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-mangue\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-mangue/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 2947043,
+      "sourceSha256": "449ba2c4b543dd286d7ba5232300095928a3aac5c7992a636cc6684338bbeca1",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 13481,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "ef15b739e4d27c9ac55afd2486ee1d7a3364865add1fd82611f99556e5e1dbcb"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 18896,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "6b96642093222556d65cbca3aef87cad82f1d2b6af2aae541ba7b4cb90004699"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 19714,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "b8622d5692df4c04da6cd8d77290fb741aa32f0c5a8d2eb9b4c8e21e3d8ef7cb"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 28496,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "76dface4263a4ce83b591f4f7e58e7b836781860caf9c9898495c8437a687a1f"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 33579,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "b77c0a1c50c34e3bb38574f3ec6a873985e1b6494d0046cbaafac724ed7e335f"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 50732,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "6be68cf2ed020b2c950f25f682799c6ba7b62185200c9d94f200cf2bdf0bafdc"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 51688,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "e3d6405925f73b05ae41505c4dedaa0e4a9e59372b0df62fe14a8a443aec2921"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 79066,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "cb218304a40f922a121213eff472c6021aac5b7b351383a132b5307ff3b868eb"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 81696,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "b46b084eb7f690ee1e23c1f2bb01e7a7592fbcd24cf835720dd2c20991cdf55c"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-mangue/images/tropicoul-mangue__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 121620,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "989997ce408da3a206d45c2c04fcc12d0e9c4117ab543f2f6a7f3cb9a93b4471"
+        }
+      ]
+    }
+  }
+}

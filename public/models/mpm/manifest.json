@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-31T07:05:53.561Z",
+  "policy": {
+    "targetBytes": 2621440,
+    "maximumBytes": 3145728,
+    "maximumTriangles": 35000,
+    "compressionExtensions": [],
+    "sourceMastersModified": false
+  },
+  "products": [
+    {
+      "id": "tropicoul-ananas",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Pineapple_330ml_Premium.glb",
+        "bytes": 4000632,
+        "sha256": "911b167ff1def4c86a838877b6c78a5dce942be986012a729548991c83d1669f",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-ananas.glb",
+        "bytes": 1454296,
+        "mib": 1.387,
+        "withinTarget": true,
+        "sha256": "419d450bdd30e27c7411f2e30032a6790df6ab23abc63b7602c46c97ec7a5e0a",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 585183
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 44629
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 43589
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "tropicoul-orange",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Orange_330ml_Premium.glb",
+        "bytes": 3931312,
+        "sha256": "10c78be193fb805ee2d9aaca47352672572b35b3add96330317ab49d6aeccdc9",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-orange.glb",
+        "bytes": 1477220,
+        "mib": 1.409,
+        "withinTarget": true,
+        "sha256": "f421d18f02ccee645a6832c8fc52ff7fefbe8b22fc0490d2fd802d49bba7b720",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 615025
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 45037
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 36204
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "tropicoul-mangue",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Mango_330ml_Premium.glb",
+        "bytes": 3603708,
+        "sha256": "8e90aa575a58d602d0cbda1bd33c2f6f75b8e2d354086acc0ad0e6daeabb7a14",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-mangue.glb",
+        "bytes": 1341804,
+        "mib": 1.28,
+        "withinTarget": true,
+        "sha256": "e3eb7a5a23c9274a3a73f0cbef6363e778b4bb27245512e310961b4f4c092351",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 487223
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 37827
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 35816
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "tropicoul-goyave",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Guava_330ml_Premium.glb",
+        "bytes": 3497020,
+        "sha256": "b1a391dac44acb2718940f453953ad45072155f99af96b9bf9e3741e089220f2",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-goyave.glb",
+        "bytes": 1302672,
+        "mib": 1.242,
+        "withinTarget": true,
+        "sha256": "785fb5f900388d1524f2a37e5e8b268a03ddc35fd7e6fe77a744b75d71ddc411",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 454390
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 32224
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 34885
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "tropicoul-cocktail",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Cocktail_330ml_Premium.glb",
+        "bytes": 3888120,
+        "sha256": "1e11d62a4633e4e02a69147fa87627d3b203608ec5dd6e2c62855c802aed6658",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-cocktail.glb",
+        "bytes": 1451352,
+        "mib": 1.384,
+        "withinTarget": true,
+        "sha256": "be7980ee95372b82cc72348ea6f17daf1a3b45ada89966c447ae2db4555666f9",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 590148
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 44468
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 35772
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "tropicoul-tamarin",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Tamarind_330ml_Premium.glb",
+        "bytes": 4204716,
+        "sha256": "81f3f6bd01571e1ef71c1bf58a38cbc7ddf6f64d9dd016d14776ef2bc5245aa6",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/tropicoul-tamarin.glb",
+        "bytes": 1523512,
+        "mib": 1.453,
+        "withinTarget": true,
+        "sha256": "13c8173875863a1e3abd81bca4eaae1bdc160839b34cd1d71458815f2655e379",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 658844
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 46638
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 37069
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "triplex",
+      "source": {
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Triplex_Energy_Drink_330ml_Premium.glb",
+        "bytes": 3502060,
+        "sha256": "24a620564e9a2af188922fb9ccc778c13acdeec0d83773167e0827b4c02a0838",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "web": {
+        "path": "/models/mpm/triplex-energy-drink.glb",
+        "bytes": 1311300,
+        "mib": 1.251,
+        "withinTarget": true,
+        "sha256": "6dfdc96828e1de7965ea6d74bdd9c7da00dae68ab92ce8be991ceda4d42baabe",
+        "triangles": 30096,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 441233
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 51737
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 1024,
+            "height": 512,
+            "bytes": 37421
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    },
+    {
+      "id": "vimto",
+      "source": {
+        "path": "3D/VIMTO/Vimto_Sparkling_Product_Page_Pack/Vimto_Sparkling_Product_Page_Pack/assets/product/vimto-330ml-premium-v002.glb",
+        "bytes": 3451196,
+        "sha256": "a298ea23fedf8c4e98684768c33a0c87874cbe784b9a0f518aacfd194f6537b4",
+        "triangles": 35072,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "immutable": true
+      },
+      "web": {
+        "path": "/models/mpm/vimto-sparkling-v2.glb",
+        "bytes": 2848740,
+        "mib": 2.717,
+        "withinTarget": true,
+        "sha256": "d8d30e644a62045d337955ce9b8047debe44e1f30a6608b447b40fcce73deaa0",
+        "triangles": 32510,
+        "rootRotations": [
+          {
+            "name": "world",
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "frontYawDegrees": 0,
+        "sourceFrontCorrectionDegrees": 30,
+        "textures": [
+          {
+            "roles": [
+              "baseColor"
+            ],
+            "width": 4096,
+            "height": 2048,
+            "bytes": 1580386
+          },
+          {
+            "roles": [
+              "orm"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 161965
+          },
+          {
+            "roles": [
+              "normal"
+            ],
+            "width": 2048,
+            "height": 1024,
+            "bytes": 261135
+          }
+        ],
+        "validation": {
+          "errors": 0,
+          "warnings": 0,
+          "infos": 0,
+          "hints": 0
+        }
+      }
+    }
+  ]
+}

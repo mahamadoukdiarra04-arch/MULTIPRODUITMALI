@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-orange",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-orange",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-orange\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-orange/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 3286629,
+      "sourceSha256": "9db7e99a54fbcc63cd512065155f18dd21c10b38e1fad7678ee4cef2288c69de",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 16780,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "13f24f4dd8912fa30edc60a933639cc589b8f98fd27ca20baf9040092537f656"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 26896,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "82914c9d228d8f30a257e372ef381be0ae26ce58c761dab462b5b54fc127d8b4"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 29525,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "e20cf07a40542bf5c7e31d66883cb87d6ae03c0e2330946cd992369382e8b956"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 50554,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "33f1dcc9ccaa485b0dc3a777d1f21be2a51496dad6766611563569e73879a5c9"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 43804,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "49d1f8c6192e56d666685935c5999c40aca696b0297031cbb5c7a4469cfa4caf"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 75272,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "16e81020046b8946757d54ca2aded11be8be08ce6bc58489cb9d6f91deee00d1"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 59048,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "f5f3a108ac461e357aeb94a57ed043293db6f9463ba9e3d17b7206ba19b5a716"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 99446,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "d0cf83e2428979dbb4753de05294355f4a8e8ee827a4b7a59a03d3b3a420c5e3"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 73561,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "cc9c33714a3c22e4fbbdef947edca5e242ec250659205b784e4d206bd086662a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 125588,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "8bf13c610eeac5e45c88bde60a42548dea4111d3d6f7745bb4ef2b03b8a1c2c7"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-orange\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-orange/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 2736662,
+      "sourceSha256": "66cae757e866de39f841452f6a09f834d05cb2c2e6622c9afecbba7f28085120",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 14173,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "c6a0dcf957a39d5692f5c4d0ea6d48eb553d46584f0472ca837e6c5cc73c918a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 21902,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "21bcfe703a489000143ceeae37a849239054606a795f18439ed62032f4e6fac7"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 21679,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "30abe18c2671410b4fb28d78fc5e773a8bfd2438679238badc0603abe49c862a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 34156,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "3a540c3c7b5abaa14534da38c392064b2933b424752d053e30137e1adb3a36d7"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 38176,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "3c65d920787087f836adfb1ef8dba93ed0709382ccfa9a144f896e8c9eb6aa56"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 61258,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "dc7787b7b3d6b8d4e2f2d69b3f1fa8123803ca57063e63428483f29150edef01"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 57296,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "002b9671aee3d7a6c80f5386cb17aa482417e22e4812007ba809685d8a4d7d0f"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 93552,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "72573da68e6ab5e5ccf563d726fe626704688fa66bfd98a293e43d90acf17c54"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 90247,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "75903bca909e17eed92ba39ad395dafe9332eae061aa868b700462525841d600"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-orange/images/tropicoul-orange__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 143424,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "f1fc82618617ed401a94904f22775739a6c2022a95fe93fa38cf8b0c7fd62f7e"
+        }
+      ]
+    }
+  }
+}

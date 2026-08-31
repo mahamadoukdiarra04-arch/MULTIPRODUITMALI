@@ -8,20 +8,12 @@ import { useHeroAutoplay } from "./useHeroAutoplay";
 
 const heroCopy = {
   fr: {
-    eyebrow: "Multiproduit Mali SARL",
-    headline: "Des boissons maliennes prêtes pour de nouveaux marchés.",
+    eyebrow: "MULTIPRODUIT MALI",
+    headline: "Trois marques. Des goûts qui rassemblent.",
     introduction:
-      "Multiproduit Mali développe et distribue les marques Tropicoul, Triplex et Vimto. Nous recherchons des partenaires capables de les représenter et de les développer dans leur pays.",
-    primaryCta: "Devenir partenaire",
-    secondaryCta: "Découvrir nos produits",
-  },
-  en: {
-    eyebrow: "Multiproduit Mali SARL",
-    headline: "Malian beverages ready for new markets.",
-    introduction:
-      "Multiproduit Mali develops and distributes Tropicoul, Triplex and Vimto. We are looking for partners to represent and grow our brands in their markets.",
-    primaryCta: "Become a partner",
-    secondaryCta: "Explore our products",
+      "Tropicoul apporte l’évasion fruitée, Triplex garde le rythme et Vimto réveille les souvenirs. Des canettes pleines de caractère, faites pour les pauses fraîches, les tables animées et les moments qui comptent.",
+    primaryCta: "Découvrir nos boissons",
+    secondaryCta: "Nous écrire",
   },
 } as const;
 
@@ -29,7 +21,7 @@ type HeroShowcaseProps = {
   locale?: keyof typeof heroCopy;
 };
 
-function emitHeroEvent(name: "hero_partner_click" | "hero_products_click" | "hero_motion_paused", locale: "fr" | "en", source?: "keyboard" | "touch") {
+function emitHeroEvent(name: "hero_contact_click" | "hero_products_click" | "hero_motion_paused", locale: "fr", source?: "keyboard" | "touch") {
   window.dispatchEvent(new CustomEvent("mpm:analytics", { detail: { name, locale, source } }));
 }
 
@@ -52,6 +44,7 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
       id="accueil"
       ref={heroRef}
       style={heroStyle}
+      data-playback-state={autoplay.playbackState}
       onFocusCapture={() => autoplay.setFocused(true)}
       onBlurCapture={handleBlur}
       onTouchStart={() => {
@@ -64,11 +57,11 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
         <h1>{copy.headline}</h1>
         <p className="hero__lead">{copy.introduction}</p>
         <div className="hero__actions">
-          <a className="hero__cta hero__cta--primary" href="#contact" onClick={() => emitHeroEvent("hero_partner_click", locale)}>
+          <a className="hero__cta hero__cta--primary" href="#marques" onClick={() => emitHeroEvent("hero_products_click", locale)}>
             {copy.primaryCta} <span aria-hidden="true">↗</span>
           </a>
-          <a className="hero__cta hero__cta--secondary" href="#marques" onClick={() => emitHeroEvent("hero_products_click", locale)}>
-            {copy.secondaryCta} <span aria-hidden="true">↓</span>
+          <a className="hero__cta hero__cta--secondary" href="/contact?mode=general&source=hero" onClick={() => emitHeroEvent("hero_contact_click", locale)}>
+            {copy.secondaryCta} <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -85,7 +78,7 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
         className={`hero__motion-control${autoplay.controlsRevealed ? " is-revealed" : ""}`}
         type="button"
         aria-pressed={autoplay.manualPaused}
-        aria-label={autoplay.manualPaused ? "Reprendre l’animation des produits" : "Mettre en pause l’animation des produits"}
+        aria-label={autoplay.manualPaused ? "Reprendre l’animation des produits" : "Mettre l’animation des produits en pause"}
         onClick={() => {
           autoplay.toggleManualPause();
           emitHeroEvent("hero_motion_paused", locale, "keyboard");

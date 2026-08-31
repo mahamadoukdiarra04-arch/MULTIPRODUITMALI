@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "http";
   const siteUrl = `${protocol}://${host}`;
-  const title = "Simpara Distribution | Des boissons qui créent des moments";
-  const description = "Simpara Distribution accompagne les moments de partage avec les marques Tropicoul et Triplex.";
+  const title = "Multiproduit Mali | Tropicoul, Triplex et Vimto";
+  const description = "Découvrez Tropicoul, Triplex Original et Vimto Sparkling dans l’univers Multiproduit Mali : produits, identités visuelles et contacts commerciaux.";
 
   return {
     metadataBase: new URL(siteUrl),
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       type: "website",
       locale: "fr_FR",
-      images: [{ url: "/og.png", width: 1734, height: 908, alt: "Simpara Distribution" }],
+      images: [{ url: "/og.png", width: 1734, height: 908, alt: "Multiproduit Mali" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -37,7 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body suppressHydrationWarning>
+        <a className="skip-link" href="#main-content">Aller au contenu principal</a>
+        {children}
+      </body>
     </html>
   );
 }

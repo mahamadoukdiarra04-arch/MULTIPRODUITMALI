@@ -1,0 +1,2601 @@
+{
+  "schemaVersion": 2,
+  "sourcePolicy": "Immutable validated web exports only; masters, sources and qa are never copied or modified.",
+  "sourceRoot": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets",
+  "formats": [
+    "avif",
+    "webp",
+    "png",
+    "svg"
+  ],
+  "assets": [
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-hero-desktop-v01.avif",
+          "bytes": 224653,
+          "sha256": "766e2fdced2f0730322658ac85f54ceacd7809ca7a62ea5ff1c6f3ddd1b9e35c"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-hero-desktop-v01.webp",
+          "bytes": 126556,
+          "sha256": "9df999fee7217e254f66c01b1974da74a1b332866c941b17603f983743d017e4"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-hero-mobile-v01.avif",
+          "bytes": 245175,
+          "sha256": "5f7d02ca78e1d4dfd260d508c3fea49c57360df45b9e743acb80b3c7f20e3b2f"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-hero-mobile-v01.webp",
+          "bytes": 150712,
+          "sha256": "61413d5393fe687e3c47a729371d36ca27943cba45f9118cb36617327eb24871"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-product-desktop-v01.avif",
+          "bytes": 432325,
+          "sha256": "f7f229818899cad0f22953b578ce34d096b471323e5912b05ced2a14f2db218e"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-product-desktop-v01.webp",
+          "bytes": 266282,
+          "sha256": "9213f2aa6c39e9decda60ea8fc1dd6be5e2ab4c6ddfbbf37852cf336386aeb89"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-product-mobile-v01.avif",
+          "bytes": 164232,
+          "sha256": "040612df1d6c87a994d226989c4caf3487052670b33f344df0dcb3be9c89d3ce"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-background-product-mobile-v01.webp",
+          "bytes": 96788,
+          "sha256": "f8334b02643e03a9d7550a3886b459f36c5b6adc3b98816f4f66d010faa85fd2"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-atmosphere-back-v01.avif",
+          "bytes": 167465,
+          "sha256": "909ca87b36478e0271facaf9bb445e3f649b4bfaab6106c46606cf70824d9f95"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-atmosphere-back-v01.webp",
+          "bytes": 417890,
+          "sha256": "8dc95683a8130a1955b0224eb022993227d8285005ad3d14c4a65b2e93485cae"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-splash-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-splash-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-splash-mid-v01.avif",
+          "bytes": 318085,
+          "sha256": "ea66df75eb49936b270221a3beab35d3074969d97699bb6b2320de78a9e0f79d"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-splash-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-splash-mid-v01.webp",
+          "bytes": 373654,
+          "sha256": "e29e204c37779c2fb580c0b7ef4c881a8e2e08cb933aac57fc18b3c9797f1b8a"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-particle-front-v01",
+      "role": "particle",
+      "depth": "front",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-particle-front-v01.avif",
+          "bytes": 223417,
+          "sha256": "43ab6fecf808e020763732913c0eada7c35aba03f3ee5fe58e2e013ba3400986"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-particle-front-v01.webp",
+          "bytes": 526052,
+          "sha256": "95d11d734a2ab2c5429b1c5181ff7bf2f84d5e437a72b70e1ea0359658851dce"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-quarter-left-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-left-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-left-mid-v01.avif",
+          "bytes": 116435,
+          "sha256": "155177bdd6daefa494f4020c363cb8ca9167551376970ea0093396ae6dc7017e"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-left-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-left-mid-v01.webp",
+          "bytes": 118670,
+          "sha256": "d8d54e87d5a0b3aa69d564962accd9d96257d4b009569587625ba48da28b2c44"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-quarter-right-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-right-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-right-mid-v01.avif",
+          "bytes": 107063,
+          "sha256": "48561cfec23b92085335c2b9ce9d0546926bed4b57ece6e0cde6c7888f91ddd4"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-right-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-right-mid-v01.webp",
+          "bytes": 112738,
+          "sha256": "c5e26e6a237d4627f3216bf0cbf9bde8fe28f2d854fd9e24b9523262aef67c8b"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-fruit-cluster-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-fruit-cluster-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-fruit-cluster-mid-v01.avif",
+          "bytes": 244886,
+          "sha256": "1334ba0a7db6e8d40ee42555fbfd81017f7d4fd93a7adbba47952385997aee34"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-fruit-cluster-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-fruit-cluster-mid-v01.webp",
+          "bytes": 301684,
+          "sha256": "c1613c85e2bf966ca297b4c09dc40548d1229ef59865b64c6900748f3fdbad1c"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-leaf-background-back-v01",
+      "role": "leaf",
+      "depth": "back",
+      "usage": [
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-leaf-background-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-leaf-background-back-v01.avif",
+          "bytes": 235988,
+          "sha256": "211196c896a32b8debcaa576222195fb0591c385fd3c1816ac8ca145e034c7e0"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-leaf-background-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-leaf-background-back-v01.webp",
+          "bytes": 364158,
+          "sha256": "cdd1a2f71e72b8d389979d5c477537a34eb73f2691c02df117275d8f98915613"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-quarter-front-v01",
+      "role": "fruit",
+      "depth": "front",
+      "usage": [
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-front-v01.avif",
+          "bytes": 108942,
+          "sha256": "704a9c14af12b2f2c25c92aed632fd86a54115b357213ed87e5b6695788950c6"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-quarter-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-quarter-front-v01.webp",
+          "bytes": 179136,
+          "sha256": "172dbe10b6ed1b0e63c589d884d167b041785ddc330ad5545b92f41771cf1394"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-goyave",
+      "id": "goyave-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-mid-v01.avif",
+          "bytes": 389308,
+          "sha256": "39c6aa4f6abee965553bd430c94e1fcdda2c07fef4f39978f8649d5db170b08b"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/tropicoul-goyave/web/goyave-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-mid-v01.webp",
+          "bytes": 214498,
+          "sha256": "677cc15c59f9ebeee89c5059763fb1fb61e3ffdca041375dd527cdf78a4ea673"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-hero-desktop-v01.avif",
+          "bytes": 130960,
+          "sha256": "c1e6ed81412ea9f9796537ffc5ec13fdd1cf4f53afda47b5463eee85bf0162ad"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-hero-desktop-v01.webp",
+          "bytes": 66724,
+          "sha256": "14f364f75a5fa1f1bc385e32e89d01a9eae26eb5615169460fdca66f35966826"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-hero-mobile-v01.avif",
+          "bytes": 111866,
+          "sha256": "4883947864cea8fcc47fd194f570244b6bc56aa2233951088bc3e7471380e0e6"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-hero-mobile-v01.webp",
+          "bytes": 53754,
+          "sha256": "af56a2951cb14b0f80d17ae566418dec1ed322acec8f739b3acf63c9e45f129f"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-product-desktop-v01.avif",
+          "bytes": 100471,
+          "sha256": "81d7e050282fa88811f654cea9adccf8a562f0e79f39c78f0a20bff28d8c1403"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-product-desktop-v01.webp",
+          "bytes": 52514,
+          "sha256": "72f19004b76e665134069e936fcdaa74ad4c0e17d366215b4bb7a5a79e60c2bd"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-product-mobile-v01.avif",
+          "bytes": 81495,
+          "sha256": "76ace63a9dc219737cf8a37c55e39ef42a159115fe5b3c0924f3b0d5969aa251"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-background-product-mobile-v01.webp",
+          "bytes": 39272,
+          "sha256": "028276fab682e2a6b9cb11947022b35eac04eb78eaf02fda4aebd16374064949"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-carbon-pattern-back-v01",
+      "role": "texture",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-carbon-pattern-back-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-carbon-pattern-back-v01.avif",
+          "bytes": 285873,
+          "sha256": "778f2a097a325fa48dee8f3fb7c9dc75204aacafd053031d1eba2e9b344e1f40"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-carbon-pattern-back-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-carbon-pattern-back-v01.webp",
+          "bytes": 199240,
+          "sha256": "45241cc0569a2fab0d0f9faf2ade95b25337c75b3c2285bc3d030af4b6e063ba"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-atmosphere-back-v01.avif",
+          "bytes": 133002,
+          "sha256": "66124d6fa35f0775d472fc4ac80395aa3d9a83c2ef0c5779a151f5bb391c812f"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-atmosphere-back-v01.webp",
+          "bytes": 409146,
+          "sha256": "54296b4ca064b06aa52a754f5f3c3b9259420486777ed9c9292d273f9b78f7f7"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-smoke-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-smoke-back-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-smoke-back-v01.avif",
+          "bytes": 155949,
+          "sha256": "19e9ea84518c850d16ef396dae3044e9468346e0ffb39bf8272136c34ddee52b"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-smoke-back-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-smoke-back-v01.webp",
+          "bytes": 412124,
+          "sha256": "f68b179290d0298810a07855ee9a35537773cf84d726d5e16958df0f3da9dc42"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-energy-ribbon-back-v01",
+      "role": "foreground",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-energy-ribbon-back-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-energy-ribbon-back-v01.avif",
+          "bytes": 192755,
+          "sha256": "3cda9c263a78e09616210ee624592fd4016c30e57b2f65d16fac899f95d5a5b9"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-energy-ribbon-back-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-energy-ribbon-back-v01.webp",
+          "bytes": 319376,
+          "sha256": "749993b214af99ea313edf137a3e7f7c3b8ffb50fef00938ba771f6b52db4de5"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-speed-line-mid-v01",
+      "role": "particle",
+      "depth": "mid",
+      "usage": [
+        "hero"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-speed-line-mid-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-speed-line-mid-v01.avif",
+          "bytes": 221848,
+          "sha256": "c134848a8f7c75ba581ff2044db9ff9d77bcb1d7b86f92127a389cb6440f009f"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-speed-line-mid-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-speed-line-mid-v01.webp",
+          "bytes": 316846,
+          "sha256": "05b0087c935546fb8606fbb7f5806e9e3564e052fcaf0c9cac3f5ee956dd4cad"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-fragment-mid-v01",
+      "role": "particle",
+      "depth": "mid",
+      "usage": [
+        "hero"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-fragment-mid-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-fragment-mid-v01.avif",
+          "bytes": 118072,
+          "sha256": "439e58f4f0dc18aa64cf8baef43c0143f861cc251f71d3517c8ad896343de0eb"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-fragment-mid-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-fragment-mid-v01.webp",
+          "bytes": 148066,
+          "sha256": "3289b91a0b8ea3a8dee645d9b6738c26f7ff5e9183196905756861af3c3dc582"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-foreground-energy-front-v01",
+      "role": "foreground",
+      "depth": "front",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-foreground-energy-front-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-foreground-energy-front-v01.avif",
+          "bytes": 326776,
+          "sha256": "582304699a2f9dbf81d501fff97160896850108f64f310e694b0afdafe2f1472"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-foreground-energy-front-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-foreground-energy-front-v01.webp",
+          "bytes": 434574,
+          "sha256": "6be10de811d7facb97e20d6f8d914d9126fca5e94dd4ec24e2419c7d5445e339"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-spark-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-spark-front-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-spark-front-v01.avif",
+          "bytes": 111956,
+          "sha256": "8da469accb3a58c954e1b8782f124e31d73d07299156caa1bb01ccb6612b4910"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-spark-front-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-spark-front-v01.webp",
+          "bytes": 180112,
+          "sha256": "e451d595958e9ddb44ccfb2d4ba6794e7c477dbd70087d113229ac26707577fe"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-shadow-ground-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-shadow-ground-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-shadow-ground-v01.avif",
+          "bytes": 21201,
+          "sha256": "41ad4470971b2c18f6939724c82c12499ebf166315093e0d01ee331e29a3bcfc"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-shadow-ground-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-shadow-ground-v01.webp",
+          "bytes": 62010,
+          "sha256": "c7f945d2cf25c23089d14d62531a8a91b020b4469bf8c332c8f245708245dedf"
+        }
+      }
+    },
+    {
+      "product": "triplex-original",
+      "id": "triplex-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.avif",
+          "bytes": 288665,
+          "sha256": "04910d61eb05270ef4f62fba928e4119eff5ed32febee1653389eefeeebf46d1"
+        },
+        "webp": {
+          "source": "3D/Assets/Pilotes_Goyave_Triplex_Assets_Complet/pilot-assets/triplex-original/web/triplex-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.webp",
+          "bytes": 146756,
+          "sha256": "837a5e8c3dbda9a6b0a187a82cd42d2af16a1d0b9bc414a6e66e2889ed178569"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-hero-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 378942,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "087ffbf834ba0b978779be1e8aad558186eddd7fd30b81e778c319f613d6efd7"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-hero-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 271270,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "7de7a8fc5cf44a5fe0cfb862cbd931c3c533a71dc2575b33e07e12b546891116"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-hero-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 338152,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "d83067d0b089bd6d310fe0625ff2a27e69b7334b442dbe27aea4e515a341cd2e"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-hero-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 222330,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "c6bf2aaa0e63684094f4256d4890671173cd06f21848d80bdd6278c6b4195dc5"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-product-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 397082,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "1ce870be0335caf7ee85e449b178266f0f10ed23d07577c21e6efabcb9ca8625"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-product-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 362494,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "c5be27addf59568a6289f954a4628df92257dce963100ff70b15889c5e05ae95"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-product-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 325068,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "1f3aafb630c157cb8ea0899b5b43006d5e259ecaa8b6d95a1cf9882d4150f705"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-background-product-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 198772,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "5f74fd5a810b9db47898dc045ae9f72d1994539b68c13d5fb524f06674fd3149"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-mid-v01.avif",
+          "format": "avif",
+          "bytes": 596998,
+          "width": 2400,
+          "height": 1600,
+          "sha256": "c7c42a4e13046e83e7ad9c6e4b7e0f0d099adff49c8458cfca70b5ade7833134"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-mid-v01.webp",
+          "format": "webp",
+          "bytes": 397046,
+          "width": 2000,
+          "height": 1333,
+          "sha256": "a195e9e59a68f3116ffc67d3c2cb66944f325068ce97e66ad1300b47d92ec016"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-atmosphere-back-v01.avif",
+          "format": "avif",
+          "bytes": 136779,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "746465cd9ffc169f797f18dcdb5caa2c2642c6d85c7d6163d117882f7a75c34a"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-atmosphere-back-v01.webp",
+          "format": "webp",
+          "bytes": 221116,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2c3c2f5ac372755b513173e3b5027b05c6dc37ac22ff3c4bd00e8aec1810d2f8"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-splash-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-splash-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-splash-mid-v01.avif",
+          "format": "avif",
+          "bytes": 337689,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "d0906d7b878d8e2b4763e6e64ebdc92d9d8643e4dc59d9904738807406c4cdc9"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-splash-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-splash-mid-v01.webp",
+          "format": "webp",
+          "bytes": 378050,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "513ec3b6a6e669a7cbb0e4c7d141b595becddbc04f90192e9a2fbeaa0f1dbe0b"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-pieces-set-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-pieces-set-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-pieces-set-mid-v01.avif",
+          "format": "avif",
+          "bytes": 115718,
+          "width": 1200,
+          "height": 1200,
+          "sha256": "8b44e323336bfbc5f668ee400cab1288bd433ca9772a40f8a12d77839d31444d"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-pieces-set-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-pieces-set-mid-v01.webp",
+          "format": "webp",
+          "bytes": 164152,
+          "width": 1200,
+          "height": 1200,
+          "sha256": "83f3f821b2ba5b774de21702a1cf7c098314e4e9dad6aa908c28b47495666d0f"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-fruit-cluster-mid-v01",
+      "role": "fruit",
+      "depth": "front",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-fruit-cluster-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-fruit-cluster-mid-v01.avif",
+          "format": "avif",
+          "bytes": 249031,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "ea116c2f5ae5e62f5c21148a31e910207ef632e34b836a136c5b6a3471e08723"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-fruit-cluster-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-fruit-cluster-mid-v01.webp",
+          "format": "webp",
+          "bytes": 330010,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "e52dd7d7c70040b3837958511ade7c488f725e6574d72605c5016ff4b088c8c6"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-ananas",
+      "sourceProduct": "tropicoul-ananas",
+      "id": "ananas-particle-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-particle-front-v01.avif",
+          "format": "avif",
+          "bytes": 301722,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "8bee19165140134e64d6b0d68306a3d60983e10542adc4773e681068e3a524b7"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-ananas\\web\\ananas-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-ananas/ananas-particle-front-v01.webp",
+          "format": "webp",
+          "bytes": 523682,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "01821548ec46af0bb1bc80589bfb9e2bf45b924dd608e5e413ebc24c0d54f67c"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-hero-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 280254,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "155af5b756b1a53a77647841229c38923ecbce3add3a501f106f25596746bc97"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-hero-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 132780,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "c907d05acea643c60da87f72f72ebdbc33ff7742c19906be28b375ced601735f"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-hero-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 208527,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "13af5199c105575d73ccf8ef4dd9bb42f47ea54119085ec563fa6ebf907fa2bd"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-hero-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 126004,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "74a566e8c3b6cec8529c59423f87f1e70ede7fc38e46418cdb3bc2b35a496c6f"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-product-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 231341,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "6e16603573ed1fd54c7df22cfb42baea4802d81eb3a32107cb04ec39899da26a"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-product-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 113770,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "c9b62103eb3d3f03c17e2400ad9c9e3db2c9b5b4f6eb30676f5e2d5c5384a241"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-product-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 202237,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "7556ca888e3c5d5bb013bd8467d9aaf1d881337659d3e2aea3d100ad7f08f11d"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-background-product-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 113470,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "2085a12146710116745570476711717e20b7a4ebd080c7c2645ba78308d46da2"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-mid-v01.avif",
+          "format": "avif",
+          "bytes": 535256,
+          "width": 2400,
+          "height": 1600,
+          "sha256": "d8c72bd603be7a853737afc0ebebc4b4d3915fa4f086feb7dd634a05fc34d252"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-mid-v01.webp",
+          "format": "webp",
+          "bytes": 337418,
+          "width": 2000,
+          "height": 1333,
+          "sha256": "339f854c42684eb22dfde09657fc8008dba5990a3b8c79494743d0421b182ced"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-atmosphere-back-v01.avif",
+          "format": "avif",
+          "bytes": 176182,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "aa3be9a965d7f10ed3eb053801bc70837fadefcafdea7d8b737525f1030c8826"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-atmosphere-back-v01.webp",
+          "format": "webp",
+          "bytes": 487346,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "37c7967925c0661ebfbf97407c436cb7a5678d04e47d643296acd97216b9ff58"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-branch-background-back-v01",
+      "role": "leaf",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-branch-background-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-branch-background-back-v01.avif",
+          "format": "avif",
+          "bytes": 243924,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "5010cddc4a43229372900a3c99e809c6365e1ff598866dd5b8f86dd0c879f080"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-branch-background-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-branch-background-back-v01.webp",
+          "format": "webp",
+          "bytes": 308864,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "c12b2b96b18550c55ccd435880b3dbac773b771da8d9cfa5918cefa7effd3502"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-nectar-ribbon-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-nectar-ribbon-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-nectar-ribbon-mid-v01.avif",
+          "format": "avif",
+          "bytes": 251768,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "8e336a72e6be790e52b6b9cc668ca16ac94f349708009c6ce9eb66ea08de5b80"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-nectar-ribbon-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-nectar-ribbon-mid-v01.webp",
+          "format": "webp",
+          "bytes": 330136,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "628fdb7a749da7ccbcd333023b3bb35109f68b9088c412400df804b922286a83"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-fruit-cluster-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-fruit-cluster-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-fruit-cluster-mid-v01.avif",
+          "format": "avif",
+          "bytes": 212510,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "311d3cff2508d4c2f51f45ce99073472e7f56f8cdb61bb85c6fa57e9b48d63d1"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-fruit-cluster-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-fruit-cluster-mid-v01.webp",
+          "format": "webp",
+          "bytes": 259428,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "dc63a33f88a32e0a7c4b92e73be54d4a87ad51d4d78a83937fc576a9b2c9a8aa"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-mangue",
+      "sourceProduct": "tropicoul-mangue",
+      "id": "mangue-particle-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-particle-front-v01.avif",
+          "format": "avif",
+          "bytes": 219156,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "f96234426e828e41335a2577b963daedfc8d63c28d0c3eb020133e13369e1f8f"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-mangue\\web\\mangue-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-mangue/mangue-particle-front-v01.webp",
+          "format": "webp",
+          "bytes": 401250,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "928d29c9f0fb95c2d41c669d4f5cfe85fa0af074dba3f2d219a2052b2492d79e"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-hero-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 241911,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "7074f19c3b84442f6aa2251935c9819ff9dab6276408bec1fa928b39eed28f90"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-hero-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 124024,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "16b9097efe8b412a977026383e1c4fe3268222eccd0454e4ba49f6215ddf85d7"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-hero-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 153672,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "a0de7da80cfebd83b11cee6c22d632f241e90a48b13421e009f2b231df343446"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-hero-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 87214,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "bbdb98eebf89a7cdb054baf0a7158e559183e81c4f6669bf003ad09ae30908ee"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-product-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 397899,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "828979b2dabd83d6a4f3931685b9033e0783c30f7c352b42067cde9eacc65768"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-product-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 353188,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "5db6af43e61a2cb327b240a28b846e7d7c94fe3e36b8c8ee900fa04a5110e5b8"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-product-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 346576,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "6bb78576d91d2d44552e8ce5b51fc60a782e611bf79f8329520503dd055fc57a"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-background-product-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 194196,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "73d9fa273f176678033ceab6152e18b27b9f6f4bbd2d4b5e7f61d8138684ae31"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-lifestyle-mid-v01.avif",
+          "format": "avif",
+          "bytes": 351684,
+          "width": 2400,
+          "height": 1600,
+          "sha256": "066aa9bc8923db50fc07602cae410d6899992cc76bf4f01a1de9643c0a675235"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-lifestyle-mid-v01.webp",
+          "format": "webp",
+          "bytes": 208908,
+          "width": 2000,
+          "height": 1333,
+          "sha256": "7481bf04590e05d1136e0027bf45982bfd70952a649f5b6b7c4e20404f4c4f65"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-atmosphere-back-v01.avif",
+          "format": "avif",
+          "bytes": 156191,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "0f1b104dfafa058ac4c07d7f8a2076ec17c8aa5968c692a37df63c5118805301"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-atmosphere-back-v01.webp",
+          "format": "webp",
+          "bytes": 250988,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "01838c6435eb263f5ec84367ee4f064beeed77121eddc74c6c43392a52b8e70a"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-botanical-background-back-v01",
+      "role": "leaf",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-botanical-background-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-botanical-background-back-v01.avif",
+          "format": "avif",
+          "bytes": 241079,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "c26548a53eb61a7c483e11ef35a66613e50b203f0b4de7345bd82ce051e81bce"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-botanical-background-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-botanical-background-back-v01.webp",
+          "format": "webp",
+          "bytes": 301634,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "a50a1c3f73829064ed172982a3a5d52d1eca4723e594ee197349c325d9b64211"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-splash-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-splash-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-splash-mid-v01.avif",
+          "format": "avif",
+          "bytes": 308887,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "6ad9306c694c02c18cd835f63dc6be6f3b4cc61d180fc752819c7fb20ddac978"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-splash-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-splash-mid-v01.webp",
+          "format": "webp",
+          "bytes": 408090,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "ea84721c9ad7c9cc2278fac1e658533fdddd88cbe9ab58ae591571f4c91f2cf5"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-rings-set-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-rings-set-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-rings-set-mid-v01.avif",
+          "format": "avif",
+          "bytes": 310614,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "e891dc523ce3f5568b09501cec74c6abf980fc0db1030b34ce7faa8773a05ac1"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-rings-set-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-rings-set-mid-v01.webp",
+          "format": "webp",
+          "bytes": 357384,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "3f7a1d56dcf3c71ea865299d4cc3cdaa33991a7e1e20a7a9142a4674504b3bc6"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-orange",
+      "sourceProduct": "tropicoul-orange",
+      "id": "orange-particle-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-particle-front-v01.avif",
+          "format": "avif",
+          "bytes": 334409,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "996f68778e49efa628b2214f70a9472636ecefd63ed885c0bccfcaeab62294c4"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets\\tropicoul-orange\\web\\orange-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-orange/orange-particle-front-v01.webp",
+          "format": "webp",
+          "bytes": 788870,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "ebbb539fff96990cddc1652f56ca5f14afd8f8ce7c13bef6f023a08b1e2354c1"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-hero-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 364882,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "7b0e598c4ef6797db83b79e0ca3e0b854bfa82163a725da56b03ad143b3b29ab"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-hero-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 249570,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "9de1d4bf218386f1696a39234689dd8c8cdc77b7111d39b4b1ce121d842dbc99"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-hero-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 237294,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "a2380db799040e775b1f318659f68768b4b9134d686ace2386d5439d56b81876"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-hero-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 146842,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "67df15dba88bc2a576052766edd47157a127395c0c970bdaacd23418c69f0bae"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-product-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 417361,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "1638041763723341284b834a8e3b9f7219d6852994b25d5cff3d33d512610967"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-product-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 289582,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "9ec63bb7cabb2aaf38600f5082a4ed4766613118eeaa8d717fa22cab1eb0dd9b"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-product-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 294170,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "38fa666b7e9fef7327cfaf9544a3e66105077389fb46c39d8a1731f8a664f517"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-background-product-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 187680,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "3c5d0135094ce959e9428d73e129846085a59b9bbc1cf57ec3a760beaeed1ad2"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-mid-v01.avif",
+          "format": "avif",
+          "bytes": 525309,
+          "width": 2400,
+          "height": 1600,
+          "sha256": "0f14ae0cb4a254448b3f63bbd475b8faa1d30197a764e73391952959103d4818"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-mid-v01.webp",
+          "format": "webp",
+          "bytes": 336480,
+          "width": 2000,
+          "height": 1333,
+          "sha256": "cf14e52ad6a1f19a8653354d87a52f027d68699c6da57c2aa773848ae1a8d94e"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-atmosphere-back-v01.avif",
+          "format": "avif",
+          "bytes": 225775,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "e1bf9dffb4efa2c8dfc10cc1fc4ba0e6fc4c94359b21ae310bd6474d068f2872"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-atmosphere-back-v01.webp",
+          "format": "webp",
+          "bytes": 705268,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "cff8decc7b9ee1ba5472d0db5c86a634cd5706a339697f6bbb8c5e6c744d83f2"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-ribbon-back-v01",
+      "role": "splash",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-ribbon-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-ribbon-back-v01.avif",
+          "format": "avif",
+          "bytes": 297692,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "141928399e07790a9dfa1f420c72db2d639590def2e9bc27304a32633fec90b7"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-ribbon-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-ribbon-back-v01.webp",
+          "format": "webp",
+          "bytes": 411720,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "508ff50a1f9c82e43f96bcb69cb0d1ef59278734163f477fdc087dc6b1d99092"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-fruit-cluster-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-fruit-cluster-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-fruit-cluster-mid-v01.avif",
+          "format": "avif",
+          "bytes": 261284,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "fb7c3d216fe422edcacc2dd962ee3418231b43c10e37926df55e2644c4e7e09a"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-fruit-cluster-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-fruit-cluster-mid-v01.webp",
+          "format": "webp",
+          "bytes": 470706,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "70ca749047d149606b59fd0916b18913d924e0ae8df7325838ca8e0964a62ea7"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-splash-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-splash-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-splash-mid-v01.avif",
+          "format": "avif",
+          "bytes": 332549,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "2fce425d2cb04adc6cbebfc3a20ad40f6e92755711092d7e4292caf946132a2a"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-splash-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-splash-mid-v01.webp",
+          "format": "webp",
+          "bytes": 468060,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "7c7fe0e1b227b7b64b52f395535d634e4592d73a385d3574a98ef7d098cacaab"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-cocktail",
+      "sourceProduct": "tropicoul-cocktail",
+      "id": "cocktail-particle-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-particle-front-v01.avif",
+          "format": "avif",
+          "bytes": 237430,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "aef9be5ed9eb92199b6e5d89fdf71b0d3778915a762463bbf744fb14fa0d2c7e"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-cocktail\\web\\cocktail-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-cocktail/cocktail-particle-front-v01.webp",
+          "format": "webp",
+          "bytes": 505760,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "db79c050628056884493094462e508b2b0d05f6475d7f18479c929fc4ff29e30"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-background-hero-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-hero-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-hero-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 392939,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "3c75a51793e489967b1693af07cccb03464607b7b6d480c7cfae619363267885"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-hero-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-hero-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 284784,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "f06f808e37d1ae4008588ff13c0c89672c9b09032dc9d0f884f51801cb9611bc"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-background-hero-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-hero-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-hero-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 278018,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "cb98b2b6e56e04266e06cd14c7ac033cf1181190de6ad975dcca7c8d67f8ca2f"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-hero-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-hero-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 172354,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "ea28b19bcd157120658d897efeffe8ced522c8ffd8f0e58d1434b60033fedbc7"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-background-product-desktop-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-product-desktop-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-product-desktop-v01.avif",
+          "format": "avif",
+          "bytes": 410129,
+          "width": 2880,
+          "height": 1800,
+          "sha256": "64795042a0a4ce106c8ba20cedf631239a90db36ba95f5b556b03c1e3f43acff"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-product-desktop-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-product-desktop-v01.webp",
+          "format": "webp",
+          "bytes": 355450,
+          "width": 2560,
+          "height": 1600,
+          "sha256": "bf98138cb5a012767daa0316889100c5e0826b1971a003ee7864d0661ddecb98"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-background-product-mobile-v01",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-product-mobile-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-product-mobile-v01.avif",
+          "format": "avif",
+          "bytes": 313096,
+          "width": 1440,
+          "height": 1920,
+          "sha256": "09e93c8fcb938f04f40c3bf26f460787f12ea5b4151dae7762582d274108c806"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-background-product-mobile-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-background-product-mobile-v01.webp",
+          "format": "webp",
+          "bytes": 265190,
+          "width": 1200,
+          "height": 1600,
+          "sha256": "f8ad3a3e39448d76881477d83fee8a7637e0928424407f2f8071c64e52f8bbf2"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-lifestyle-mid-v01",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-support"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-lifestyle-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-mid-v01.avif",
+          "format": "avif",
+          "bytes": 357897,
+          "width": 2400,
+          "height": 1600,
+          "sha256": "b885e90dd3c027bd97794f35231ff52f86c6e8beb0e6b6506009094566536c41"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-lifestyle-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-mid-v01.webp",
+          "format": "webp",
+          "bytes": 227560,
+          "width": 2000,
+          "height": 1333,
+          "sha256": "394fbed82c8d3cb0ab5030668d7ebc2224b07be822924a306fd84cdba707fa37"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-atmosphere-back-v01",
+      "role": "atmosphere",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-atmosphere-back-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-atmosphere-back-v01.avif",
+          "format": "avif",
+          "bytes": 178595,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "87540bab0ac40fce2c387f7bc44445f11b99d0fac46fa4a844d829f345afa290"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-atmosphere-back-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-atmosphere-back-v01.webp",
+          "format": "webp",
+          "bytes": 300224,
+          "width": 2048,
+          "height": 1536,
+          "sha256": "25dc0494ea0c62e5a91ba51b07cff68b718963136f3b2c34a799620e35b438d6"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-amber-ribbon-mid-v01",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-amber-ribbon-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-amber-ribbon-mid-v01.avif",
+          "format": "avif",
+          "bytes": 340300,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "53a1ca7bfb09501e1aa9c140e58e1b735e12330330c33435686efa0bf916fc13"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-amber-ribbon-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-amber-ribbon-mid-v01.webp",
+          "format": "webp",
+          "bytes": 402658,
+          "width": 2200,
+          "height": 1650,
+          "sha256": "70bfe984ff9a4b769d7481b09f00c27b535777a805a5c14c7239f318e0b72c1b"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-leaf-branch-mid-v01",
+      "role": "leaf",
+      "depth": "back",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-leaf-branch-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-leaf-branch-mid-v01.avif",
+          "format": "avif",
+          "bytes": 255061,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "39acafc244b361b90a638c73195096f31c5b10f652d6962841232e7de365cb86"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-leaf-branch-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-leaf-branch-mid-v01.webp",
+          "format": "webp",
+          "bytes": 424692,
+          "width": 1800,
+          "height": 1800,
+          "sha256": "7741be1db58e4523d1e1ec31bde22bde783e911e3e6b8d106872877f7c5eb56f"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-open-pod-mid-v01",
+      "role": "fruit",
+      "depth": "mid",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-open-pod-mid-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-open-pod-mid-v01.avif",
+          "format": "avif",
+          "bytes": 296090,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "26fa99285454d4c9ce357339ea87b724399305d801a59363ed6eedbc556bd6b1"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-open-pod-mid-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-open-pod-mid-v01.webp",
+          "format": "webp",
+          "bytes": 353390,
+          "width": 1600,
+          "height": 1600,
+          "sha256": "e230b26d4f442c538e3a9a3207b0dc1af55a292a26c372462d8d2376cd621f5e"
+        }
+      }
+    },
+    {
+      "product": "tropicoul-tamarin",
+      "sourceProduct": "tropicoul-tamarin",
+      "id": "tamarin-particle-front-v01",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "hero",
+        "product"
+      ],
+      "variants": {
+        "avif": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-particle-front-v01.avif",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-particle-front-v01.avif",
+          "format": "avif",
+          "bytes": 318660,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "366bcb924c38ebe3fe84b99ac1519da25e83c31c9e861b150eebfeffa4ad14ab"
+        },
+        "webp": {
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets\\tropicoul-tamarin\\web\\tamarin-particle-front-v01.webp",
+          "destination": "/media/mpm/universes/tropicoul-tamarin/tamarin-particle-front-v01.webp",
+          "format": "webp",
+          "bytes": 609452,
+          "width": 2048,
+          "height": 2048,
+          "sha256": "dfbbae2f1fc7374ca18ae5a594c32de8cd8edaf086c84a8939a64482341637ba"
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-hero-flattened-desktop-v02",
+      "role": "hero-poster",
+      "depth": "back",
+      "usage": [
+        "product-page-hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\hero-flattened\\hero-desktop.avif",
+          "destination": "/media/mpm/product-pages/vimto-sparkling/v2/hero-desktop.avif",
+          "bytes": 378139,
+          "sha256": "d7546952bbd6fb50ba5429aea873d6cd252a089b5a324d809ecaab26c527be96",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\hero-flattened\\hero-desktop.webp",
+          "destination": "/media/mpm/product-pages/vimto-sparkling/v2/hero-desktop.webp",
+          "bytes": 410220,
+          "sha256": "ddcba149d9b15a33bfecd329f1dec012f29726ab4a229e9618bfa72312a544e4",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-hero-flattened-mobile-v02",
+      "role": "hero-poster",
+      "depth": "back",
+      "usage": [
+        "product-page-hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\hero-flattened\\hero-mobile.avif",
+          "destination": "/media/mpm/product-pages/vimto-sparkling/v2/hero-mobile.avif",
+          "bytes": 460638,
+          "sha256": "4b67ddffaafcf16d0119622e15cf6ed268449872fa4bfce8b798f9c49b300222",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\hero-flattened\\hero-mobile.webp",
+          "destination": "/media/mpm/product-pages/vimto-sparkling/v2/hero-mobile.webp",
+          "bytes": 500448,
+          "sha256": "b26a0223ed970fa15db601e0c44f377cbc7ab6466389f90da8ddbf06ef6e9b4f",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-background-hero-desktop-v02",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-hero-desktop-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-hero-desktop-v02.avif",
+          "bytes": 141333,
+          "sha256": "9045607c05189bf48b5174e6d4cb5d2429f868293cf8281584d7c819e6e7c0f8",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-hero-desktop-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-hero-desktop-v02.webp",
+          "bytes": 188524,
+          "sha256": "d429d2c2556bf745ea5098b66bb69c97eac2e421f48ef14fd738860b48fe5a30",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-background-hero-mobile-v02",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "hero-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-hero-mobile-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-hero-mobile-v02.avif",
+          "bytes": 120146,
+          "sha256": "fa71f9334ec83aa04740704bf152506beda1e33fd3b6190a81b733007903b9af",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-hero-mobile-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-hero-mobile-v02.webp",
+          "bytes": 224106,
+          "sha256": "9e8d78238c4969448feaff79dc963f504b3ce6bb1f47d9f3efbb1c94afa288d2",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-background-product-desktop-v02",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-desktop"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-product-desktop-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-product-desktop-v02.avif",
+          "bytes": 96975,
+          "sha256": "4aad2126b25fb65043efd96134656663a7266694626e463c998318b6d863d424",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-product-desktop-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-product-desktop-v02.webp",
+          "bytes": 168678,
+          "sha256": "b39e62eeac41ff9133d8e0a40021a9faa44dd5cbe5e2f744161081375956b286",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-background-product-mobile-v02",
+      "role": "background",
+      "depth": "back",
+      "usage": [
+        "product-mobile"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-product-mobile-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-product-mobile-v02.avif",
+          "bytes": 83897,
+          "sha256": "2bff0df99af950fa13c11276cfe76189ced2e044fb655bebd2e74249aad1758c",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-background-product-mobile-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-background-product-mobile-v02.webp",
+          "bytes": 164392,
+          "sha256": "32dd9f6c43e9ce7d759dc61ddb40e6210130a640271c3373f708bc283f3e00b7",
+          "dimensions": {
+            "width": 1440,
+            "height": 1920
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-can-cutout-approved-v002",
+      "role": "product-cutout",
+      "depth": "mid",
+      "usage": [
+        "homepage-packshot",
+        "product-focus",
+        "fallback"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\product\\vimto-can-cutout-approved-v002.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-approved-v002.avif",
+          "bytes": 613849,
+          "sha256": "972aa71d5544b75ffe340f769cd7146deb897628e29f34986372656e58e36fb6",
+          "dimensions": {
+            "width": 2400,
+            "height": 3200
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\product\\vimto-can-cutout-approved-v002.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-approved-v002.webp",
+          "bytes": 3361446,
+          "sha256": "80a0327f5a72daffc3d0656daee03e45c59a3c68f49dfc9ede5ae36ae1b50db7",
+          "dimensions": {
+            "width": 2400,
+            "height": 3200
+          }
+        },
+        "png": {
+          "format": "png",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\product\\vimto-can-cutout-approved-v002.png",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-approved-v002.png",
+          "bytes": 5030343,
+          "sha256": "b29cb55fe5ea5c425f68fc8f58f5b167f7b4cb3073e5657b261ea8861e1d33b3",
+          "dimensions": {
+            "width": 2400,
+            "height": 3200
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-white-panel-back-v02",
+      "role": "texture",
+      "depth": "back",
+      "usage": [
+        "product-focus"
+      ],
+      "variants": {
+        "svg": {
+          "format": "svg",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-white-panel-back-v02.svg",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-white-panel-back-v02.svg",
+          "bytes": 749,
+          "sha256": "018eb6b22c4ef826cec9fcc033bb34affd0241f6b0d5d962eb6bb3361f73e8fd"
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-lemon-line-mid-v02",
+      "role": "foreground",
+      "depth": "mid",
+      "usage": [
+        "product-focus"
+      ],
+      "variants": {
+        "svg": {
+          "format": "svg",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-lemon-line-mid-v02.svg",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-lemon-line-mid-v02.svg",
+          "bytes": 996,
+          "sha256": "4de9189d058d9ce8821c3f480b3ce3daaaa3922c54d8384919977f2c496b1d2c"
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-red-liquid-ribbon-mid-v02",
+      "role": "splash",
+      "depth": "mid",
+      "usage": [
+        "homepage-hero",
+        "product-page-hero",
+        "product-focus"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-red-liquid-ribbon-mid-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-red-liquid-ribbon-mid-v02.avif",
+          "bytes": 1608577,
+          "sha256": "cc976f8782367020ebec3169a19454cd6bc74a778a107d061f21cdad16838d48",
+          "dimensions": {
+            "width": 2000,
+            "height": 1600
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-red-liquid-ribbon-mid-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-red-liquid-ribbon-mid-v02.webp",
+          "bytes": 1441840,
+          "sha256": "97a88008dc8ba37a7212a4868d5bcdf6a3dc0f7a268bbb3107d3211f220e3e2b",
+          "dimensions": {
+            "width": 2000,
+            "height": 1600
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-bubble-particle-front-v02",
+      "role": "particle",
+      "depth": "atmosphere",
+      "usage": [
+        "homepage-hero",
+        "product-page-hero",
+        "product-focus"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-bubble-particle-front-v02.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-bubble-particle-front-v02.avif",
+          "bytes": 156383,
+          "sha256": "920abf435416153a8701862619bed89500d657ecd969837ba363c24613719333",
+          "dimensions": {
+            "width": 2000,
+            "height": 1600
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\layers-web\\vimto-bubble-particle-front-v02.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-bubble-particle-front-v02.webp",
+          "bytes": 125756,
+          "sha256": "a9070d37a744c9e5451b247dec247c94e76cd99274d53967cc2dc292478e9230",
+          "dimensions": {
+            "width": 2000,
+            "height": 1600
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-editorial-macro-v02",
+      "role": "macro",
+      "depth": "mid",
+      "usage": [
+        "product-page-macro"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\editorial\\macro.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-editorial-macro-v02.avif",
+          "bytes": 156176,
+          "sha256": "8f6f59080906564f87f69ba72486695747406c4149e2c304976c99e99601b355",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\editorial\\macro.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-editorial-macro-v02.webp",
+          "bytes": 194800,
+          "sha256": "2e4c458283e65788a19218f4b7090bf3eac340f3c07243957cbfb727775d87a2",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        }
+      }
+    },
+    {
+      "product": "vimto-sparkling",
+      "sourceProduct": "vimto-sparkling-v2-retro-red",
+      "id": "vimto-editorial-lifestyle-v02",
+      "role": "lifestyle",
+      "depth": "mid",
+      "usage": [
+        "product-page-lifestyle"
+      ],
+      "variants": {
+        "avif": {
+          "format": "avif",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\editorial\\lifestyle.avif",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v02.avif",
+          "bytes": 398861,
+          "sha256": "1fe1f9a59017ea03f1c4eaa63ff459f13beb4cdf853cae3c3f4e4755e5823272",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "webp": {
+          "format": "webp",
+          "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack\\assets\\editorial\\lifestyle.webp",
+          "destination": "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v02.webp",
+          "bytes": 452708,
+          "sha256": "7599ed210a4b883cb3aae27ef6cc4992ad4c33142c0967bcbc8ac7d7b5379444",
+          "dimensions": {
+            "width": 2560,
+            "height": 1440
+          }
+        }
+      }
+    }
+  ],
+  "sourceRoots": [
+    "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Pilotes_Goyave_Triplex_Assets_Complet\\pilot-assets",
+    "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_1\\autres-saveurs-assets",
+    "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Assets\\Autres_Saveurs_Assets_Complet_Partie_2\\autres-saveurs-assets",
+    "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\VIMTO\\Vimto_Sparkling_Product_Page_Pack\\Vimto_Sparkling_Product_Page_Pack"
+  ]
+}

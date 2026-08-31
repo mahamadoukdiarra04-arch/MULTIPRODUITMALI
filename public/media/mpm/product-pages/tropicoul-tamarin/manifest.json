@@ -1,0 +1,266 @@
+{
+  "product": "tropicoul-tamarin",
+  "sourceDirectory": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-tamarin",
+  "variants": {
+    "desktop": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-tamarin\\hero-flattened\\hero-desktop.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-tamarin/source/hero-desktop.png",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceBytes": 3930059,
+      "sourceSha256": "25f436e2301c732908e9a0dacc2d2c3ec17daff43cfeea17ea07da20b3a7c47e",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__640w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 19286,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "f64ec62a3dc561229d274e53a98a0dafe0e99876ca73d7eccf10f98b3a6f3055"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__640w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 34774,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "09dcb0ec1a6e2f81813801f8be70a0a35cc2aeb08d7540b428856031dec7da0e"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__960w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 35325,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "94b8c54b0a8444a37b0e32aed11cf699255e368ad33149f662438448baa7c031"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__960w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 63486,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "d15606b459dc034e1f108da88053c1d4d864d630fcdf6eee8529966766e07805"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1280w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 52848,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "40374dae443e1a787af64e9ba05e6f8ac0bb3953cbb5600426c9b43805df234b"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1280w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 95482,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "f599a10275fe6a63a7b9aeea882506bc38e980916c5df12307472c674644f322"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1600w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1600,
+          "height": 900,
+          "bytes": 71672,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "e769de65919af6ede44035ce81938fe01bc809cf7f7ea30330f5f84214013f25"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1600w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 128224,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "9f31edcea5d2da12a4d8114aee27744336978f9e1464917809041e9eee81b282"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1920w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 89628,
+          "quality": 55,
+          "targetBytes": 340000,
+          "withinTarget": true,
+          "sha256": "c74aca1277a37b975616cccbac04c45413dda8dc4fc30aa025e05132fe848018"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-desktop__1920w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 160160,
+          "quality": 82,
+          "targetBytes": 440000,
+          "withinTarget": true,
+          "sha256": "23ed9ebe26acd2b4ed8718bf164e31609c57ff99ef1fb7f0fed32a805444a265"
+        }
+      ]
+    },
+    "mobile": {
+      "source": "C:\\Users\\B.T.M\\Desktop\\EKAM Capital\\SIMPARA DISTRIBUTION\\3D\\Multiproduit_Product_Pages_Immersives\\Multiproduit_Product_Pages_Immersives\\assets\\tropicoul-tamarin\\hero-flattened\\hero-mobile.png",
+      "publicSource": "/media/mpm/product-pages/tropicoul-tamarin/source/hero-mobile.png",
+      "sourceWidth": 1440,
+      "sourceHeight": 1920,
+      "sourceBytes": 3531963,
+      "sourceSha256": "42b881d79f92ae78a0599b11466ed4b6b6320a9a28fe83d49de7fffb9d8d03b2",
+      "renditions": [
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__360w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 360,
+          "height": 480,
+          "bytes": 17820,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "5a823d1028d1d8a737da1ca0c6b40b4e892ced7b3e6417a23b0e59526e897afc"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__360w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 30122,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "74c4ef37b064f4bf2ff1f92b7283a82ff07e3326e1fd5dc0c5e8f9f686433c2c"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__480w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 27256,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "46a5b306f86ea733666c38620c99fcbc0d103490cf542fac002863878e1886b8"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__480w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 46444,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "3e8d0b687b0c206dc358045a226fd8f8abb7ec6b79f241a1ab3a525309f2766a"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__720w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 50519,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "f6b3e7d3ced056c4d1f00a915b392ba81721e489812f794d241b80226547ccf2"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__720w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 86628,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "96cefbb674bb0a5c51c179fd2f490852a460a20f5eeb0308c6f65b2019344252"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__1000w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 79842,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "98c8a2e398a82da8a71da30a3c0ef8a4701fbee89e16137f0930f7ccd7f12e23"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__1000w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1333,
+          "bytes": 138624,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "fbfc60b2d5df9529078c930c7736baad8552f084e50a6aa1f15cf0f7188cdc74"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__1440w.avif",
+          "format": "avif",
+          "mime": "image/avif",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 125145,
+          "quality": 54,
+          "targetBytes": 180000,
+          "withinTarget": true,
+          "sha256": "c7e317376ee77bfc4330b7272b3208d5857f18474461d2aaa4f41773e3909ee5"
+        },
+        {
+          "path": "/media/mpm/product-pages/tropicoul-tamarin/images/tropicoul-tamarin__hero-mobile__1440w.webp",
+          "format": "webp",
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 211792,
+          "quality": 80,
+          "targetBytes": 230000,
+          "withinTarget": true,
+          "sha256": "b48084363c8f7b7144e01cd1f369c7803269f68d8092e6acd49971500464e664"
+        }
+      ]
+    }
+  }
+}
