@@ -157,21 +157,21 @@ test("server-renders responsive immersive product pages and guards unpublished r
   assert.match(vimtoHtml, /product-pages\/vimto-sparkling\/v2\/hero-desktop\.webp/);
   assert.match(vimtoHtml, /product-pages\/vimto-sparkling\/v2\/hero-mobile\.avif/);
   assert.match(vimtoHtml, /product-pages\/vimto-sparkling\/v2\/hero-mobile\.webp/);
-  assert.match(vimtoHtml, /vimto-can-cutout-approved-v002\.avif/);
-  assert.match(vimtoHtml, /vimto-can-cutout-approved-v002\.webp/);
-  assert.match(vimtoHtml, /vimto-can-cutout-approved-v002\.png/);
+  assert.match(vimtoHtml, /vimto-can-cutout-clean-v003\.avif/);
+  assert.match(vimtoHtml, /vimto-can-cutout-clean-v003\.webp/);
+  assert.match(vimtoHtml, /vimto-can-cutout-clean-v003\.png/);
   assert.match(vimtoHtml, /vimto-editorial-macro-v02\.avif/);
   assert.match(vimtoHtml, /vimto-editorial-lifestyle-v03\.avif/);
   assert.match(vimtoHtml, /alt="Gros plan du lettrage Vimto rouge entouré de jaune sur le panneau blanc de la canette\."/);
   assert.match(vimtoHtml, /alt="Canette Vimto Sparkling rouge au premier plan d’un repas partagé par quatre adultes en extérieur\."/);
-  assert.match(normalizeRenderedText(vimtoHtml), /<dt>Format<\/dt><dd>Canette 330 ml<\/dd>/);
+  assert.match(normalizeRenderedText(vimtoHtml), /<dt>Format<\/dt><dd>Canette (?:<span[^>]*>)?330 ml(?:<\/span>)?<\/dd>/);
   assert.match(vimtoHtml, /data-product-motion-factor="0\.79"/);
   assert.doesNotMatch(vimtoHtml, /vimto-(?:ruby|fruit-cluster|gold-particle)|grape|blackcurrant|raspberry|\/models\/mpm\/vimto\.glb/i);
   assertPublishedRange(vimtoHtml, "vimto-sparkling");
 
   const revisedAssets = [
     ["../public/media/mpm/product-pages/vimto-sparkling/v2/hero-desktop.avif", "d7546952bbd6fb50ba5429aea873d6cd252a089b5a324d809ecaab26c527be96"],
-    ["../public/media/mpm/universes/vimto-sparkling/vimto-can-cutout-approved-v002.avif", "972aa71d5544b75ffe340f769cd7146deb897628e29f34986372656e58e36fb6"],
+    ["../public/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.avif", "955c4fcd80f43fe7e70d64ae1eaf01c55f8ead095e86cb21227d040e7d438977"],
     ["../public/media/mpm/universes/vimto-sparkling/vimto-editorial-macro-v02.avif", "8f6f59080906564f87f69ba72486695747406c4149e2c304976c99e99601b355"],
     ["../public/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v03.avif", "6d26a935c41ba04d459bcb4f4144fad625ce4bc2db0f262685d021c8a6b17d26"],
   ];
@@ -190,8 +190,8 @@ test("server-renders responsive immersive product pages and guards unpublished r
   assert.match(motionSource, /PRODUCT_PAGE_MOTION_FACTOR = 0\.79/);
   const modelManifest = JSON.parse(await readFile(new URL("../public/models/mpm/manifest.json", import.meta.url), "utf8"));
   const vimtoModel = modelManifest.products.find((product) => product.id === "vimto");
-  assert.equal(vimtoModel.source.path, "3D/VIMTO/Vimto_Sparkling_Product_Page_Pack/Vimto_Sparkling_Product_Page_Pack/assets/product/vimto-330ml-premium-v002.glb");
-  assert.equal(vimtoModel.web.sourceFrontCorrectionDegrees, 30);
+  assert.equal(vimtoModel.source.path, "3D/Collection_Canettes_330ml_GLBS_Premium/Vimto_330ml_Premium.glb");
+  assert.equal(vimtoModel.web.frontYawDegrees, 30);
   assert.equal(vimtoModel.web.validation.errors, 0);
   assert.equal(vimtoModel.web.validation.warnings, 0);
 });

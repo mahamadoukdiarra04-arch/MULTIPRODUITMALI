@@ -269,8 +269,16 @@ export function ProductRangeTurntable() {
     const handlePointerDown = () => {
       lastInputWasKeyboard = false;
     };
+    const syncInteractions = () => {
+      // A horizontal scroll can move a card out from under a stationary
+      // pointer without emitting pointerleave. Re-evaluate every card so a
+      // can that is no longer active finishes its return to the front instead
+      // of leaving a stale half-rotation in the viewport.
+      for (const item of items) updateInteraction(item);
+    };
     const handleScroll = () => {
       canvas.style.transform = `translate3d(${viewport.scrollLeft}px, 0, 0)`;
+      syncInteractions();
       requestFrame();
     };
     const handleVisibilityChange = () => {

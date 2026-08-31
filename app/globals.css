@@ -337,7 +337,7 @@ main { isolation: isolate; overflow: clip; }
 .product-range__heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
 .product-range nav { position: relative; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; isolation: isolate; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: clamp(1rem, 5vw, 4rem); }
 .product-range nav::-webkit-scrollbar { display: none; width: 0; height: 0; }
-.product-range nav::after { content: ""; position: absolute; z-index: 3; inset: 0 0 0 auto; width: clamp(2rem, 6vw, 5rem); pointer-events: none; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--product-surface) 92%, transparent)); }
+.product-range nav::after { display: none; }
 .product-range__turntable-trigger { position: absolute; inset: 0; visibility: hidden; pointer-events: none; }
 .product-range__turntable { position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 220ms ease; }
 .product-range__turntable.is-ready { opacity: 1; }
