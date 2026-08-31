@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T07:05:53.561Z",
+  "generatedAt": "2026-08-31T14:49:07.938Z",
   "policy": {
     "targetBytes": 2621440,
     "maximumBytes": 3145728,
@@ -228,9 +228,9 @@
     {
       "id": "tropicoul-goyave",
       "source": {
-        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Tropicoul_Guava_330ml_Premium.glb",
-        "bytes": 3497020,
-        "sha256": "b1a391dac44acb2718940f453953ad45072155f99af96b9bf9e3741e089220f2",
+        "path": "3D/GOYAVE/Tropicoul_Guava_330ml_Premium.glb",
+        "bytes": 4008844,
+        "sha256": "e93b2dc509af54e9de6bb2fc085403c2a0b5bdd642a9cbe2dc68e8924452c666",
         "triangles": 35072,
         "rootRotations": [
           {
@@ -246,10 +246,10 @@
       },
       "web": {
         "path": "/models/mpm/tropicoul-goyave.glb",
-        "bytes": 1302672,
-        "mib": 1.242,
+        "bytes": 1461244,
+        "mib": 1.394,
         "withinTarget": true,
-        "sha256": "785fb5f900388d1524f2a37e5e8b268a03ddc35fd7e6fe77a744b75d71ddc411",
+        "sha256": "5dee8eb46aa2066b59095a6d65c6156a4f950bac7d452cc131c7e6698f4d1786",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -270,7 +270,7 @@
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 454390
+            "bytes": 612775
           },
           {
             "roles": [
@@ -516,7 +516,7 @@
     {
       "id": "vimto",
       "source": {
-        "path": "3D/VIMTO/Vimto_Sparkling_Product_Page_Pack/Vimto_Sparkling_Product_Page_Pack/assets/product/vimto-330ml-premium-v002.glb",
+        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Vimto_330ml_Premium.glb",
         "bytes": 3451196,
         "sha256": "a298ea23fedf8c4e98684768c33a0c87874cbe784b9a0f518aacfd194f6537b4",
         "triangles": 35072,
@@ -530,16 +530,15 @@
               0
             ]
           }
-        ],
-        "immutable": true
+        ]
       },
       "web": {
-        "path": "/models/mpm/vimto-sparkling-v2.glb",
-        "bytes": 2848740,
-        "mib": 2.717,
+        "path": "/models/mpm/vimto.glb",
+        "bytes": 1287804,
+        "mib": 1.228,
         "withinTarget": true,
-        "sha256": "d8d30e644a62045d337955ce9b8047debe44e1f30a6608b447b40fcce73deaa0",
-        "triangles": 32510,
+        "sha256": "7931f9f4723d6b15b9c0e0b7839e64eec9887ab326fe672a848f8d64c60dc27b",
+        "triangles": 30096,
         "rootRotations": [
           {
             "name": "world",
@@ -551,32 +550,31 @@
             ]
           }
         ],
-        "frontYawDegrees": 0,
-        "sourceFrontCorrectionDegrees": 30,
+        "frontYawDegrees": 30,
         "textures": [
           {
             "roles": [
               "baseColor"
             ],
-            "width": 4096,
-            "height": 2048,
-            "bytes": 1580386
+            "width": 2048,
+            "height": 1024,
+            "bytes": 433632
           },
           {
             "roles": [
               "orm"
             ],
-            "width": 2048,
-            "height": 1024,
-            "bytes": 161965
+            "width": 1024,
+            "height": 512,
+            "bytes": 36041
           },
           {
             "roles": [
               "normal"
             ],
-            "width": 2048,
-            "height": 1024,
-            "bytes": 261135
+            "width": 1024,
+            "height": 512,
+            "bytes": 36601
           }
         ],
         "validation": {

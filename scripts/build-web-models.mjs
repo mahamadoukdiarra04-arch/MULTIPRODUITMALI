@@ -19,7 +19,7 @@ const products = [
   { id: "tropicoul-ananas", source: "Tropicoul_Pineapple_330ml_Premium.glb", output: "tropicoul-ananas.glb" },
   { id: "tropicoul-orange", source: "Tropicoul_Orange_330ml_Premium.glb", output: "tropicoul-orange.glb" },
   { id: "tropicoul-mangue", source: "Tropicoul_Mango_330ml_Premium.glb", output: "tropicoul-mangue.glb" },
-  { id: "tropicoul-goyave", source: "Tropicoul_Guava_330ml_Premium.glb", output: "tropicoul-goyave.glb", normaliseRoot: true },
+  { id: "tropicoul-goyave", source: "../GOYAVE/Tropicoul_Guava_330ml_Premium.glb", output: "tropicoul-goyave.glb", normaliseRoot: true },
   { id: "tropicoul-cocktail", source: "Tropicoul_Cocktail_330ml_Premium.glb", output: "tropicoul-cocktail.glb" },
   { id: "tropicoul-tamarin", source: "Tropicoul_Tamarind_330ml_Premium.glb", output: "tropicoul-tamarin.glb" },
   { id: "triplex", source: "Triplex_Energy_Drink_330ml_Premium.glb", output: "triplex-energy-drink.glb" },
