@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import Link from "next/link";
+import Link from "../../PlainLink";
 
 import { BrandLogo } from "../../BrandLogo";
 import { DecorativePicture } from "../../DecorativePicture";
@@ -292,7 +292,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </section>
       </main>
 
-      <footer className="product-page__footer"><span>Multiproduit Mali</span><Link href="/">Retour à l’accueil</Link></footer>
+      <footer className="product-page__footer">
+        <span>Multiproduit Mali</span>
+        <nav aria-label="Navigation de bas de page">
+          <Link href="/#marques">Voir les produits</Link>
+          <Link href="/">Retour à l’accueil</Link>
+        </nav>
+      </footer>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
-import Link from "next/link";
+import Link from "./PlainLink";
 
 type ContactMode = "choice" | "partnership" | "general" | "success";
 type PartnerBrand = "tropicoul" | "triplex";

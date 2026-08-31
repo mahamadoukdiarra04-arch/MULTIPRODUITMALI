@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "../PlainLink";
 
 import { BrandLogo } from "../BrandLogo";
 import { ContactExperience } from "../ContactExperience";

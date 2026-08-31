@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "./PlainLink";
 import { useState } from "react";
 
 type BrandId = "tropicoul" | "triplex" | "vimto";

@@ -354,6 +354,9 @@ main { isolation: isolate; overflow: clip; }
 .product-final-cta__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .product-final-cta__actions a:first-child { border-color: var(--product-accent); background: var(--product-accent); color: var(--product-cta-text); }
 .product-page__footer { display: flex; min-height: 6rem; align-items: center; justify-content: space-between; padding: 1.5rem 5vw; border-top: 1px solid rgba(255,255,255,0.18); background: #050505; color: rgba(255,255,255,0.74); font-size: 0.72rem; }
+.product-page__footer nav { display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+.product-page__footer a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; transition: color 160ms ease; }
+.product-page__footer a:hover, .product-page__footer a:focus-visible { color: #fff; }
 .product-not-found { display: grid; min-height: 100svh; place-content: center; gap: 1rem; padding: 2rem; background: var(--paper); }
 .product-not-found h1 { max-width: 12ch; margin: 0; font-size: 4rem; line-height: 0.86; }
 .product-not-found a { width: fit-content; border-bottom: 1px solid currentColor; padding-bottom: 0.25rem; font-size: 0.75rem; font-weight: 900; }

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- publication covers and galleries accept validated editorial image URLs. */
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "../../PlainLink";
 import { notFound } from "next/navigation";
 
 import { getPublicationBySlug, listComments } from "../../../db/editorial";

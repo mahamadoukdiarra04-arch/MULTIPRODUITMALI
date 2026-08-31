@@ -1,5 +1,5 @@
 import { listPublications } from "../db/editorial";
-import Link from "next/link";
+import Link from "./PlainLink";
 import { BrandLogo } from "./BrandLogo";
 import { BrandTriptych } from "./BrandTriptych";
 import { FeaturedPublication } from "./actualites/FeaturedPublication";

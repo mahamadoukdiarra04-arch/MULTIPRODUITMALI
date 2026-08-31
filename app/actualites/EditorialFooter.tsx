@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../PlainLink";
 
 import { BrandLogo } from "../BrandLogo";
 

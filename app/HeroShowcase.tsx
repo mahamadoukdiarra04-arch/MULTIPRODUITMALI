@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type CSSProperties, type FocusEvent } from "react";
-import Link from "next/link";
+import Link from "./PlainLink";
 
 import { HeroProductStage } from "./HeroProductStage";
 import { HERO_UNIVERSES } from "./hero-universes";

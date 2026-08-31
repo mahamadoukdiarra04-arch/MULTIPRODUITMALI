@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import Link from "next/link";
+import Link from "./PlainLink";
 
 import { DecorativePicture } from "./DecorativePicture";
 import { DECORATIVE_DEPTHS, getDecorativeAssets, type DecorativeAsset } from "./decorative-assets";

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- publication covers can be supplied from the protected editorial media source. */
-import Link from "next/link";
+import Link from "../PlainLink";
 
 import { EditorialMeta } from "./EditorialMeta";
 import type { EditorialPublication } from "./types";
