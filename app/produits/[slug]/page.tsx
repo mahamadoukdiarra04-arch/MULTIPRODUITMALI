@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import Link from "../../PlainLink";
 
 import { BrandLogo } from "../../BrandLogo";
+import { HomePointer } from "../../HomePointer";
 import { DecorativePicture } from "../../DecorativePicture";
 import { DECORATIVE_DEPTHS, getDecorativeAssets, type DecorativeAsset } from "../../decorative-assets";
 import { productPageContent } from "../../product-page-data";
@@ -11,6 +12,8 @@ import { PRODUCT_PAGE_MOTION_FACTOR, productPageMotionDuration } from "../../pro
 import { ProductPageHero } from "../../ProductPageHero";
 import { ProductPageMotion } from "../../ProductPageMotion";
 import { ProductRangeTurntable } from "../../ProductRangeTurntable";
+import { SiteFooter } from "../../SiteFooter";
+import { VimtoFormats } from "../../VimtoFormats";
 import { findProduct, products, type Product } from "../../products";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
@@ -63,9 +66,7 @@ function AssetPicture({ asset, className }: { asset: DecorativeAsset; className:
 
   return (
     <picture className={className}>
-      {mobile?.avif ? <source media="(max-width: 720px)" type="image/avif" srcSet={mobile.avif} /> : null}
       {mobile?.webp ? <source media="(max-width: 720px)" type="image/webp" srcSet={mobile.webp} /> : null}
-      {desktop?.avif ? <source type="image/avif" srcSet={desktop.avif} /> : null}
       {desktop?.webp ? <source type="image/webp" srcSet={desktop.webp} /> : null}
       <img
         src={fallback}
@@ -84,7 +85,6 @@ function AssetPicture({ asset, className }: { asset: DecorativeAsset; className:
 function PackshotPicture({ product, className, alt }: { product: Product; className: string; alt: string }) {
   return (
     <picture className={className}>
-      <source type="image/avif" srcSet={product.packshotAvif} />
       <source type="image/webp" srcSet={product.packshotWebp} />
       <img
         src={product.brand === "Vimto" ? product.packshot : product.packshotWebp}
@@ -103,18 +103,18 @@ function PackshotPicture({ product, className, alt }: { product: Product; classN
 function LifestyleSection({ product }: { product: Product }) {
   const content = productPageContent[product.slug];
   const macroAsset = allProductAssets(product).find((asset) => asset.id === content.macroAssetId);
+  const keepRightSubjectInFrame = product.slug === "tropicoul-orange" || product.slug === "triplex-original";
 
   return (
     <section className={`product-lifestyle${content.showLifestyle ? "" : " product-lifestyle--abstract"}`} data-product-section="lifestyle" aria-labelledby="lifestyle-title">
       {content.showLifestyle ? (
-        <picture className="product-lifestyle__media">
-          {product.lifestyleAvif ? <source type="image/avif" srcSet={product.lifestyleAvif} /> : null}
+        <picture className={`product-lifestyle__media${keepRightSubjectInFrame ? " product-lifestyle__media--right-subject" : ""}`}>
           {product.lifestyleWebp ? <source type="image/webp" srcSet={product.lifestyleWebp} /> : null}
           <img
             src={product.lifestyleWebp ?? product.lifestyle}
             alt={product.lifestyleAlt ?? `Moment de dégustation avec ${product.brand} ${product.name}.`}
-            width="2400"
-            height="1600"
+            width="2048"
+            height="1152"
             sizes="(max-width: 720px) 100vw, 62vw"
             loading="lazy"
             fetchPriority="low"
@@ -141,11 +141,11 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "http";
   const origin = `${protocol}://${host}`;
-  const imagePath = product.slug === "vimto-sparkling"
+  const imagePath = product.brand === "Vimto"
     ? product.posterWebp
     : `/media/mpm/product-pages/${product.slug}/images/${product.slug}__hero-desktop__1280w.webp`;
   const image = new URL(imagePath, origin).toString();
-  const title = `${product.brand} ${product.name} 330 ml | Multiproduit Mali`;
+  const title = `${product.pageTitle ?? `${product.brand} ${product.name} 330 ml`} | Multiproduit Mali`;
   const shouldIndex = product.publicationStatus === "published";
 
   return {
@@ -184,11 +184,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "--product-cta-text": product.ctaText,
   } as CSSProperties;
   const macroAsset = allProductAssets(product).find((asset) => asset.id === content.macroAssetId);
-  const publishedProducts = products.filter((candidate) => candidate.publicationStatus === "published");
-  const facts = [
+  const publishedProducts = products.filter((candidate) => candidate.publicationStatus === "published" && candidate.showInCarousel !== false);
+  const productRangeItems = publishedProducts.map((candidate) => {
+    const isVimtoRange = candidate.slug === "vimto-sparkling";
+    return {
+      candidate,
+      isVimtoRange,
+      href: isVimtoRange ? "/gammes/vimto" : `/produits/${candidate.slug}`,
+      name: isVimtoRange ? "Gamme Vimto" : candidate.name,
+    };
+  });
+  const facts: Array<[string, string]> = [
     ["Marque", product.brand],
     [product.brand === "Tropicoul" ? "Saveur" : "Version", product.name],
-    ...(product.publicationStatus !== "pending-confirmation" ? [["Format", "Canette 330 ml"]] : []),
+    ...(product.publicationStatus !== "pending-confirmation" ? [["Format", product.formatLabel ?? "Canette 330 ml"] as [string, string]] : []),
   ];
   const contactParameters = new URLSearchParams({ mode: "partnership", source: "product-" + product.slug });
   if (product.brand === "Tropicoul") {
@@ -210,15 +219,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Link className="wordmark wordmark--logo" href="/" aria-label="Multiproduit Mali, retour à l’accueil">
           <BrandLogo />
         </Link>
+        <HomePointer />
         <nav aria-label="Navigation produit"><Link href="/#marques">Tous les produits</Link><Link href={contactHref}>Contact</Link></nav>
-        <Link className="product-page__back" href="/#marques">Retour à la gamme</Link>
       </header>
 
       <main id="main-content">
         <ProductPageHero product={product} content={content} />
 
         <section className="product-facts" aria-label="Informations sur le produit" data-product-section="facts">
-          <dl>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{label === "Format" ? <>Canette <span className="product-facts__nowrap">330 ml</span></> : value}</dd></div>)}</dl>
+          <dl>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{label === "Format" && value === "Canette 330 ml" ? <>Canette <span className="product-facts__nowrap">330 ml</span></> : value}</dd></div>)}</dl>
         </section>
 
         <section className="product-signature" id="signature" data-product-section="signature" aria-labelledby="signature-title">
@@ -235,15 +244,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
               className="product-focus__packshot"
               alt={product.packshotAlt ?? `Canette ${product.brand} ${product.name}, vue de face.`}
             />
-            <ProductDecorLayer product={product} depth="front" />
-            <ProductDecorLayer product={product} depth="atmosphere" />
           </div>
         </ProductPageMotion>
 
         <section className="product-macro" data-product-section="macro" aria-labelledby="macro-title">
-          {product.macroAvif && product.macroWebp ? (
+          {product.slug === "vimto-sparkling" ? (
+            <div className="product-macro__media product-macro__media--vimto-logo">
+              <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="Logo Vimto" width="1536" height="1024" loading="lazy" decoding="async" />
+            </div>
+          ) : product.macroAvif && product.macroWebp ? (
             <picture className="product-macro__media">
-              <source type="image/avif" srcSet={product.macroAvif} />
               <source type="image/webp" srcSet={product.macroWebp} />
               <img
                 src={product.macroWebp}
@@ -262,24 +272,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <LifestyleSection product={product} />
 
+        {product.brand === "Vimto" ? <VimtoFormats product={product} /> : null}
+
         <section className="product-range" data-product-section="range" aria-labelledby="range-title">
           <div className="product-range__heading"><p>À DÉCOUVRIR</p><h2 id="range-title">D’autres saveurs à découvrir</h2></div>
           <nav aria-label="Autres produits Multiproduit Mali">
             <ProductRangeTurntable />
-            <ul>{publishedProducts.map((candidate) => (
+            <ul>{productRangeItems.map(({ candidate, href, isVimtoRange, name }) => (
               <li key={candidate.slug}>
-                <Link href={`/produits/${candidate.slug}`} aria-current={candidate.slug === product.slug ? "page" : undefined}>
-                  <picture
-                    className="product-range__fallback"
-                    data-turntable-model={candidate.modelSrc}
-                    data-turntable-rotation="180"
-                    data-turntable-state="waiting"
-                  >
-                    <source type="image/avif" srcSet={candidate.packshotAvif} />
-                    <source type="image/webp" srcSet={candidate.packshotWebp} />
-                    <img src={candidate.packshotWebp} alt="" width="2048" height="2048" loading="lazy" decoding="async" />
-                  </picture>
-                  <span><small>{candidate.brand}</small><strong>{candidate.name}</strong></span>
+                <Link href={href} aria-current={!isVimtoRange && candidate.slug === product.slug ? "page" : undefined}>
+                  {isVimtoRange ? (
+                    <picture className="product-range__fallback product-range__fallback--vimto-logo">
+                      <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+                    </picture>
+                  ) : (
+                    <picture className="product-range__fallback" data-turntable-model={candidate.modelSrc} data-turntable-rotation="180" data-turntable-state="waiting">
+                      <source type="image/webp" srcSet={candidate.packshotWebp} />
+                      <img src={candidate.packshotWebp} alt="" width="2048" height="2048" loading="lazy" decoding="async" />
+                    </picture>
+                  )}
+                  <span><small>{candidate.brand}</small><strong>{name}</strong></span>
                 </Link>
               </li>
             ))}</ul>
@@ -287,18 +299,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </section>
 
         <section className="product-final-cta" data-product-section="cta" aria-labelledby="final-cta-title">
-          <div><p>MULTIPRODUIT MALI</p><h2 id="final-cta-title">Quelle saveur vous fera envie ensuite ?</h2></div>
+          <div><h2 id="final-cta-title">Quelle saveur vous fera envie ensuite ?</h2></div>
           <div className="product-final-cta__actions"><Link href="/#marques">Voir toutes les saveurs</Link><Link href={contactHref}>Contacter Multiproduit Mali</Link></div>
         </section>
       </main>
 
-      <footer className="product-page__footer">
-        <span>Multiproduit Mali</span>
-        <nav aria-label="Navigation de bas de page">
-          <Link href="/#marques">Voir les produits</Link>
-          <Link href="/">Retour à l’accueil</Link>
-        </nav>
-      </footer>
+      <SiteFooter productRangeHref={`/gammes/${product.brand.toLowerCase()}`} productRangeLabel={`Gamme ${product.brand}`} />
     </div>
   );
 }

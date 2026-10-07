@@ -1,0 +1,16 @@
+# Sources brutes, livrables et caches : ils ne font pas partie de l'aperçu Vercel.
+.git/
+3D/
+Livrables/
+Direction/
+.qa/
+.codex-tmp/
+tmp/
+node_modules/
+dist/
+.wrangler/
+.vinext/
+.next/
+SIMPARA_DISTRIBUTION_APERCU_CLIENT.html
+*.log
+~$*

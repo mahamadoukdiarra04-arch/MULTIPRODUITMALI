@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { createPbrEnvironment, getThreeRuntime, loadModelClone } from "./three-model-cache";
+import {
+  createPbrEnvironment,
+  getThreeRuntime,
+  loadModelClone,
+  prepareModelForPresentation,
+} from "./three-model-cache";
 
 type TriplexBrandCan3DProps = {
   onReady: () => void;
@@ -16,8 +21,13 @@ const MODEL_SRC = "/models/mpm/triplex-energy-drink.glb";
 export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
   const triggerRef = useRef<HTMLSpanElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const onReadyRef = useRef(onReady);
   const [activated, setActivated] = useState(false);
   const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    onReadyRef.current = onReady;
+  }, [onReady]);
 
   useEffect(() => {
     const trigger = triggerRef.current;
@@ -59,19 +69,21 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
         const modelRoot = await loadModelClone(MODEL_SRC);
         if (cancelled) return;
 
-        const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-        const pixelRatioCap = lowPowerDevice ? 1 : 1.1;
+        const mobileViewport = window.innerWidth <= 720;
+        const constrainedHardware = (navigator.hardwareConcurrency ?? 8) <= 2;
+        const pixelRatioCap = mobileViewport ? 1.35 : constrainedHardware ? 1.4 : 1.75;
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: !lowPowerDevice,
+          antialias: true,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.04;
+        renderer.toneMapping = THREE.NeutralToneMapping;
+        renderer.toneMappingExposure = 0.88;
         renderer.setClearColor(0x000000, 0);
+        prepareModelForPresentation(modelRoot, renderer);
 
         scene = new THREE.Scene();
         environmentTarget = createPbrEnvironment(THREE, RoomEnvironment, renderer);
@@ -79,11 +91,14 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
         camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
         camera.position.set(0, 0.05, 6.2);
         camera.lookAt(0, 0, 0);
-        scene.add(new THREE.HemisphereLight(0xffffff, 0x2f1214, 1.5));
-        const key = new THREE.DirectionalLight(0xffffff, 2.45);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x202225, 0.32));
+        const key = new THREE.DirectionalLight(0xffffff, 0.9);
         key.position.set(3.5, 4.4, 5.5);
         scene.add(key);
-        const rim = new THREE.DirectionalLight(0xf44336, 1.35);
+        const fill = new THREE.DirectionalLight(0xffffff, 0.3);
+        fill.position.set(-3.2, 1.1, 4.2);
+        scene.add(fill);
+        const rim = new THREE.DirectionalLight(0xffffff, 0.2);
         rim.position.set(-3.8, 2, -2.8);
         scene.add(rim);
 
@@ -91,7 +106,7 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
         const size = bounds.getSize(new THREE.Vector3());
         const center = bounds.getCenter(new THREE.Vector3());
         const maxDimension = Math.max(size.x, size.y, size.z) || 1;
-        const fittedScale = (3.05 / maxDimension) * 0.74;
+        const fittedScale = (3.05 / maxDimension) * 0.6;
         modelRoot.scale.setScalar(fittedScale);
         modelRoot.position.copy(center).multiplyScalar(-fittedScale);
 
@@ -118,7 +133,7 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
 
         renderer.render(scene, camera);
         setReady(true);
-        onReady();
+        onReadyRef.current();
       } catch {
         // The lightweight packshot remains visible if WebGL or the GLB is unavailable.
       }
@@ -133,7 +148,7 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
       renderer?.dispose();
       renderer?.forceContextLoss();
     };
-  }, [activated, onReady]);
+  }, [activated]);
 
   return (
     <span ref={triggerRef} className={`brand-triptych__triplex-can${ready ? " is-ready" : ""}`} aria-hidden="true">

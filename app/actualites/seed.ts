@@ -58,7 +58,7 @@ export const editorialSeed: EditorialPublication[] = [
     status: "published",
     title: "Triplex au cœur des journées qui gardent le rythme",
     excerpt: "Une présence affirmée au plus près de celles et ceux qui avancent sans ralentir.",
-    body: "Triplex Original accompagne les moments où le rythme s'accélère. Au fil de cette activation, les visiteurs ont découvert son identité intense et sa canette au caractère franc.\n\nLa rencontre a surtout permis de recueillir des retours directs sur le goût, l'univers de la marque et les moments où Triplex trouve naturellement sa place.",
+    body: "Triplex Energy Drink accompagne les moments où le rythme s'accélère. Au fil de cette activation, les visiteurs ont découvert son identité intense et sa canette au caractère franc.\n\nLa rencontre a surtout permis de recueillir des retours directs sur le goût, l'univers de la marque et les moments où Triplex trouve naturellement sa place.",
     coverImage: "/media/mpm/product-pages/triplex-original/images/triplex-original__hero-desktop__1280w.webp",
     gallery: ["/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.webp"],
     location: "Bamako, Mali",

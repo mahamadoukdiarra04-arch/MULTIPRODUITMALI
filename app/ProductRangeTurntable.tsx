@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { createPbrEnvironment, getThreeRuntime, loadModelClone } from "./three-model-cache";
+import {
+  createPbrEnvironment,
+  getThreeRuntime,
+  loadModelClone,
+  prepareModelForPresentation,
+} from "./three-model-cache";
 
 type TurntableStatus = "waiting" | "loading" | "ready" | "fallback";
 type NavigatorWithConnection = Navigator & { connection?: { saveData?: boolean } };
@@ -16,6 +21,7 @@ type RangeItem = {
   element: HTMLElement;
   link: HTMLElement | null;
   modelSrc: string;
+  rotationSpan: number;
   rotation: number;
   fromRotation: number;
   targetRotation: number;
@@ -25,8 +31,26 @@ type RangeItem = {
 };
 
 const HALF_TURN = Math.PI;
+const FULL_TURN = Math.PI * 2;
 const TURN_DURATION = 900;
 const ENTRY_STAGGER = 75;
+const SINGLE_PRESENTATION_FACE_MODELS = new Set([
+  "/models/mpm/tropicoul-goyave.glb",
+  "/models/mpm/vimto-sparkling-v2.glb",
+]);
+
+function presentationRotationSpan(modelSrc: string) {
+  return SINGLE_PRESENTATION_FACE_MODELS.has(modelSrc) ? FULL_TURN : HALF_TURN;
+}
+
+function rotationLabel(rotation: number) {
+  if (rotation === 0) return "0";
+  return rotation === FULL_TURN ? "360" : "180";
+}
+
+function rotationEndsOnFront(item: RangeItem, rotation: number) {
+  return rotation === 0 || (item.rotationSpan === FULL_TURN && rotation === FULL_TURN);
+}
 
 function easeOutCubic(progress: number) {
   return 1 - ((1 - progress) ** 3);
@@ -82,17 +106,22 @@ export function ProductRangeTurntable() {
 
     const items: RangeItem[] = Array.from(
       viewport.querySelectorAll<HTMLElement>("[data-turntable-model]"),
-      (element) => ({
-        element,
-        link: element.closest<HTMLElement>("a"),
-        modelSrc: element.dataset.turntableModel ?? "",
-        rotation: HALF_TURN,
-        fromRotation: HALF_TURN,
-        targetRotation: 0,
-        transitionStart: 0,
-        transitionDuration: TURN_DURATION,
-        transitioning: false,
-      }),
+      (element) => {
+        const modelSrc = element.dataset.turntableModel ?? "";
+        const rotationSpan = presentationRotationSpan(modelSrc);
+        return {
+          element,
+          link: element.closest<HTMLElement>("a"),
+          modelSrc,
+          rotationSpan,
+          rotation: rotationSpan,
+          fromRotation: rotationSpan,
+          targetRotation: 0,
+          transitionStart: 0,
+          transitionDuration: TURN_DURATION,
+          transitioning: false,
+        };
+      },
     ).filter((item) => item.modelSrc);
     const modelSources = [...new Set(items.map((item) => item.modelSrc))];
     const models = new Map<string, RangeModel>();
@@ -179,8 +208,8 @@ export function ProductRangeTurntable() {
         if (progress >= 1) {
           item.rotation = item.targetRotation;
           item.transitioning = false;
-          item.element.dataset.turntableRotation = item.targetRotation === 0 ? "0" : "180";
-          item.element.dataset.turntableState = item.targetRotation === 0 ? "front" : "back";
+          item.element.dataset.turntableRotation = rotationLabel(item.targetRotation);
+          item.element.dataset.turntableState = rotationEndsOnFront(item, item.targetRotation) ? "front" : "back";
         }
       }
 
@@ -221,8 +250,10 @@ export function ProductRangeTurntable() {
       item.transitionStart = performance.now() + delay;
       item.transitionDuration = TURN_DURATION;
       item.transitioning = true;
-      item.element.dataset.turntableTarget = target === 0 ? "0" : "180";
-      item.element.dataset.turntableState = target === 0 ? "returning" : "turning-back";
+      item.element.dataset.turntableTarget = rotationLabel(target);
+      item.element.dataset.turntableState = target === 0
+        ? "returning"
+        : rotationEndsOnFront(item, target) ? "turning-full" : "turning-back";
       requestFrame();
     };
 
@@ -230,8 +261,8 @@ export function ProductRangeTurntable() {
       if (entryStarted || !modelsReady || !inView || !pageVisible) return;
       entryStarted = true;
       items.forEach((item, index) => {
-        item.fromRotation = HALF_TURN;
-        item.rotation = HALF_TURN;
+        item.fromRotation = item.rotationSpan;
+        item.rotation = item.rotationSpan;
         item.targetRotation = 0;
         item.transitionStart = performance.now() + (index * ENTRY_STAGGER);
         item.transitionDuration = TURN_DURATION;
@@ -245,7 +276,7 @@ export function ProductRangeTurntable() {
     const updateInteraction = (item: RangeItem) => {
       const pointerActive = fineHover && item.link?.matches(":hover") === true;
       const keyboardActive = lastInputWasKeyboard && item.link?.matches(":focus-visible") === true;
-      startTransition(item, pointerActive || keyboardActive ? HALF_TURN : 0);
+      startTransition(item, pointerActive || keyboardActive ? item.rotationSpan : 0);
     };
 
     const interactionCleanups: Array<() => void> = [];
@@ -315,20 +346,20 @@ export function ProductRangeTurntable() {
       try {
         const { THREE, RoomEnvironment } = await getThreeRuntime();
         if (cancelled) return;
-        const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
         const mobileViewport = window.innerWidth <= 720;
-        const pixelRatioCap = mobileViewport ? 1 : lowPowerDevice ? 1 : 1.1;
+        const constrainedHardware = (navigator.hardwareConcurrency ?? 8) <= 2;
+        const pixelRatioCap = mobileViewport ? 1.35 : constrainedHardware ? 1.4 : 1.75;
 
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: mobileViewport || !lowPowerDevice,
+          antialias: true,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1;
+        renderer.toneMapping = THREE.NeutralToneMapping;
+        renderer.toneMappingExposure = 0.88;
         renderer.setClearColor(0x000000, 0);
 
         scene = new THREE.Scene();
@@ -337,10 +368,16 @@ export function ProductRangeTurntable() {
         camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
         camera.position.set(0, 0.04, 6.2);
         camera.lookAt(0, 0, 0);
-        scene.add(new THREE.HemisphereLight(0xffffff, 0x63534b, 1.35));
-        const key = new THREE.DirectionalLight(0xffffff, 2.25);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x26282b, 0.32));
+        const key = new THREE.DirectionalLight(0xffffff, 0.9);
         key.position.set(3.5, 4.5, 5.5);
         scene.add(key);
+        const fill = new THREE.DirectionalLight(0xffffff, 0.3);
+        fill.position.set(-3.2, 1.1, 4.2);
+        scene.add(fill);
+        const rim = new THREE.DirectionalLight(0xffffff, 0.18);
+        rim.position.set(-4, 1.8, -2.5);
+        scene.add(rim);
 
         const resize = () => {
           if (!renderer) return;
@@ -358,6 +395,7 @@ export function ProductRangeTurntable() {
         for (const src of modelSources) {
           const root = await loadModelClone(src);
           if (cancelled) return;
+          prepareModelForPresentation(root, renderer);
           const bounds = new THREE.Box3().setFromObject(root);
           const size = bounds.getSize(new THREE.Vector3());
           const center = bounds.getCenter(new THREE.Vector3());
@@ -366,7 +404,7 @@ export function ProductRangeTurntable() {
           root.scale.setScalar(fittedScale);
           root.position.copy(center).multiplyScalar(-fittedScale);
           const spinner = new THREE.Group();
-          spinner.rotation.y = HALF_TURN;
+          spinner.rotation.y = presentationRotationSpan(src);
           spinner.add(root);
           const outer = new THREE.Group();
           outer.add(spinner);

@@ -9,6 +9,10 @@ export type Product = {
   publicationStatus: "published" | "prototype" | "pending-confirmation";
   brand: "Tropicoul" | "Triplex" | "Vimto";
   name: string;
+  /** Product variants can have their own page without entering the 3D can carousel. */
+  showInCarousel?: boolean;
+  formatLabel?: string;
+  pageTitle?: string;
   tags: readonly string[];
   headline: string;
   description: string;
@@ -47,20 +51,50 @@ export type Product = {
   decorativeLayers: DecorativeLayers;
 };
 
+const vimtoEditorialRoot = "/media/mpm/editorial/vimto-sparkling";
+
+function vimtoEditorialAsset(baseName: string, format: "webp" | "avif") {
+  return `${vimtoEditorialRoot}/${baseName}.${format}`;
+}
+
+function vimtoVariantAssets(spec: {
+  hero: string;
+  packshot: string;
+  lifestyle: string;
+  macro: string;
+}) {
+  return {
+    poster: vimtoEditorialAsset(spec.hero, "webp"),
+    posterAvif: vimtoEditorialAsset(spec.hero, "avif"),
+    posterWebp: vimtoEditorialAsset(spec.hero, "webp"),
+    posterMobile: vimtoEditorialAsset(spec.hero, "webp"),
+    posterMobileAvif: vimtoEditorialAsset(spec.hero, "avif"),
+    posterMobileWebp: vimtoEditorialAsset(spec.hero, "webp"),
+    packshot: vimtoEditorialAsset(spec.packshot, "webp"),
+    packshotAvif: vimtoEditorialAsset(spec.packshot, "avif"),
+    packshotWebp: vimtoEditorialAsset(spec.packshot, "webp"),
+    productHero: vimtoEditorialAsset(spec.packshot, "webp"),
+    lifestyle: vimtoEditorialAsset(spec.lifestyle, "webp"),
+    lifestyleAvif: vimtoEditorialAsset(spec.lifestyle, "avif"),
+    lifestyleWebp: vimtoEditorialAsset(spec.lifestyle, "webp"),
+    modelSrc: "",
+  };
+}
+
 function productAssets(id: string, modelFile: string, lifestyle?: string) {
   const root = `/media/mpm/products/${id}`;
   return {
-    poster: `${root}/poster.png`,
+    poster: `${root}/poster.webp`,
     posterAvif: `${root}/poster.avif`,
     posterWebp: `${root}/poster.webp`,
-    posterMobile: `${root}/poster-mobile.png`,
+    posterMobile: `${root}/poster-mobile.webp`,
     posterMobileAvif: `${root}/poster-mobile.avif`,
     posterMobileWebp: `${root}/poster-mobile.webp`,
-    packshot: `${root}/packshot.png`,
+    packshot: `${root}/packshot.webp`,
     packshotAvif: `${root}/packshot.avif`,
     packshotWebp: `${root}/packshot.webp`,
-    productHero: `${root}/product-hero.png`,
-    lifestyle: lifestyle ?? `${root}/lifestyle-fallback.png`,
+    productHero: `${root}/product-hero.webp`,
+    lifestyle: lifestyle ?? `${root}/lifestyle-fallback.webp`,
     modelSrc: `/models/mpm/${modelFile}`,
   };
 }
@@ -476,7 +510,28 @@ const tamarinDecorations = () => createProductUniverse("tropicoul-tamarin", "tam
   },
 ]);
 
-const vimtoDecorations = () => createDecorativeLayers([
+const vimtoFruitDecoration: DecorativeAssetDefinition = {
+  id: "vimto-fruit-cluster-mid-v01",
+  role: "fruit",
+  depth: "mid",
+  src: "/media/mpm/universes/vimto/vimto-fruit-cluster-mid-v01.webp",
+  sources: {
+    desktop: {
+      avif: "/media/mpm/universes/vimto/vimto-fruit-cluster-mid-v01.avif",
+      webp: "/media/mpm/universes/vimto/vimto-fruit-cluster-mid-v01.webp",
+      width: 1600,
+      height: 1600,
+    },
+  },
+  alt: "",
+  blend: "normal",
+  opacity: 0.88,
+  desktop: { x: 76, y: 69, scale: 0.36, rotate: -7 },
+  mobile: { x: 78, y: 76, scale: 0.42, rotate: -9 },
+  motion: { preset: "parallax", durationMs: 12400, delayMs: 120, amplitude: 0.54 },
+};
+
+const vimtoDecorations = (withRedFruit = false) => createDecorativeLayers([
   {
     id: "vimto-background-product-v02",
     role: "background",
@@ -543,6 +598,7 @@ const vimtoDecorations = () => createDecorativeLayers([
     mobile: { x: 76, y: 55, scale: 0.5, rotate: 4 },
     motion: { preset: "drift", durationMs: 13200, delayMs: 0, amplitude: 0.5 },
   },
+  ...(withRedFruit ? [vimtoFruitDecoration] : []),
 ]);
 
 export const products: readonly Product[] = [
@@ -557,9 +613,9 @@ export const products: readonly Product[] = [
     benefitTitle: "L’ÉVASION FRUITÉE",
     benefit: "Une saveur solaire, faite pour les repas animés, les retrouvailles et toutes les envies de fraîcheur.",
     ...productAssets("tropicoul-ananas", "tropicoul-ananas.glb", "/media/simpara/tropicoul/ananas/ananas-card.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-mid-v01.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-ananas/ananas-lifestyle-with-can-v02.webp",
     heroAlt: "Canette Tropicoul Ananas 330 ml dans un décor jaune et vert aux reliefs tropicaux.",
     packshotAlt: "Canette Tropicoul Ananas 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Ananas 330 ml mise en scène dans un décor lumineux jaune et vert.",
@@ -584,9 +640,9 @@ export const products: readonly Product[] = [
     benefitTitle: "LE PLAISIR MANGUE",
     benefit: "Une saveur douce et solaire qui apporte une note gourmande aux moments simples.",
     ...productAssets("tropicoul-mangue", "tropicoul-mangue.glb", "/media/simpara/tropicoul/mangue/mangue-market.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-mid-v01.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-with-can-v03.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-with-can-v03.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-mangue/mangue-lifestyle-with-can-v03.webp",
     heroAlt: "Canette Tropicoul Mangue 330 ml dans un décor doré aux courbes amples.",
     packshotAlt: "Canette Tropicoul Mangue 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Mangue 330 ml intégrée à une scène chaleureuse aux tons dorés.",
@@ -611,9 +667,12 @@ export const products: readonly Product[] = [
     benefitTitle: "LA VIVACITÉ ORANGE",
     benefit: "Une saveur franche et ensoleillée à ouvrir quand on veut une pause qui a du goût.",
     ...productAssets("tropicoul-orange", "tropicoul-orange.glb", "/media/simpara/tropicoul/orange/orange-card.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-mid-v01.webp",
+    packshot: "/media/mpm/products/tropicoul-orange/packshot-v02.png",
+    packshotAvif: "/media/mpm/products/tropicoul-orange/packshot-v02.avif",
+    packshotWebp: "/media/mpm/products/tropicoul-orange/packshot-v02.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-orange/orange-lifestyle-with-can-v02.webp",
     heroAlt: "Canette Tropicoul Orange 330 ml entourée de formes circulaires orange et bleu cobalt.",
     packshotAlt: "Canette Tropicoul Orange 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Orange 330 ml dans une scène contemporaine orange et bleu cobalt.",
@@ -638,9 +697,9 @@ export const products: readonly Product[] = [
     benefitTitle: "LE GOÛT DE LA DÉCOUVERTE",
     benefit: "Une saveur fruitée singulière, fraîche et généreuse, à partager avec les curieux.",
     ...productAssets("tropicoul-goyave", "tropicoul-goyave.glb", "/media/simpara/tropicoul/goyave/goyave-lifestyle.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-mid-v01.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-goyave/goyave-lifestyle-with-can-v02.webp",
     heroAlt: "Canette Tropicoul Goyave 330 ml dans un décor botanique rose et vert.",
     packshotAlt: "Canette Tropicoul Goyave 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Goyave 330 ml mise en scène dans un décor botanique rose et vert.",
@@ -665,9 +724,9 @@ export const products: readonly Product[] = [
     benefitTitle: "LA NOTE COCKTAIL",
     benefit: "Un goût fruité expressif, à savourer bien frais quand l’ambiance commence à monter.",
     ...productAssets("tropicoul-cocktail", "tropicoul-cocktail.glb", "/media/simpara/tropicoul/cocktail/cocktail-market.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-mid-v01.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-cocktail/cocktail-lifestyle-with-can-v02.webp",
     heroAlt: "Canette Tropicoul Cocktail 330 ml dans un décor abstrait bleu aux éclats lumineux.",
     packshotAlt: "Canette Tropicoul Cocktail 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Cocktail 330 ml intégrée à une scène contemporaine bleu profond.",
@@ -692,9 +751,9 @@ export const products: readonly Product[] = [
     benefitTitle: "LE GOÛT QUI CHANGE",
     benefit: "Une pause fruitée avec du caractère, faite pour être découverte et commentée.",
     ...productAssets("tropicoul-tamarin", "tropicoul-tamarin.glb", "/media/simpara/tropicoul/tamarin/tamarin-card.png"),
-    lifestyle: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-mid-v01.webp",
+    lifestyle: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/tropicoul-tamarin/tamarin-lifestyle-with-can-v02.webp",
     heroAlt: "Canette Tropicoul Tamarin 330 ml dans un décor végétal sombre éclairé de tons ambrés.",
     packshotAlt: "Canette Tropicoul Tamarin 330 ml, vue de face.",
     lifestyleAlt: "Canette Tropicoul Tamarin 330 ml mise en scène dans un décor contemporain aux tons ambrés.",
@@ -712,19 +771,19 @@ export const products: readonly Product[] = [
     slug: "triplex-original",
     publicationStatus: "published",
     brand: "Triplex",
-    name: "Original",
+    name: "Energy Drink",
     tags: ["Énergisante", "Intense", "330 ml"],
     headline: "TRIPLEX. GARDEZ LE RYTHME.",
     description: "Une boisson énergisante 330 ml au goût intense, prête à accompagner les journées rapides et les nuits qui se prolongent.",
     benefitTitle: "L’ÉNERGIE DU MOMENT",
     benefit: "Une canette fraîche et assumée pour rester dans le mouvement lorsque le tempo monte.",
     ...productAssets("triplex", "triplex-energy-drink.glb", "/media/simpara/triplex/triplex-work.png"),
-    lifestyle: "/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.webp",
-    lifestyleAvif: "/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.avif",
-    lifestyleWebp: "/media/mpm/universes/triplex-original/triplex-lifestyle-mid-v01.webp",
-    heroAlt: "Canette Triplex Original 330 ml, boisson énergisante au goût intense, dans une scène de nuit.",
-    packshotAlt: "Canette Triplex Original 330 ml, vue de face.",
-    lifestyleAlt: "Canette Triplex Original 330 ml au premier plan d’une scène urbaine nocturne rouge et noire.",
+    lifestyle: "/media/mpm/universes/triplex-original/triplex-lifestyle-with-can-v02.webp",
+    lifestyleAvif: "/media/mpm/universes/triplex-original/triplex-lifestyle-with-can-v02.avif",
+    lifestyleWebp: "/media/mpm/universes/triplex-original/triplex-lifestyle-with-can-v02.webp",
+    heroAlt: "Canette Triplex Energy Drink 330 ml, boisson énergisante au goût intense, dans une scène de nuit.",
+    packshotAlt: "Canette Triplex Energy Drink 330 ml, vue de face.",
+    lifestyleAlt: "Canette Triplex Energy Drink 330 ml au premier plan d’une scène urbaine nocturne rouge et noire.",
     accent: "#d63a2b",
     deep: "#050505",
     soft: "#121212",
@@ -764,10 +823,88 @@ export const products: readonly Product[] = [
     macroAvif: "/media/mpm/universes/vimto-sparkling/vimto-editorial-macro-v02.avif",
     macroWebp: "/media/mpm/universes/vimto-sparkling/vimto-editorial-macro-v02.webp",
     macroAlt: "Gros plan du lettrage Vimto rouge entouré de jaune sur le panneau blanc de la canette.",
-    lifestyle: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v03.webp",
-    lifestyleAvif: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v03.avif",
-    lifestyleWebp: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v03.webp",
-    lifestyleAlt: "Canette Vimto Sparkling rouge au premier plan d’un repas partagé par quatre adultes en extérieur.",
+    lifestyle: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v07.webp",
+    lifestyleAvif: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v07.avif",
+    lifestyleWebp: "/media/mpm/universes/vimto-sparkling/vimto-editorial-lifestyle-v07.webp",
+    lifestyleAlt: "Repas partagé avec une canette Vimto Sparkling ouverte devant chaque convive, des verres servis et un bac à glaçons.",
+    accent: "#FDE002",
+    deep: "#650B1A",
+    soft: "#E3EDF2",
+    surface: "#B1172D",
+    foreground: "#E3EDF2",
+    heading: "#ffffff",
+    accentText: "#FDE002",
+    ctaText: "#0B0909",
+    decorativeLayers: vimtoDecorations(true),
+  },
+  {
+    slug: "vimto-sirop",
+    publicationStatus: "published",
+    brand: "Vimto",
+    name: "Sirop",
+    pageTitle: "Vimto Sirop",
+    formatLabel: "Bouteille en verre · Sirop",
+    showInCarousel: false,
+    tags: ["Sirop", "Original", "Bouteille en verre"],
+    headline: "VIMTO. LE GOÛT HISTORIQUE EN SIROP.",
+    description: "Le sirop Vimto en bouteille en verre prolonge le goût historique de la marque dans un format pensé pour le service et le partage.",
+    benefitTitle: "LE RITUEL DU SERVICE",
+    benefit: "Une bouteille en verre à servir selon l’envie, pour retrouver la signature Vimto autour de la table.",
+    ...vimtoVariantAssets({
+      hero: "vimto-bottle-lantern-v02",
+      packshot: "vimto-bottle-lantern-v02",
+      lifestyle: "vimto-sparkling-univers-07-vimto-sparkling-univers-07-serve-v02",
+      macro: "vimto-bottle-original-v02",
+    }),
+    heroAlt: "Bouteilles en verre de sirop Vimto dans un décor rouge chaleureux.",
+    packshotAlt: "Bouteilles en verre de sirop Vimto autour d’une lanterne.",
+    packshotWidth: 1404,
+    packshotHeight: 1120,
+    macroAvif: vimtoEditorialAsset("vimto-bottle-original-v02", "avif"),
+    macroWebp: vimtoEditorialAsset("vimto-bottle-original-v02", "webp"),
+    macroAlt: "Bouteille en verre de sirop Vimto et verre servi avec des glaçons.",
+    lifestyleAlt: "Bouteille de sirop Vimto, pichet et verres servis très frais.",
+    accent: "#FDE002",
+    deep: "#650B1A",
+    soft: "#E3EDF2",
+    surface: "#B1172D",
+    foreground: "#E3EDF2",
+    heading: "#ffffff",
+    accentText: "#FDE002",
+    ctaText: "#0B0909",
+    decorativeLayers: vimtoDecorations(),
+  },
+  {
+    slug: "vimto-malt",
+    publicationStatus: "published",
+    brand: "Vimto",
+    name: "Malt",
+    pageTitle: "Vimto Malt",
+    formatLabel: "Canette 330 ml",
+    showInCarousel: false,
+    tags: ["Malt", "Fruitée", "330 ml"],
+    headline: "VIMTO MALT. UNE AUTRE INTENSITÉ.",
+    description: "Vimto Malt associe une identité fruitée à une note maltée dans une canette 330 ml, pour une expression plus intense de la gamme.",
+    benefitTitle: "LE CARACTÈRE MALT",
+    benefit: "Une canette 330 ml à la présence plus profonde, à découvrir bien fraîche et à partager autrement.",
+    ...vimtoVariantAssets({
+      hero: "vimto-malt-hero-blend-v04",
+      packshot: "vimto-sparkling-univers-04-vimto-sparkling-univers-04-lifestyle-v03",
+      lifestyle: "vimto-malt-lifestyle-v07",
+      macro: "vimto-sparkling-univers-09-vimto-sparkling-univers-09-detail-v02",
+    }),
+    packshot: "/media/mpm/universes/vimto-sparkling/vimto-malt-330-packshot-v01.png",
+    packshotAvif: "/media/mpm/universes/vimto-sparkling/vimto-malt-330-packshot-v01.avif",
+    packshotWebp: "/media/mpm/universes/vimto-sparkling/vimto-malt-330-packshot-v01.webp",
+    productHero: "/media/mpm/universes/vimto-sparkling/vimto-malt-330-packshot-v01.png",
+    heroAlt: "Canettes Vimto Sparkling et Vimto Malt 330 ml, entourées de céréales d’orge dans un décor ambré.",
+    packshotAlt: "Canette noire Vimto Malt 330 ml, vue de face.",
+    packshotWidth: 1254,
+    packshotHeight: 1254,
+    macroAvif: vimtoEditorialAsset("vimto-sparkling-univers-09-vimto-sparkling-univers-09-detail-v02", "avif"),
+    macroWebp: vimtoEditorialAsset("vimto-sparkling-univers-09-vimto-sparkling-univers-09-detail-v02", "webp"),
+    macroAlt: "Canette noire Vimto Malt 330 ml dans une composition fraîche et fruitée.",
+    lifestyleAlt: "Canettes Vimto Malt 330 ml réunies autour d’un moment partagé.",
     accent: "#FDE002",
     deep: "#650B1A",
     soft: "#E3EDF2",

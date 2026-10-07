@@ -1,5 +1,5 @@
 import vinext from "vinext";
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
 
@@ -40,20 +40,39 @@ export default defineConfig(async () => {
   process.env.WRANGLER_LOG_PATH ??= ".wrangler/logs";
   process.env.MINIFLARE_REGISTRY_PATH ??= ".wrangler/registry";
 
-  // Wrangler snapshots its log path while the Cloudflare plugin is imported.
-  const { cloudflare } = await import("@cloudflare/vite-plugin");
+  // Node hosts (including Hostinger) and Vercel need Nitro's server output.
+  // The default local/Sites build keeps the Cloudflare Worker adapter and its
+  // D1/R2 bindings.
+  const isNodeBuild = Boolean(
+    process.env.HOSTINGER
+      || process.env.VERCEL
+      || process.env.NITRO_PRESET === "vercel"
+      || process.env.NITRO_PRESET === "node-server",
+  );
+  const plugins: PluginOption[] = [vinext()];
 
-  return {
-    server: isCodexSeatbeltSandbox
-      ? { watch: { useFsEvents: false, usePolling: true } }
-      : undefined,
-    plugins: [
-      vinext(),
+  if (isNodeBuild) {
+    const { nitro } = await import("nitro/vite");
+    plugins.push(nitro());
+  } else {
+    // Wrangler snapshots its log path while the Cloudflare plugin is imported.
+    const { cloudflare } = await import("@cloudflare/vite-plugin");
+    plugins.push(
       sites(),
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
         config: localBindingConfig,
       }),
-    ],
+    );
+  }
+
+  return {
+    server: isCodexSeatbeltSandbox
+      ? { watch: { useFsEvents: false, usePolling: true } }
+      : undefined,
+    build: isNodeBuild
+      ? { rolldownOptions: { external: ["cloudflare:workers"] } }
+      : undefined,
+    plugins,
   };
 });

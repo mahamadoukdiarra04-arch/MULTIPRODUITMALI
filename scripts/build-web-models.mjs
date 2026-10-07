@@ -15,6 +15,16 @@ const masterDir = path.join(rootDir, "3D", "Collection_Canettes_330ml_GLBS_Premi
 const outputDir = path.join(rootDir, "public", "models", "mpm");
 const manifestPath = path.join(outputDir, "manifest.json");
 
+const labelSources = {
+  "tropicoul-ananas": path.join("3D", "ANANAS", "Tropicoul_Pineapple_360_Reconstructed_Pack", "Tropicoul_Pineapple_360_BaseColor_4096x2048.png"),
+  "tropicoul-cocktail": path.join("3D", "Tropicoul_Flat_360_5_References_Complet", "Tropicoul_Cocktail_Flat_360", "Tropicoul_Cocktail_360_BaseColor_4096x2048.png"),
+  "tropicoul-goyave": path.join("3D", "Vimto_Guava_Flat_360_Complet_8K_TIFF", "Vimto_Guava_Flat_360_Pack", "Tropicoul_Guava_Flat_360", "Tropicoul_Guava_360_BaseColor_4096x2048.png"),
+  "tropicoul-mangue": path.join("3D", "Tropicoul_Flat_360_5_References_Complet", "Tropicoul_Mango_Flat_360", "Tropicoul_Mango_360_BaseColor_4096x2048.png"),
+  "tropicoul-orange": path.join("3D", "Tropicoul_Flat_360_5_References_Complet", "Tropicoul_Orange_Flat_360", "Tropicoul_Orange_360_BaseColor_4096x2048.png"),
+  "tropicoul-tamarin": path.join("3D", "Tropicoul_Flat_360_5_References_Complet", "Tropicoul_Tamarind_Flat_360", "Tropicoul_Tamarind_360_BaseColor_4096x2048.png"),
+  triplex: path.join("3D", "Tropicoul_Flat_360_5_References_Complet", "Triplex_Flat_360", "Triplex_360_BaseColor_4096x2048.png"),
+};
+
 const products = [
   { id: "tropicoul-ananas", source: "Tropicoul_Pineapple_330ml_Premium.glb", output: "tropicoul-ananas.glb" },
   { id: "tropicoul-orange", source: "Tropicoul_Orange_330ml_Premium.glb", output: "tropicoul-orange.glb" },
@@ -23,7 +33,6 @@ const products = [
   { id: "tropicoul-cocktail", source: "Tropicoul_Cocktail_330ml_Premium.glb", output: "tropicoul-cocktail.glb" },
   { id: "tropicoul-tamarin", source: "Tropicoul_Tamarind_330ml_Premium.glb", output: "tropicoul-tamarin.glb" },
   { id: "triplex", source: "Triplex_Energy_Drink_330ml_Premium.glb", output: "triplex-energy-drink.glb" },
-  { id: "vimto", source: "Vimto_330ml_Premium.glb", output: "vimto.glb", normaliseRoot: true, frontYawDegrees: 30 },
 ];
 
 const TARGET_BYTES = 2.5 * 1024 * 1024;
@@ -135,7 +144,7 @@ async function resizeTextures(document) {
     const isColor = assignedRoles.includes("baseColor") || assignedRoles.includes("emissive");
     const width = isColor ? 2048 : 1024;
     const height = isColor ? 1024 : 512;
-    const quality = isColor ? 91 : 88;
+    const quality = isColor ? 94 : 88;
     const output = await sharp(image)
       .resize(width, height, { fit: "fill", kernel: sharp.kernel.lanczos3 })
       .jpeg({ quality, chromaSubsampling: isColor ? "4:4:4" : "4:2:0", mozjpeg: true })
@@ -150,6 +159,55 @@ async function resizeTextures(document) {
   return details;
 }
 
+async function replaceBaseColor(document, labelPath) {
+  const labelBuffer = await readFile(labelPath);
+  const metadata = await sharp(labelBuffer).metadata();
+  if (metadata.width !== 4096 || metadata.height !== 2048) {
+    throw new Error(`${labelPath}: le developpe 360 doit mesurer 4096 x 2048 px.`);
+  }
+
+  const textures = new Set();
+  for (const material of document.getRoot().listMaterials()) {
+    const texture = material.getBaseColorTexture();
+    if (texture) textures.add(texture);
+  }
+  if (textures.size !== 1) {
+    throw new Error(`${labelPath}: une texture Base Color unique etait attendue, ${textures.size} trouvee(s).`);
+  }
+
+  for (const texture of textures) {
+    texture.setImage(labelBuffer);
+    texture.setMimeType("image/png");
+    texture.setURI("");
+    texture.setName(`${path.basename(labelPath, path.extname(labelPath))} source`);
+  }
+
+  return {
+    path: path.relative(rootDir, labelPath).replaceAll("\\", "/"),
+    bytes: labelBuffer.byteLength,
+    width: metadata.width,
+    height: metadata.height,
+    sha256: sha256(labelBuffer),
+  };
+}
+
+function calibratePrintedMaterial(document) {
+  let calibrated = 0;
+  for (const material of document.getRoot().listMaterials()) {
+    if (!/printed|lacquer|can body/i.test(material.getName())) continue;
+    material.setMetallicFactor(0.02);
+    material.setRoughnessFactor(0.48);
+    material.setNormalScale(0.12);
+    material.setEmissiveTexture(material.getBaseColorTexture());
+    material.setEmissiveFactor([0.06, 0.06, 0.06]);
+    const clearcoat = material.getExtension("KHR_materials_clearcoat");
+    clearcoat?.setClearcoatFactor(0.1);
+    clearcoat?.setClearcoatRoughnessFactor(0.48);
+    calibrated += 1;
+  }
+  if (calibrated === 0) throw new Error("Aucun materiau imprime n'a ete trouve dans le GLB.");
+}
+
 async function buildProduct(product) {
   const sourcePath = path.join(masterDir, product.source);
   const outputPath = path.join(outputDir, product.output);
@@ -157,6 +215,8 @@ async function buildProduct(product) {
   const document = await io.readBinary(new Uint8Array(sourceBuffer));
   const beforeTriangles = triangleCount(document);
   const beforeRoots = rootRotations(document);
+  const label = await replaceBaseColor(document, path.join(rootDir, labelSources[product.id]));
+  calibratePrintedMaterial(document);
 
   if (product.normaliseRoot) bakeRootRotation(document);
   bakeFrontYaw(document, product.frontYawDegrees ?? 0);
@@ -196,6 +256,7 @@ async function buildProduct(product) {
       sha256: sha256(sourceBuffer),
       triangles: beforeTriangles,
       rootRotations: beforeRoots,
+      label,
     },
     web: {
       path: `/${path.relative(path.join(rootDir, "public"), outputPath).replaceAll("\\", "/")}`,

@@ -87,5 +87,5 @@ export function getDecorativePreloadSource(asset: DecorativeAsset, mobile: boole
   const media = mobile && asset.sources?.mobile
     ? asset.sources.mobile
     : asset.sources?.desktop;
-  return media?.avif ?? media?.webp ?? media?.png ?? asset.src;
+  return media?.webp ?? media?.png ?? media?.avif ?? asset.src;
 }

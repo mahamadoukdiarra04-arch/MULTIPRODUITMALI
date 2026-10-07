@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element -- product packshots are lightweight visual selections inside client-side controls. */
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useState, useSyncExternalStore, type FormEvent } from "react";
+import { countryFlag, countryNameFromLocale, countryOptions } from "./countries";
 import Link from "./PlainLink";
 
-type ContactMode = "choice" | "partnership" | "general" | "success";
-type PartnerBrand = "tropicoul" | "triplex";
+type PartnerBrand = "tropicoul" | "triplex" | "vimto";
 type ContactChannel = "email" | "whatsapp";
+type CollaborationType = "Représentation" | "Distribution" | "Événement" | "Autre";
 
 type ContactExperienceProps = {
-  initialMode?: "partnership" | "general";
   initialBrand?: PartnerBrand;
   initialFlavour?: string;
   source?: string;
@@ -24,15 +24,7 @@ type PartnershipData = {
   brands: PartnerBrand[];
   tropicoulAll: boolean;
   flavours: string[];
-  collaborationType: string;
-  message: string;
-  preferredChannel: ContactChannel;
-  email: string;
-  phone: string;
-};
-
-type GeneralData = {
-  name: string;
+  collaborationType: CollaborationType | "";
   message: string;
   preferredChannel: ContactChannel;
   email: string;
@@ -40,6 +32,7 @@ type GeneralData = {
 };
 
 type Receipt = {
+  channel: ContactChannel;
   whatsappUrl: string | null;
   delivery: "sent" | "pending" | "failed";
 };
@@ -53,12 +46,7 @@ const tropicoulFlavours = [
   { slug: "tropicoul-tamarin", name: "Tamarin", image: "/media/mpm/products/tropicoul-tamarin/packshot.webp" },
 ] as const;
 
-const countrySuggestions = [
-  "Mali", "Burkina Faso", "Côte d’Ivoire", "Guinée", "Niger", "Sénégal",
-  "Bénin", "Togo", "Ghana", "Cameroun", "France", "Maroc", "Algérie",
-] as const;
-
-const collaborationChoices = ["Distribution", "Point de vente", "Événement", "Autre"] as const;
+const collaborationChoices = ["Représentation", "Distribution", "Événement", "Autre"] as const satisfies readonly CollaborationType[];
 
 function partnershipInitialData(initialBrand?: PartnerBrand, initialFlavour?: string): PartnershipData {
   const matchedFlavour = tropicoulFlavours.find((flavour) => flavour.slug === initialFlavour)?.name;
@@ -66,7 +54,7 @@ function partnershipInitialData(initialBrand?: PartnerBrand, initialFlavour?: st
     name: "",
     company: "",
     role: "",
-    country: "Mali",
+    country: "",
     city: "",
     brands: initialBrand ? [initialBrand] : [],
     tropicoulAll: false,
@@ -79,19 +67,27 @@ function partnershipInitialData(initialBrand?: PartnerBrand, initialFlavour?: st
   };
 }
 
-function generalInitialData(): GeneralData {
-  return { name: "", message: "", preferredChannel: "email", email: "", phone: "" };
-}
-
 function labelForBrand(brand: PartnerBrand) {
-  return brand === "tropicoul" ? "Tropicoul" : "Triplex";
+  if (brand === "tropicoul") return "Tropicoul";
+  if (brand === "triplex") return "Triplex Energy Drink";
+  return "Vimto Sparkling";
 }
 
-export function ContactExperience({ initialMode, initialBrand, initialFlavour, source = "contact" }: ContactExperienceProps) {
-  const [mode, setMode] = useState<ContactMode>(initialMode ?? "choice");
+function getEstimatedCountry() {
+  if (typeof navigator === "undefined") return "Mali";
+  return countryNameFromLocale(navigator.languages?.[0] ?? navigator.language);
+}
+
+const subscribeToLocale = () => () => {};
+const getServerCountry = () => "Mali";
+
+export function ContactExperience({ initialBrand, initialFlavour, source = "contact" }: ContactExperienceProps) {
+  const [mode, setMode] = useState<"partnership" | "success">("partnership");
   const [step, setStep] = useState(1);
   const [partnership, setPartnership] = useState<PartnershipData>(() => partnershipInitialData(initialBrand, initialFlavour));
-  const [general, setGeneral] = useState<GeneralData>(generalInitialData);
+  const estimatedCountry = useSyncExternalStore(subscribeToLocale, getEstimatedCountry, getServerCountry);
+  const [countryOverride, setCountryOverride] = useState<string | null>(null);
+  const country = countryOverride ?? estimatedCountry;
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [receipt, setReceipt] = useState<Receipt | null>(null);
@@ -101,16 +97,19 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
     [partnership.flavours, partnership.tropicoulAll],
   );
 
-  const begin = (nextMode: "partnership" | "general") => {
-    setMode(nextMode);
+  const resetRequest = () => {
+    setPartnership(partnershipInitialData(initialBrand, initialFlavour));
+    setCountryOverride(null);
+    setMode("partnership");
     setStep(1);
     setError("");
     setReceipt(null);
   };
 
-  const changeRequest = () => {
-    setMode("choice");
-    setStep(1);
+  const continueByEmail = () => {
+    setPartnership((current) => ({ ...current, preferredChannel: "email" }));
+    setMode("partnership");
+    setStep(3);
     setError("");
   };
 
@@ -118,12 +117,12 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
     setPartnership((current) => ({ ...current, [key]: value }));
   };
 
-  const updateGeneral = <K extends keyof GeneralData>(key: K, value: GeneralData[K]) => {
-    setGeneral((current) => ({ ...current, [key]: value }));
-  };
-
   const selectBrand = (brand: PartnerBrand) => {
     setPartnership((current) => {
+      if (current.collaborationType === "Représentation" && brand !== "tropicoul") return current;
+      if (current.collaborationType === "Représentation" && brand === "tropicoul") {
+        return { ...current, brands: ["tropicoul"] };
+      }
       const hasBrand = current.brands.includes(brand);
       const brands = hasBrand ? current.brands.filter((item) => item !== brand) : [...current.brands, brand];
       return {
@@ -132,6 +131,16 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
         ...(brand === "tropicoul" && hasBrand ? { flavours: [], tropicoulAll: false } : {}),
       };
     });
+  };
+
+  const selectCollaborationType = (choice: CollaborationType) => {
+    setPartnership((current) => ({
+      ...current,
+      collaborationType: choice,
+      ...(choice === "Représentation"
+        ? { brands: ["tropicoul"], flavours: current.flavours, tropicoulAll: current.tropicoulAll }
+        : {}),
+    }));
   };
 
   const toggleFlavour = (name: string) => {
@@ -145,8 +154,12 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
   };
 
   const nextStep = () => {
-    if (step === 1 && (!partnership.name || !partnership.company || !partnership.country)) {
+    if (step === 1 && (!partnership.name || !partnership.company || !country)) {
       setError("Indiquez votre nom, votre entreprise et votre pays pour continuer.");
+      return;
+    }
+    if (step === 2 && !partnership.collaborationType) {
+      setError("Choisissez d’abord un type de partenariat.");
       return;
     }
     if (step === 2 && !partnership.brands.length) {
@@ -162,17 +175,26 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
     setStep((current) => Math.max(1, current - 1));
   };
 
-  const submit = async (event: FormEvent<HTMLFormElement>, kind: "partnership" | "general") => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
+
+    if (!partnership.collaborationType || !partnership.brands.length) {
+      setStep(2);
+      setError(!partnership.collaborationType
+        ? "Choisissez d’abord un type de partenariat."
+        : "Choisissez au moins une marque.");
+      return;
+    }
+
     setSubmitting(true);
 
-    const data = kind === "partnership" ? {
-      kind,
+    const data = {
+      kind: "partnership" as const,
       name: partnership.name,
       company: partnership.company,
       role: partnership.role,
-      country: partnership.country,
+      country,
       city: partnership.city,
       brands: partnership.brands.map(labelForBrand),
       flavours: selectedFlavourNames,
@@ -181,21 +203,6 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
       email: partnership.email,
       phone: partnership.phone,
       message: partnership.message,
-      source,
-    } : {
-      kind,
-      name: general.name,
-      company: "",
-      role: "",
-      country: "",
-      city: "",
-      brands: [],
-      flavours: [],
-      collaborationType: "",
-      preferredChannel: general.preferredChannel,
-      email: general.email,
-      phone: general.phone,
-      message: general.message,
       source,
     };
 
@@ -209,6 +216,7 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
       if (!response.ok) throw new Error(result.error || "Votre demande n’a pas pu être transmise.");
 
       setReceipt({
+        channel: partnership.preferredChannel,
         whatsappUrl: typeof result.whatsappUrl === "string" ? result.whatsappUrl : null,
         delivery: result.delivery ?? "pending",
       });
@@ -222,86 +230,20 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
 
   if (mode === "success") {
     return (
-      <section className="contact-success" aria-live="polite">
+    <section className="contact-success" aria-live="polite">
         <p className="section-kicker">MULTIPRODUIT MALI</p>
         <h1>Merci, votre demande a bien été transmise.</h1>
         <p>L’équipe Multiproduit Mali dispose maintenant des informations nécessaires pour vous répondre.</p>
         {receipt?.whatsappUrl ? <a className="contact-primary-action" href={receipt.whatsappUrl} target="_blank" rel="noreferrer">Continuer sur WhatsApp <span aria-hidden="true">↗</span></a> : null}
-        {!receipt?.whatsappUrl && receipt?.delivery === "pending" ? <p className="contact-success__note">L’échange sera poursuivi par le canal de réponse choisi.</p> : null}
+        {!receipt?.whatsappUrl && receipt?.channel === "whatsapp" ? <>
+          <p className="contact-success__note">WhatsApp n’est pas disponible pour le moment. Vous pouvez poursuivre par e-mail.</p>
+          <button className="contact-secondary-action" type="button" onClick={continueByEmail}>Envoyer plutôt par e-mail</button>
+        </> : null}
         <div className="contact-success__links">
           <Link href="/#marques">Retourner aux produits</Link>
           <Link href="/">Retour à l’accueil</Link>
-          <button type="button" onClick={changeRequest}>Faire une autre demande</button>
+          <button type="button" onClick={resetRequest}>Faire une autre demande</button>
         </div>
-      </section>
-    );
-  }
-
-  if (mode === "choice") {
-    return (
-      <section className="contact-choice" aria-labelledby="contact-title">
-        <div className="contact-choice__heading">
-          <p className="section-kicker">PRENONS CONTACT</p>
-          <h1 id="contact-title">Choisissez simplement le point de départ qui vous ressemble.</h1>
-          <p>Que vous souhaitiez développer une présence commerciale ou poser une question, nous vous orientons vers le bon échange.</p>
-        </div>
-        <div className="contact-choice__cards">
-          <button className="contact-path-card contact-path-card--partnership" type="button" onClick={() => begin("partnership")}>
-            <span className="contact-path-card__eyebrow">PARTENARIAT</span>
-            <strong>Construire un partenariat</strong>
-            <small>Distribution, développement commercial, point de vente ou événement.</small>
-            <span className="contact-path-card__products" aria-hidden="true">
-              <img src="/media/mpm/products/tropicoul-ananas/packshot.webp" alt="" />
-              <img src="/media/mpm/products/tropicoul-goyave/packshot.webp" alt="" />
-              <img src="/media/mpm/products/triplex/packshot.webp" alt="" />
-            </span>
-            <i aria-hidden="true">↗</i>
-          </button>
-          <button className="contact-path-card contact-path-card--general" type="button" onClick={() => begin("general")}>
-            <span className="contact-path-card__eyebrow">CONTACT GÉNÉRAL</span>
-            <strong>Écrire à l’équipe</strong>
-            <small>Pour toute question, message ou demande différente.</small>
-            <span className="contact-path-card__institution" aria-hidden="true">MM</span>
-            <i aria-hidden="true">↗</i>
-          </button>
-        </div>
-      </section>
-    );
-  }
-
-  if (mode === "general") {
-    return (
-      <section className="contact-general" aria-labelledby="general-contact-title">
-        <div className="contact-general__intro">
-          <button className="contact-change-request" type="button" onClick={changeRequest}>← Changer de demande</button>
-          <p className="section-kicker">CONTACT GÉNÉRAL</p>
-          <h1 id="general-contact-title">Comment pouvons-nous vous aider ?</h1>
-          <p>Expliquez-nous votre demande avec vos propres mots. Nous vous répondrons par le canal qui vous convient.</p>
-        </div>
-        <form className="contact-form contact-form--general" onSubmit={(event) => submit(event, "general")}>
-          <label className="contact-field">
-            <span>Nom</span>
-            <input value={general.name} onChange={(event) => updateGeneral("name", event.target.value)} autoComplete="name" required />
-          </label>
-          <label className="contact-field contact-field--wide">
-            <span>Votre message</span>
-            <textarea value={general.message} onChange={(event) => updateGeneral("message", event.target.value)} rows={7} required />
-          </label>
-          <ChannelChoice channel={general.preferredChannel} onChange={(channel) => updateGeneral("preferredChannel", channel)} />
-          {general.preferredChannel === "email" ? (
-            <label className="contact-field">
-              <span>Adresse e-mail</span>
-              <input type="email" value={general.email} onChange={(event) => updateGeneral("email", event.target.value)} autoComplete="email" required />
-            </label>
-          ) : (
-            <label className="contact-field">
-              <span>Numéro WhatsApp</span>
-              <input type="tel" value={general.phone} onChange={(event) => updateGeneral("phone", event.target.value)} autoComplete="tel" required />
-            </label>
-          )}
-          <FormNotice error={error} />
-          <button className="contact-primary-action" type="submit" disabled={submitting}>{submitting ? "Transmission…" : general.preferredChannel === "whatsapp" ? "Continuer sur WhatsApp" : "Envoyer le message"} <span aria-hidden="true">↗</span></button>
-        </form>
       </section>
     );
   }
@@ -309,13 +251,12 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
   return (
     <section className={"contact-partnership contact-partnership--step-" + step} aria-labelledby="partnership-contact-title">
       <div className="contact-partnership__intro">
-        <button className="contact-change-request" type="button" onClick={changeRequest}>← Changer de demande</button>
         <p className="section-kicker">PARTENARIAT</p>
         <h1 id="partnership-contact-title">Construisons une présence qui a du goût.</h1>
         <p>Quelques informations suffisent pour préparer le bon échange avec l’équipe Multiproduit Mali.</p>
       </div>
 
-      <form className="contact-form contact-form--partnership" onSubmit={(event) => submit(event, "partnership")}>
+      <form className="contact-form contact-form--partnership" onSubmit={submit}>
         <div className="contact-progress" aria-label={"Étape " + step + " sur 3"}>
           <strong>{step} sur 3</strong>
           <span><i className={step >= 1 ? "is-active" : ""} /><i className={step >= 2 ? "is-active" : ""} /><i className={step >= 3 ? "is-active" : ""} /></span>
@@ -328,42 +269,60 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
               <label className="contact-field"><span>Nom et prénom</span><input value={partnership.name} onChange={(event) => updatePartnership("name", event.target.value)} autoComplete="name" required /></label>
               <label className="contact-field"><span>Entreprise</span><input value={partnership.company} onChange={(event) => updatePartnership("company", event.target.value)} autoComplete="organization" required /></label>
               <label className="contact-field"><span>Fonction <em>facultatif</em></span><input value={partnership.role} onChange={(event) => updatePartnership("role", event.target.value)} autoComplete="organization-title" /></label>
-              <label className="contact-field"><span>Pays</span><input value={partnership.country} onChange={(event) => updatePartnership("country", event.target.value)} list="contact-country-options" autoComplete="country-name" required /></label>
+              <label className="contact-field"><span>Pays</span><select value={country} onChange={(event) => { setCountryOverride(event.target.value); updatePartnership("country", event.target.value); }} autoComplete="country-name" required>{countryOptions.map((option) => <option key={option.code} value={option.name}>{countryFlag(option.code)} {option.name}</option>)}</select></label>
               <label className="contact-field"><span>Ville <em>facultatif</em></span><input value={partnership.city} onChange={(event) => updatePartnership("city", event.target.value)} autoComplete="address-level2" /></label>
             </div>
-            <datalist id="contact-country-options">{countrySuggestions.map((country) => <option key={country} value={country} />)}</datalist>
           </div>
         ) : null}
 
         {step === 2 ? (
           <div className="contact-step">
-            <div className="contact-step__heading"><p>ÉTAPE 2</p><h2>Les produits qui vous intéressent</h2></div>
-            <div className="contact-brand-options">
-              <button className={"contact-brand-card contact-brand-card--tropicoul" + (partnership.brands.includes("tropicoul") ? " is-selected" : "")} type="button" aria-pressed={partnership.brands.includes("tropicoul")} onClick={() => selectBrand("tropicoul")}>
-                <span><small>TROPICOUL</small><strong>Une gamme fruitée, colorée et généreuse.</strong></span>
-                <div aria-hidden="true"><img src="/media/mpm/products/tropicoul-ananas/packshot.webp" alt="" /><img src="/media/mpm/products/tropicoul-mangue/packshot.webp" alt="" /><img src="/media/mpm/products/tropicoul-goyave/packshot.webp" alt="" /></div>
-                <i aria-hidden="true">{partnership.brands.includes("tropicoul") ? "✓" : "+"}</i>
-              </button>
-              <button className={"contact-brand-card contact-brand-card--triplex" + (partnership.brands.includes("triplex") ? " is-selected" : "")} type="button" aria-pressed={partnership.brands.includes("triplex")} onClick={() => selectBrand("triplex")}>
-                <span><small>TRIPLEX</small><strong>L’énergie intense prête à garder le rythme.</strong></span>
-                <img src="/media/mpm/products/triplex/packshot.webp" alt="" aria-hidden="true" />
-                <i aria-hidden="true">{partnership.brands.includes("triplex") ? "✓" : "+"}</i>
-              </button>
-            </div>
-            {partnership.brands.includes("tropicoul") ? (
-              <div className="contact-flavour-picker">
-                <div><p>PARFUMS TROPICOUL</p><span>Sélection multiple possible</span></div>
-                <button type="button" className={partnership.tropicoulAll ? "is-selected" : ""} aria-pressed={partnership.tropicoulAll} onClick={() => updatePartnership("tropicoulAll", !partnership.tropicoulAll)}>Toute la gamme</button>
-                <div className="contact-flavour-picker__list">
-                  {tropicoulFlavours.map((flavour) => <button type="button" key={flavour.slug} className={partnership.flavours.includes(flavour.name) && !partnership.tropicoulAll ? "is-selected" : ""} aria-pressed={partnership.flavours.includes(flavour.name) && !partnership.tropicoulAll} onClick={() => toggleFlavour(flavour.name)}><img src={flavour.image} alt="" /><span>{flavour.name}</span></button>)}
+            <div className="contact-step__heading"><p>ÉTAPE 2</p><h2>Votre type de partenariat</h2></div>
+            <fieldset className="contact-collaboration contact-collaboration--first">
+              <legend>Comment souhaitez-vous collaborer ? <strong>obligatoire</strong></legend>
+              <div>{collaborationChoices.map((choice) => (
+                <label className={partnership.collaborationType === choice ? "is-selected" : ""} key={choice}>
+                  <input type="radio" name="collaborationType" value={choice} checked={partnership.collaborationType === choice} onChange={() => selectCollaborationType(choice)} required />
+                  <span>{choice}</span>
+                </label>
+              ))}</div>
+            </fieldset>
+            {partnership.collaborationType ? (
+              <div className="contact-product-selection">
+                <div className="contact-product-selection__heading">
+                  <p>PRODUITS ÉLIGIBLES</p>
+                  <h3>Les produits qui vous intéressent</h3>
+                  <span>{partnership.collaborationType === "Représentation" ? "La représentation est réservée à Tropicoul." : "Tous les produits sont disponibles pour ce partenariat."}</span>
                 </div>
+                <div className="contact-brand-options">
+                  <button className={"contact-brand-card contact-brand-card--tropicoul" + (partnership.brands.includes("tropicoul") ? " is-selected" : "")} type="button" aria-pressed={partnership.brands.includes("tropicoul")} onClick={() => selectBrand("tropicoul")}>
+                    <span><small>TROPICOUL</small><strong>Une gamme fruitée, colorée et généreuse.</strong></span>
+                    <div aria-hidden="true"><img src="/media/mpm/products/tropicoul-ananas/packshot.webp" alt="" /><img src="/media/mpm/products/tropicoul-mangue/packshot.webp" alt="" /><img src="/media/mpm/products/tropicoul-goyave/packshot.webp" alt="" /></div>
+                    <i aria-hidden="true">{partnership.brands.includes("tropicoul") ? "✓" : "+"}</i>
+                  </button>
+                  {partnership.collaborationType !== "Représentation" ? <button className={"contact-brand-card contact-brand-card--triplex" + (partnership.brands.includes("triplex") ? " is-selected" : "")} type="button" aria-pressed={partnership.brands.includes("triplex")} onClick={() => selectBrand("triplex")}>
+                    <span><small>TRIPLEX ENERGY DRINK</small><strong>L’énergie intense prête à garder le rythme.</strong></span>
+                    <img src="/media/mpm/products/triplex/packshot.webp" alt="" aria-hidden="true" />
+                    <i aria-hidden="true">{partnership.brands.includes("triplex") ? "✓" : "+"}</i>
+                  </button> : null}
+                  {partnership.collaborationType !== "Représentation" ? <button className={"contact-brand-card contact-brand-card--vimto" + (partnership.brands.includes("vimto") ? " is-selected" : "")} type="button" aria-pressed={partnership.brands.includes("vimto")} onClick={() => selectBrand("vimto")}>
+                    <span><small>VIMTO SPARKLING</small><strong>Le goût fruité et pétillant à partager.</strong></span>
+                    <img src="/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.webp" alt="" aria-hidden="true" />
+                    <i aria-hidden="true">{partnership.brands.includes("vimto") ? "✓" : "+"}</i>
+                  </button> : null}
+                </div>
+                {partnership.brands.includes("tropicoul") ? (
+                  <div className="contact-flavour-picker">
+                    <div><p>PARFUMS TROPICOUL</p><span>Sélection multiple possible</span></div>
+                    <button type="button" className={partnership.tropicoulAll ? "is-selected" : ""} aria-pressed={partnership.tropicoulAll} onClick={() => updatePartnership("tropicoulAll", !partnership.tropicoulAll)}>Toute la gamme</button>
+                    <div className="contact-flavour-picker__list">
+                      {tropicoulFlavours.map((flavour) => <button type="button" key={flavour.slug} className={partnership.flavours.includes(flavour.name) && !partnership.tropicoulAll ? "is-selected" : ""} aria-pressed={partnership.flavours.includes(flavour.name) && !partnership.tropicoulAll} onClick={() => toggleFlavour(flavour.name)}><img src={flavour.image} alt="" /><span>{flavour.name}</span></button>)}
+                    </div>
+                  </div>
+                ) : null}
+                {partnership.brands.includes("triplex") ? <p className="contact-triplex-choice">✓ Triplex Energy Drink sélectionné</p> : null}
               </div>
-            ) : null}
-            {partnership.brands.includes("triplex") ? <p className="contact-triplex-choice">✓ Triplex Original sélectionné</p> : null}
-            <div className="contact-collaboration">
-              <p>Comment souhaitez-vous collaborer ? <em>facultatif</em></p>
-              <div>{collaborationChoices.map((choice) => <button type="button" className={partnership.collaborationType === choice ? "is-selected" : ""} aria-pressed={partnership.collaborationType === choice} key={choice} onClick={() => updatePartnership("collaborationType", partnership.collaborationType === choice ? "" : choice)}>{choice}</button>)}</div>
-            </div>
+            ) : <p className="contact-product-gate">Sélectionnez d’abord un type de partenariat pour afficher les produits éligibles.</p>}
           </div>
         ) : null}
 
@@ -383,7 +342,7 @@ export function ContactExperience({ initialMode, initialBrand, initialFlavour, s
         <FormNotice error={error} />
         <div className="contact-form__actions">
           {step > 1 ? <button className="contact-secondary-action" type="button" onClick={previousStep}>← Retour</button> : <span />}
-          {step < 3 ? <button className="contact-primary-action" type="button" onClick={nextStep}>Continuer <span aria-hidden="true">→</span></button> : <button className="contact-primary-action" type="submit" disabled={submitting}>{submitting ? "Transmission…" : partnership.preferredChannel === "whatsapp" ? "Continuer sur WhatsApp" : "Envoyer la demande"} <span aria-hidden="true">↗</span></button>}
+          {step < 3 ? <button className="contact-primary-action" type="button" onClick={nextStep} disabled={step === 2 && !partnership.collaborationType}>Continuer <span aria-hidden="true">→</span></button> : <button className="contact-primary-action" type="submit" disabled={submitting}>{submitting ? "Transmission…" : partnership.preferredChannel === "whatsapp" ? "Continuer sur WhatsApp" : "Envoyer la demande"} <span aria-hidden="true">↗</span></button>}
         </div>
       </form>
     </section>

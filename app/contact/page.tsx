@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "../PlainLink";
 
 import { BrandLogo } from "../BrandLogo";
+import { HomePointer } from "../HomePointer";
 import { ContactExperience } from "../ContactExperience";
 import { EditorialFooter } from "../actualites/EditorialFooter";
 import { MobileMenu } from "../MobileMenu";
@@ -28,24 +29,23 @@ function parameter(value: string | string[] | undefined) {
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
   const params = await searchParams;
-  const mode = parameter(params.mode);
   const brand = parameter(params.brand);
   const flavour = parameter(params.flavour);
   const source = parameter(params.source);
-  const initialMode = mode === "partnership" || mode === "general" ? mode : undefined;
-  const initialBrand = brand === "tropicoul" || brand === "triplex" ? brand : undefined;
+  const initialBrand = brand === "tropicoul" || brand === "triplex" || brand === "vimto" ? brand : undefined;
 
   return (
     <div className="contact-page">
       <header className="site-header contact-header">
         <Link className="wordmark wordmark--logo" href="/" aria-label="Multiproduit Mali, retour à l’accueil"><BrandLogo /></Link>
+        <HomePointer />
         <nav className="desktop-nav" aria-label="Navigation principale">
           {navigation.map(([label, href]) => <Link href={href} key={href} aria-current={href === "/contact" ? "page" : undefined}>{label}</Link>)}
         </nav>
         <MobileMenu navigation={navigation} />
       </header>
       <main id="main-content">
-        <ContactExperience initialMode={initialMode} initialBrand={initialBrand} initialFlavour={flavour} source={source} />
+        <ContactExperience initialBrand={initialBrand} initialFlavour={flavour} source={source} />
       </main>
       <EditorialFooter />
     </div>

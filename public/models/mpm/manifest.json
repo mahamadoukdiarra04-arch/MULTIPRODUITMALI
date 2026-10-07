@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T14:49:07.938Z",
+  "generatedAt": "2026-09-06T07:37:23.363Z",
   "policy": {
     "targetBytes": 2621440,
     "maximumBytes": 3145728,
@@ -26,14 +26,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/ANANAS/Tropicoul_Pineapple_360_Reconstructed_Pack/Tropicoul_Pineapple_360_BaseColor_4096x2048.png",
+          "bytes": 6484389,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "5b29e732d3d58b4508036ec2a427a2baf9165230b8e5572bd0b7935b56ad7453"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-ananas.glb",
-        "bytes": 1454296,
-        "mib": 1.387,
+        "bytes": 1603232,
+        "mib": 1.529,
         "withinTarget": true,
-        "sha256": "419d450bdd30e27c7411f2e30032a6790df6ab23abc63b7602c46c97ec7a5e0a",
+        "sha256": "7a64dff38807904212e6ad9da80d4b9d75517b0de511d18e72a566c5fdde4bff",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -50,11 +57,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 585183
+            "bytes": 734043
           },
           {
             "roles": [
@@ -98,14 +106,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Tropicoul_Flat_360_5_References_Complet/Tropicoul_Orange_Flat_360/Tropicoul_Orange_360_BaseColor_4096x2048.png",
+          "bytes": 5924650,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "00031efa583883cdf9bafb2af2e60e6d2e465a9658ab05de2b91951bee7d9f6e"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-orange.glb",
-        "bytes": 1477220,
-        "mib": 1.409,
+        "bytes": 1626984,
+        "mib": 1.552,
         "withinTarget": true,
-        "sha256": "f421d18f02ccee645a6832c8fc52ff7fefbe8b22fc0490d2fd802d49bba7b720",
+        "sha256": "1cb899b4523beeb7a4c09d351615ce74b04a40e657d66f06e13fdaec9c646bea",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -122,11 +137,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 615025
+            "bytes": 764693
           },
           {
             "roles": [
@@ -170,14 +186,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Tropicoul_Flat_360_5_References_Complet/Tropicoul_Mango_Flat_360/Tropicoul_Mango_360_BaseColor_4096x2048.png",
+          "bytes": 5204415,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "7d298ecf40fc2f97558642e0660cacc88a64144b831a1d861968c6f2804eb79a"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-mangue.glb",
-        "bytes": 1341804,
-        "mib": 1.28,
+        "bytes": 1467072,
+        "mib": 1.399,
         "withinTarget": true,
-        "sha256": "e3eb7a5a23c9274a3a73f0cbef6363e778b4bb27245512e310961b4f4c092351",
+        "sha256": "5a59973f897c7b892a48ab3760361657a193587d6f5db00f884ae6790ebde40c",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -194,11 +217,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 487223
+            "bytes": 612388
           },
           {
             "roles": [
@@ -242,14 +266,21 @@
               0
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Vimto_Guava_Flat_360_Complet_8K_TIFF/Vimto_Guava_Flat_360_Pack/Tropicoul_Guava_Flat_360/Tropicoul_Guava_360_BaseColor_4096x2048.png",
+          "bytes": 4849382,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "8b8da1bf9237f3f997ff6e7cdc14f8cc68bab3dab94c344fba86d37e12783ad5"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-goyave.glb",
-        "bytes": 1461244,
-        "mib": 1.394,
+        "bytes": 1416868,
+        "mib": 1.351,
         "withinTarget": true,
-        "sha256": "5dee8eb46aa2066b59095a6d65c6156a4f950bac7d452cc131c7e6698f4d1786",
+        "sha256": "e23f169c1e7c5e460f870f49e93dfd8c929ee7fea3e99ceb99c0b402436b8757",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -266,11 +297,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 612775
+            "bytes": 568305
           },
           {
             "roles": [
@@ -314,14 +346,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Tropicoul_Flat_360_5_References_Complet/Tropicoul_Cocktail_Flat_360/Tropicoul_Cocktail_360_BaseColor_4096x2048.png",
+          "bytes": 5680572,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "bb28fbcde9b594acf3d1a2d50cfbc4c7a8c4661385be95c04b14798f1cacd799"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-cocktail.glb",
-        "bytes": 1451352,
-        "mib": 1.384,
+        "bytes": 1586804,
+        "mib": 1.513,
         "withinTarget": true,
-        "sha256": "be7980ee95372b82cc72348ea6f17daf1a3b45ada89966c447ae2db4555666f9",
+        "sha256": "e0cdf3e7abbfcdf17d3f16f4ca1835cce55a55e44fb868c87702bc22fa8dc24b",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -338,11 +377,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 590148
+            "bytes": 725502
           },
           {
             "roles": [
@@ -386,14 +426,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Tropicoul_Flat_360_5_References_Complet/Tropicoul_Tamarind_Flat_360/Tropicoul_Tamarind_360_BaseColor_4096x2048.png",
+          "bytes": 3989111,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "9ef28ac25af2dafd6f09c8d033c4c0745715eeca6c30637f8e22bf15893c1caf"
+        }
       },
       "web": {
         "path": "/models/mpm/tropicoul-tamarin.glb",
-        "bytes": 1523512,
-        "mib": 1.453,
+        "bytes": 1681724,
+        "mib": 1.604,
         "withinTarget": true,
-        "sha256": "13c8173875863a1e3abd81bca4eaae1bdc160839b34cd1d71458815f2655e379",
+        "sha256": "ebfc8c29bf7871b6970ea0e6c318649acfd6f0baddf036548a7ed4bdcb11f16c",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -410,11 +457,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 658844
+            "bytes": 816958
           },
           {
             "roles": [
@@ -458,14 +506,21 @@
               1
             ]
           }
-        ]
+        ],
+        "label": {
+          "path": "3D/Tropicoul_Flat_360_5_References_Complet/Triplex_Flat_360/Triplex_360_BaseColor_4096x2048.png",
+          "bytes": 4480788,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "302652b0b97b26e68801ce7618dcd5b19b836cadce947c2d5d9a8edfe33a5abf"
+        }
       },
       "web": {
         "path": "/models/mpm/triplex-energy-drink.glb",
-        "bytes": 1311300,
-        "mib": 1.251,
+        "bytes": 1415612,
+        "mib": 1.35,
         "withinTarget": true,
-        "sha256": "6dfdc96828e1de7965ea6d74bdd9c7da00dae68ab92ce8be991ceda4d42baabe",
+        "sha256": "47b926be4dffdd27230c49233c1c95b53d9d4c23028d867ea18b0016e3383024",
         "triangles": 30096,
         "rootRotations": [
           {
@@ -482,11 +537,12 @@
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 441233
+            "bytes": 545449
           },
           {
             "roles": [
@@ -516,7 +572,7 @@
     {
       "id": "vimto",
       "source": {
-        "path": "3D/Collection_Canettes_330ml_GLBS_Premium/Vimto_330ml_Premium.glb",
+        "path": "3D/VIMTO/Vimto_Sparkling_Product_Page_Pack/Vimto_Sparkling_Product_Page_Pack/assets/product/vimto-330ml-premium-v002.glb",
         "bytes": 3451196,
         "sha256": "a298ea23fedf8c4e98684768c33a0c87874cbe784b9a0f518aacfd194f6537b4",
         "triangles": 35072,
@@ -530,15 +586,23 @@
               0
             ]
           }
-        ]
+        ],
+        "immutable": true,
+        "label": {
+          "path": "3D/Vimto_Guava_Flat_360_Complet_8K_TIFF/Vimto_Guava_Flat_360_Pack/Vimto_Flat_360/Vimto_360_BaseColor_4096x2048.png",
+          "bytes": 5634678,
+          "width": 4096,
+          "height": 2048,
+          "sha256": "4147104ca38accdd9e8ca276eb6dc1707c37887303f6a04ccb9aa36833479cc1"
+        }
       },
       "web": {
-        "path": "/models/mpm/vimto.glb",
-        "bytes": 1287804,
-        "mib": 1.228,
+        "path": "/models/mpm/vimto-sparkling-v2.glb",
+        "bytes": 1448404,
+        "mib": 1.381,
         "withinTarget": true,
-        "sha256": "7931f9f4723d6b15b9c0e0b7839e64eec9887ab326fe672a848f8d64c60dc27b",
-        "triangles": 30096,
+        "sha256": "175a7b5a1c7b320b38c82b5d39d420880753a4370a7e25b9d3f62d333cec49ba",
+        "triangles": 32510,
         "rootRotations": [
           {
             "name": "world",
@@ -550,15 +614,17 @@
             ]
           }
         ],
-        "frontYawDegrees": 30,
+        "frontYawDegrees": 0,
+        "sourceFrontCorrectionDegrees": 30,
         "textures": [
           {
             "roles": [
-              "baseColor"
+              "baseColor",
+              "emissive"
             ],
             "width": 2048,
             "height": 1024,
-            "bytes": 433632
+            "bytes": 518437
           },
           {
             "roles": [
@@ -566,7 +632,7 @@
             ],
             "width": 1024,
             "height": 512,
-            "bytes": 36041
+            "bytes": 41021
           },
           {
             "roles": [
@@ -574,7 +640,7 @@
             ],
             "width": 1024,
             "height": 512,
-            "bytes": 36601
+            "bytes": 43586
           }
         ],
         "validation": {

@@ -7,11 +7,13 @@ import { HeroShowcase } from "./HeroShowcase";
 import { MobileMenu } from "./MobileMenu";
 import { ProductExplorer } from "./ProductExplorer";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";
+import { SiteFooter } from "./SiteFooter";
 import { SiteExperienceLoader } from "./SiteExperienceLoader";
 
 const navigation = [
   ["Notre entreprise", "#entreprise"],
   ["Nos marques", "#marques"],
+  ["Livraison", "/livraison"],
   ["Actualités", "/actualites", "Actualités & événements"],
   ["Contact", "/contact"],
 ] as const;
@@ -46,9 +48,8 @@ export default async function Home() {
 
       <section className="company-intro" id="entreprise">
         <div className="company-intro__heading">
-          <p className="section-kicker">NOTRE ENTREPRISE</p>
           <div>
-            <h2>Trois marques. Trois façons de se faire plaisir.</h2>
+            <h2>Multiproduit Mali, des goûts qui rassemblent.</h2>
             <p>
               Tropicoul apporte l’évasion fruitée, Triplex accompagne les journées qui s’accélèrent et Vimto Sparkling rassemble autour de son goût pétillant.
             </p>
@@ -60,7 +61,6 @@ export default async function Home() {
 
       <section className="brands" id="marques">
         <div className="section-heading section-heading--light">
-          <p className="section-kicker">NOS MARQUES</p>
           <h2>À chaque envie, sa canette.</h2>
         </div>
         <ProductExplorer />
@@ -88,24 +88,7 @@ export default async function Home() {
         <Link className="button-link" href="/contact?mode=partnership&source=home-contact">Construire un partenariat <Arrow /></Link>
       </section>
 
-      <footer className="site-footer">
-        <div className="site-footer__brand">
-          <BrandLogo />
-          <strong>MULTIPRODUIT<br />MALI</strong>
-        </div>
-        <div>
-          <p>EXPLORER</p>
-          <a href="#entreprise">Notre entreprise</a>
-          <a href="#marques">Nos marques</a>
-          <Link href="/actualites">Actualités &amp; événements</Link>
-        </div>
-        <div>
-          <p>CONTACT</p>
-          <Link href="/contact">Écrire à l’équipe</Link>
-          <a href="#accueil">Retour en haut ↑</a>
-        </div>
-        <small>© 2026 Multiproduit Mali. Tous droits réservés.</small>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

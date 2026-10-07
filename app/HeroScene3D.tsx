@@ -2,8 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import type { HeroUniverse } from "./hero-universes";
-import { createPbrEnvironment, getThreeRuntime, loadModelClone } from "./three-model-cache";
+import { HERO_DISPLAY_MS, type HeroUniverse } from "./hero-universes";
+import {
+  createPbrEnvironment,
+  getThreeRuntime,
+  loadModelClone,
+  prepareModelForPresentation,
+  resolvePresentationModelSource,
+} from "./three-model-cache";
 
 type HeroScene3DProps = {
   universe: HeroUniverse;
@@ -16,11 +22,36 @@ type ModelTransition = {
   incoming: import("three").Group;
   outgoing: import("three").Group;
   startedAt: number;
-  durationMs: number;
+  incomingFaceRotation: number;
+  outgoingFaceFrom: number;
+  outgoingFaceTo: number;
 };
 
-const MODEL_TRANSITION_MS = 820;
 const MODEL_TRAVEL_DISTANCE = 2.9;
+// The handoff deliberately takes a little longer than a single frame burst.
+// A short smoothstep made the can accelerate visibly as it approached the
+// printed face, especially when the next model finished loading near the end
+// of the display window.  A longer settle with an ease-out lets the design
+// decelerate naturally into the logo before the next can enters.
+const MODEL_FACE_SETTLE_MS = 560;
+const MODEL_FACE_HOLD_MS = 240;
+const MODEL_SLIDE_MS = 420;
+function nearestPrintedFaceRotation(from: number, front: number, interval: number) {
+  // Printed faces repeat at the interval declared by each model. Rounding is
+  // important here: a tiny
+  // frame overshoot must settle back a fraction of a degree, not continue for
+  // almost another turn to reach the same artwork.
+  const faceIndex = Math.round((from - front) / interval);
+  return front + (faceIndex * interval);
+}
+
+function interpolateAngle(from: number, to: number, progress: number) {
+  return from + (to - from) * progress;
+}
+
+function easeOutSine(progress: number) {
+  return Math.sin((Math.min(1, Math.max(0, progress)) * Math.PI) / 2);
+}
 
 function announceFallback(universeId: string, reason: string) {
   window.dispatchEvent(
@@ -99,31 +130,62 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
       const delta = lastFrame ? Math.min((now - lastFrame) / 1000, 0.06) : 0;
       lastFrame = now;
       const transition = modelTransitionRef.current;
-      const rotationStep = (Math.PI * 2 * delta) / 16;
+      const rotationSpan = Number(modelRoot.userData.mpmRotationSpan ?? Math.PI);
+      const rotationStep = (rotationSpan / (HERO_DISPLAY_MS / 1000)) * delta;
 
-      modelRoot.rotation.y += rotationStep;
+      if (!transition) {
+        modelRoot.rotation.y += rotationStep;
+      }
       if (transition) {
-        transition.outgoing.rotation.y += rotationStep;
-        const progress = Math.min(1, (now - transition.startedAt) / transition.durationMs);
-        const eased = progress * progress * (3 - (2 * progress));
+        const elapsed = Math.max(0, now - transition.startedAt);
+        const settleEnd = MODEL_FACE_SETTLE_MS;
+        const holdEnd = settleEnd + MODEL_FACE_HOLD_MS;
+        transition.incoming.rotation.y = transition.incomingFaceRotation;
 
-        transition.incoming.position.x = MODEL_TRAVEL_DISTANCE * (1 - eased);
-        transition.incoming.position.y = 0.08 * (1 - eased);
-        transition.incoming.rotation.z = 0.075 * (1 - eased);
-        transition.incoming.scale.setScalar(0.94 + (0.06 * eased));
+        // First finish the outgoing can on its printed face while it is still
+        // centered. The next can stays off to the right during this short
+        // settle so the logo is actually visible before the handoff.
+        if (elapsed < settleEnd) {
+          const progress = Math.min(1, elapsed / MODEL_FACE_SETTLE_MS);
+          const eased = easeOutSine(progress);
+          transition.outgoing.rotation.y = interpolateAngle(
+            transition.outgoingFaceFrom,
+            transition.outgoingFaceTo,
+            eased,
+          );
+          transition.incoming.position.set(MODEL_TRAVEL_DISTANCE, 0.08, 0);
+          transition.incoming.rotation.z = 0.075;
+          transition.incoming.scale.setScalar(0.94);
+        } else if (elapsed < holdEnd) {
+          // Hold the logo face long enough to read it before anything moves;
+          // this is the printed front or back, never a side panel.
+          transition.outgoing.rotation.y = transition.outgoingFaceTo;
+          transition.incoming.position.set(MODEL_TRAVEL_DISTANCE, 0.08, 0);
+          transition.incoming.rotation.z = 0.075;
+          transition.incoming.scale.setScalar(0.94);
+          canvas.dataset.transitionState = "settling";
+        } else {
+          const progress = Math.min(1, (elapsed - holdEnd) / MODEL_SLIDE_MS);
+          const eased = progress * progress * (3 - (2 * progress));
+          transition.outgoing.rotation.y = transition.outgoingFaceTo;
+          transition.incoming.position.x = MODEL_TRAVEL_DISTANCE * (1 - eased);
+          transition.incoming.position.y = 0.08 * (1 - eased);
+          transition.incoming.rotation.z = 0.075 * (1 - eased);
+          transition.incoming.scale.setScalar(0.94 + (0.06 * eased));
 
-        transition.outgoing.position.x = -MODEL_TRAVEL_DISTANCE * eased;
-        transition.outgoing.position.y = -0.05 * eased;
-        transition.outgoing.rotation.z = -0.075 * eased;
-        transition.outgoing.scale.setScalar(1 - (0.06 * eased));
+          transition.outgoing.position.x = -MODEL_TRAVEL_DISTANCE * eased;
+          transition.outgoing.position.y = -0.05 * eased;
+          transition.outgoing.rotation.z = -0.075 * eased;
+          transition.outgoing.scale.setScalar(1 - (0.06 * eased));
 
-        if (progress >= 1) {
-          scene.remove(transition.outgoing);
-          transition.incoming.position.set(0, 0, 0);
-          transition.incoming.rotation.z = 0;
-          transition.incoming.scale.setScalar(1);
-          modelTransitionRef.current = null;
-          canvas.dataset.transitionState = "settled";
+          if (progress >= 1) {
+            scene.remove(transition.outgoing);
+            transition.incoming.position.set(0, 0, 0);
+            transition.incoming.rotation.z = 0;
+            transition.incoming.scale.setScalar(1);
+            modelTransitionRef.current = null;
+            canvas.dataset.transitionState = "settled";
+          }
         }
       }
       renderer.render(scene, camera);
@@ -160,19 +222,22 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
       try {
         const { THREE, RoomEnvironment } = await getThreeRuntime();
         if (cancelled) return;
-        const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
-        const pixelRatioCap = lowPowerDevice ? 1 : 1.25;
+        const mobileViewport = window.innerWidth <= 720;
+        const constrainedHardware = (navigator.hardwareConcurrency ?? 8) <= 2;
+        const pixelRatioCap = mobileViewport ? 1.35 : constrainedHardware ? 1.5 : 2;
 
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: !lowPowerDevice,
+          antialias: true,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1;
+        // Neutral tone mapping keeps packaging colours closer to the supplied
+        // packshots than a cinematic curve while still protecting highlights.
+        renderer.toneMapping = THREE.NeutralToneMapping;
+        renderer.toneMappingExposure = 0.88;
         renderer.setClearColor(0x000000, 0);
 
         scene = new THREE.Scene();
@@ -182,11 +247,14 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
         camera.position.set(0, 0.08, 6.2);
         camera.lookAt(0, 0, 0);
 
-        scene.add(new THREE.HemisphereLight(0xffffff, 0x71333f, 1.6));
-        const keyLight = new THREE.DirectionalLight(0xffffff, 2.7);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x26282b, 0.32));
+        const keyLight = new THREE.DirectionalLight(0xffffff, 0.92);
         keyLight.position.set(3.5, 4.5, 5.5);
         scene.add(keyLight);
-        const rimLight = new THREE.DirectionalLight(0xffd9df, 1.45);
+        const fillLight = new THREE.DirectionalLight(0xffffff, 0.32);
+        fillLight.position.set(-3.2, 1.2, 4.2);
+        scene.add(fillLight);
+        const rimLight = new THREE.DirectionalLight(0xffffff, 0.22);
         rimLight.position.set(-4, 1.5, -2.5);
         scene.add(rimLight);
 
@@ -242,17 +310,17 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
     const renderer = rendererRef.current;
     const scene = sceneRef.current;
     const camera = cameraRef.current;
-    const modelSrc = universe.modelSrc;
+    const modelSrc = resolvePresentationModelSource(universe.modelSrc, universe.modelHdSrc);
     if (!runtimeReady || !canvas || !renderer || !scene || !camera || !modelSrc || !universe.model.enabled) return;
 
     let cancelled = false;
     let timedOut = false;
-    const hasDisplayedModel = modelRootRef.current !== null;
-    if (!hasDisplayedModel) {
-      window.queueMicrotask(() => {
-        if (!cancelled) setStatus("loading");
-      });
-    }
+    // The active universe changed. Hide the previous canvas while the next
+    // model loads; HeroProductStage keeps the next packshot visible as the
+    // seamless visual bridge.
+    window.queueMicrotask(() => {
+      if (!cancelled) setStatus("loading");
+    });
 
     const loadingTimeout = window.setTimeout(() => {
       if (cancelled) return;
@@ -266,6 +334,7 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
         const { THREE } = await getThreeRuntime();
         const modelRoot = await loadModelClone(modelSrc);
         if (cancelled || timedOut) return;
+        prepareModelForPresentation(modelRoot, renderer);
 
         const bounds = new THREE.Box3().setFromObject(modelRoot);
         const size = bounds.getSize(new THREE.Vector3());
@@ -278,6 +347,9 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
         modelRoot.position.copy(center).multiplyScalar(-fittedScale);
         const presentationRoot = new THREE.Group();
         presentationRoot.rotation.y = universe.model.rotationOffset;
+        presentationRoot.userData.mpmFaceBaseRotation = universe.model.rotationOffset;
+        presentationRoot.userData.mpmRotationSpan = universe.model.rotationSpan;
+        presentationRoot.userData.mpmPrintedFaceInterval = universe.model.printedFaceInterval;
         presentationRoot.add(modelRoot);
 
         const previousModel = modelRootRef.current;
@@ -297,7 +369,16 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
             incoming: presentationRoot,
             outgoing: previousModel,
             startedAt: performance.now(),
-            durationMs: MODEL_TRANSITION_MS,
+            incomingFaceRotation: universe.model.rotationOffset,
+            outgoingFaceFrom: previousModel.rotation.y,
+            // Settle on the closest printed face (front or back). The normal
+            // rotation is timed to arrive here already, so this only absorbs
+            // sub-frame drift and never creates a visible acceleration.
+            outgoingFaceTo: nearestPrintedFaceRotation(
+              previousModel.rotation.y,
+              Number(previousModel.userData.mpmFaceBaseRotation ?? universe.model.rotationOffset),
+              Number(previousModel.userData.mpmPrintedFaceInterval ?? Math.PI),
+            ),
           };
           canvas.dataset.transitionState = "crossing";
         } else {

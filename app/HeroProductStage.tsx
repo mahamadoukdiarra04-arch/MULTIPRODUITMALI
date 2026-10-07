@@ -10,14 +10,12 @@ import {
 } from "./decorative-assets";
 import { HERO_UNIVERSES, type HeroUniverse } from "./hero-universes";
 import { HeroScene3D } from "./HeroScene3D";
-import { preloadModel } from "./three-model-cache";
+import { preloadModel, resolvePresentationModelSource } from "./three-model-cache";
 
 type HeroProductStageProps = {
   activeIndex: number;
   previousIndex: number | null;
   transitioning: boolean;
-  onPointerEnter: () => void;
-  onPointerLeave: () => void;
 };
 
 type UniverseState = "active" | "incoming" | "outgoing";
@@ -133,25 +131,31 @@ export function HeroProductStage({
   activeIndex,
   previousIndex,
   transitioning,
-  onPointerEnter,
-  onPointerLeave,
 }: HeroProductStageProps) {
   const activeUniverse = HERO_UNIVERSES[activeIndex];
   const previousUniverse = previousIndex === null ? null : HERO_UNIVERSES[previousIndex];
   const [modelReadyId, setModelReadyId] = useState<string | null>(null);
-  const modelHasRendered = modelReadyId !== null;
+  // A ready model belongs to one universe only. Keep the next universe's
+  // packshot visible until its own GLB is ready so the label transition never
+  // leaves an empty visual pause between cans.
+  const modelHasRendered = modelReadyId === activeUniverse.id;
   const handleModelReady = useCallback(() => setModelReadyId(activeUniverse.id), [activeUniverse.id]);
 
   useEffect(() => {
     const nextUniverse = HERO_UNIVERSES[(activeIndex + 1) % HERO_UNIVERSES.length];
     const cancelNextPackshot = preloadImageCandidates([
-      nextUniverse.packshotAvifSrc,
       nextUniverse.packshotWebpSrc,
       nextUniverse.packshotSrc,
     ], "low");
 
-    void preloadModel(activeUniverse.modelSrc).catch(() => undefined);
-    void preloadModel(nextUniverse.modelSrc).catch(() => undefined);
+    void preloadModel(resolvePresentationModelSource(
+      activeUniverse.modelSrc,
+      activeUniverse.modelHdSrc,
+    )).catch(() => undefined);
+    void preloadModel(resolvePresentationModelSource(
+      nextUniverse.modelSrc,
+      nextUniverse.modelHdSrc,
+    )).catch(() => undefined);
     const mobile = window.matchMedia("(max-width: 720px)").matches;
     DECORATIVE_DEPTHS.flatMap((depth) => getDecorativeAssets(nextUniverse.decorativeLayers, depth))
       .filter((asset) => asset.role === "background")
@@ -162,7 +166,7 @@ export function HeroProductStage({
       });
 
     return cancelNextPackshot;
-  }, [activeIndex, activeUniverse.modelSrc]);
+  }, [activeIndex, activeUniverse.modelHdSrc, activeUniverse.modelSrc]);
 
   useEffect(() => {
     if (modelReadyId !== activeUniverse.id) return;
@@ -173,7 +177,10 @@ export function HeroProductStage({
 
     const cancelIdlePreload = scheduleIdlePreload(() => {
       if (cancelled) return;
-      void preloadModel(nextUniverse.modelSrc).catch(() => undefined);
+      void preloadModel(resolvePresentationModelSource(
+        nextUniverse.modelSrc,
+        nextUniverse.modelHdSrc,
+      )).catch(() => undefined);
       DECORATIVE_DEPTHS.flatMap((depth) => getDecorativeAssets(nextUniverse.decorativeLayers, depth))
         .filter((asset) => asset.role !== "background")
         .slice(0, 2)
@@ -195,8 +202,6 @@ export function HeroProductStage({
       className="hero-stage"
       aria-hidden="true"
       role="presentation"
-      onPointerEnter={onPointerEnter}
-      onPointerLeave={onPointerLeave}
     >
       {previousUniverse ? (
         <UniverseLayer universe={previousUniverse} state="outgoing" key={previousUniverse.id} />
@@ -208,7 +213,6 @@ export function HeroProductStage({
       />
       <div className="hero-stage__model">
         <picture className="hero-stage__packshot">
-          <source type="image/avif" srcSet={activeUniverse.packshotAvifSrc} />
           <source type="image/webp" srcSet={activeUniverse.packshotWebpSrc} />
           <img
             className={`hero-stage__packshot-image${modelHasRendered ? " is-model-ready" : ""}`}
@@ -220,8 +224,6 @@ export function HeroProductStage({
         </picture>
         <HeroScene3D universe={activeUniverse} onReady={handleModelReady} />
       </div>
-      <DecorLayer universe={activeUniverse} depth="front" />
-      <DecorLayer universe={activeUniverse} depth="atmosphere" />
       <p className="hero-stage__name">{activeUniverse.productName}</p>
     </div>
   );

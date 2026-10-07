@@ -8,6 +8,8 @@ import type {
   PublicationStatus,
   PublicationType,
 } from "../app/actualites/types";
+import * as mysqlEditorial from "./editorial-mysql";
+import { isMySqlConfigured } from "./mysql";
 
 type PublicationRow = Omit<EditorialPublication, "gallery" | "commentCount" | "isFeatured" | "commentsEnabled"> & {
   gallery: string;
@@ -232,6 +234,7 @@ const commentColumns = `
 `;
 
 export async function listPublications(options: { includePrivate?: boolean } = {}): Promise<EditorialPublication[]> {
+  if (isMySqlConfigured()) return mysqlEditorial.listPublications(options);
   const db = await editorialDb();
   if (!db) return editorialSeed.map((publication) => ({ ...publication, gallery: [...publication.gallery] }));
 
@@ -241,6 +244,7 @@ export async function listPublications(options: { includePrivate?: boolean } = {
 }
 
 export async function getPublicationBySlug(slug: string, options: { includePrivate?: boolean } = {}): Promise<EditorialPublication | null> {
+  if (isMySqlConfigured()) return mysqlEditorial.getPublicationBySlug(slug, options);
   const db = await editorialDb();
   if (!db) return editorialSeed.find((publication) => publication.slug === slug) ?? null;
 
@@ -250,6 +254,7 @@ export async function getPublicationBySlug(slug: string, options: { includePriva
 }
 
 export async function listComments(publicationId: string, order: "newest" | "oldest" = "newest"): Promise<EditorialComment[]> {
+  if (isMySqlConfigured()) return mysqlEditorial.listComments(publicationId, order);
   const db = await editorialDb();
   if (!db) return [];
 
@@ -279,6 +284,7 @@ export async function listComments(publicationId: string, order: "newest" | "old
 }
 
 export async function createVisitorComment(input: { publicationId: string; authorName: string; content: string; parentId?: string | null }): Promise<EditorialComment> {
+  if (isMySqlConfigured()) return mysqlEditorial.createVisitorComment(input);
   const db = await editorialDb();
   if (!db) throw new Error("La base de commentaires n’est pas encore disponible.");
 
@@ -329,6 +335,7 @@ export function detectCommentLanguage(content: string): CommentLanguage {
 }
 
 export async function requestCommentTranslation(commentId: string) {
+  if (isMySqlConfigured()) return mysqlEditorial.requestCommentTranslation(commentId);
   const db = await editorialDb();
   if (!db) throw new Error("Le service de traduction n’est pas encore disponible.");
 
@@ -369,6 +376,7 @@ export async function requestCommentTranslation(commentId: string) {
 }
 
 export async function reportComment(commentId: string, kind: "comment" | "translation") {
+  if (isMySqlConfigured()) return mysqlEditorial.reportComment(commentId, kind);
   const db = await editorialDb();
   if (!db) throw new Error("Le service de signalement n’est pas encore disponible.");
 
@@ -383,6 +391,7 @@ export async function reportComment(commentId: string, kind: "comment" | "transl
 }
 
 export async function savePublication(input: PublicationInput): Promise<EditorialPublication> {
+  if (isMySqlConfigured()) return mysqlEditorial.savePublication(input);
   const db = await editorialDb();
   if (!db) throw new Error("La base éditoriale n’est pas encore disponible.");
 
@@ -419,6 +428,7 @@ export async function savePublication(input: PublicationInput): Promise<Editoria
 }
 
 export async function listModerationComments(): Promise<EditorialComment[]> {
+  if (isMySqlConfigured()) return mysqlEditorial.listModerationComments();
   const db = await editorialDb();
   if (!db) return [];
 
@@ -436,6 +446,7 @@ export async function listModerationComments(): Promise<EditorialComment[]> {
 }
 
 export async function moderateComment(id: string, change: { status?: CommentStatus; isPinned?: boolean }) {
+  if (isMySqlConfigured()) return mysqlEditorial.moderateComment(id, change);
   const db = await editorialDb();
   if (!db) throw new Error("La base éditoriale n’est pas encore disponible.");
 
@@ -450,6 +461,7 @@ export async function moderateComment(id: string, change: { status?: CommentStat
 }
 
 export async function replyAsEditorialTeam(input: { publicationId: string; parentId: string; content: string }) {
+  if (isMySqlConfigured()) return mysqlEditorial.replyAsEditorialTeam(input);
   const db = await editorialDb();
   if (!db) throw new Error("La base éditoriale n’est pas encore disponible.");
 

@@ -4,9 +4,13 @@ import type { CSSProperties } from "react";
 import { CatalogueTurntable } from "./CatalogueTurntable";
 import { products } from "./products";
 
-const publishedProducts = products.filter((product) => product.publicationStatus === "published");
+const publishedProducts = products.filter((product) => product.publicationStatus === "published" && product.showInCarousel !== false);
 const continuousProducts = [...publishedProducts, ...publishedProducts];
 const editorialTilts = [-6, 5, -4, 6, -5, 4, -7, 5] as const;
+
+function productDestination(slug: string) {
+  return slug === "vimto-sparkling" ? "/gammes/vimto" : `/produits/${slug}`;
+}
 
 function ProductLoop({ reverse = false }: { reverse?: boolean }) {
   return (
@@ -14,9 +18,10 @@ function ProductLoop({ reverse = false }: { reverse?: boolean }) {
       {continuousProducts.map((product, index) => (
         <a
           className="product-loop__item"
-          href={`/produits/${product.slug}`}
+          href={productDestination(product.slug)}
           key={`${product.name}-${index}`}
-          aria-label={`Découvrir ${product.brand} ${product.name}`}
+          aria-label={product.slug === "vimto-sparkling" ? "Découvrir toute la gamme Vimto" : `Découvrir ${product.brand} ${product.name}`}
+          data-product-link={product.slug === "vimto-sparkling" ? "vimto-range" : "product"}
         >
           <span className="product-loop__label">
             <small>{product.brand}</small>
@@ -30,7 +35,6 @@ function ProductLoop({ reverse = false }: { reverse?: boolean }) {
             style={{ "--product-tilt": `${editorialTilts[index % editorialTilts.length]}deg` } as CSSProperties}
           >
             <picture className="product-loop__fallback">
-              <source type="image/avif" srcSet={product.packshotAvif} />
               <source type="image/webp" srcSet={product.packshotWebp} />
               <Image src={product.packshot} alt="" width={2048} height={2048} sizes="(max-width: 760px) 104px, 128px" />
             </picture>
@@ -45,10 +49,6 @@ function ProductLoop({ reverse = false }: { reverse?: boolean }) {
 export function ProductExplorer() {
   return (
     <section className="product-marquee" aria-label="Sélection de produits Multiproduit Mali">
-      <div className="product-marquee__heading">
-        <p>NOS SAVEURS</p>
-        <span>FAITES DÉFILER POUR CHOISIR</span>
-      </div>
       <div className="product-marquee__viewport">
         <CatalogueTurntable />
         <ProductLoop />

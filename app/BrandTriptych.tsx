@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "./PlainLink";
 import { useState } from "react";
+import { TriplexBrandCan3D } from "./TriplexBrandCan3D";
 
 type BrandId = "tropicoul" | "triplex" | "vimto";
 
@@ -11,7 +12,7 @@ const brands = [
     id: "tropicoul" as const,
     label: "Tropicoul",
     signature: "Le soleil se partage, bien frais.",
-    href: "/#marques",
+    href: "/gammes/tropicoul",
   },
   {
     id: "triplex" as const,
@@ -21,9 +22,9 @@ const brands = [
   },
   {
     id: "vimto" as const,
-    label: "Vimto Sparkling",
-    signature: "Le goût pétillant des moments réunis.",
-    href: "/produits/vimto-sparkling",
+    label: "Vimto",
+    signature: "Un goût qui rassemble, sous plusieurs formats.",
+    href: "/gammes/vimto",
   },
 ] as const;
 
@@ -80,6 +81,7 @@ function TriplexVisual() {
         height={1600}
         sizes="(max-width: 720px) 48vw, 23vw"
       />
+      <TriplexBrandCan3D onReady={() => undefined} />
       <span className="brand-triptych__steel" aria-hidden="true" />
     </>
   );

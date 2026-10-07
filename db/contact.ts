@@ -1,3 +1,6 @@
+import * as mysqlContact from "./contact-mysql";
+import { isMySqlConfigured } from "./mysql";
+
 export type ContactKind = "partnership" | "general";
 export type ContactChannel = "email" | "whatsapp";
 export type ContactDelivery = "sent" | "pending" | "failed";
@@ -53,7 +56,12 @@ async function getContactRuntime(): Promise<ContactRuntime> {
     const { env } = await import("cloudflare:workers");
     return env as unknown as ContactRuntime;
   } catch {
-    return {};
+    return {
+      RESEND_API_KEY: process.env.RESEND_API_KEY,
+      CONTACT_RECIPIENT_EMAIL: process.env.CONTACT_RECIPIENT_EMAIL,
+      CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL,
+      CONTACT_WHATSAPP_NUMBER: process.env.CONTACT_WHATSAPP_NUMBER,
+    };
   }
 }
 
@@ -73,6 +81,7 @@ async function getContactDatabase() {
 }
 
 export async function saveContactRequest(input: ContactRequestInput): Promise<StoredContactRequest> {
+  if (isMySqlConfigured()) return mysqlContact.saveContactRequest(input);
   const db = await getContactDatabase();
   if (!db) throw new Error("Le service de contact est indisponible pour le moment.");
 
@@ -176,6 +185,7 @@ export async function deliverContactEmail(request: StoredContactRequest): Promis
 }
 
 export async function setContactEmailDelivery(id: string, delivery: ContactDelivery) {
+  if (isMySqlConfigured()) return mysqlContact.setContactEmailDelivery(id, delivery);
   const db = await getContactDatabase();
   if (!db) return;
   await db.prepare("UPDATE contact_requests SET email_delivery = ? WHERE id = ?").bind(delivery, id).run();

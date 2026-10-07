@@ -36,10 +36,8 @@ export function DecorativePicture({
 
   return (
     <picture className="decorative-picture">
-      {mobile?.avif ? <source media="(max-width: 720px)" type="image/avif" srcSet={mobile.avif} /> : null}
       {mobile?.webp ? <source media="(max-width: 720px)" type="image/webp" srcSet={mobile.webp} /> : null}
       {mobile?.png ? <source media="(max-width: 720px)" type="image/png" srcSet={mobile.png} /> : null}
-      {desktop?.avif ? <source type="image/avif" srcSet={desktop.avif} /> : null}
       {desktop?.webp ? <source type="image/webp" srcSet={desktop.webp} /> : null}
       {desktop?.png ? <source type="image/png" srcSet={desktop.png} /> : null}
       <img

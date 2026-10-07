@@ -26,7 +26,6 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
   const [activeIndex, setActiveIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState<number | null>(null);
   const [transitioning, setTransitioning] = useState(false);
-  const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [touchPaused, setTouchPaused] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(true);
@@ -69,7 +68,10 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
     if (touchPauseTimer.current !== null) window.clearTimeout(touchPauseTimer.current);
   }, []);
 
-  const paused = reducedMotion || hovered || focused || touchPaused || !documentVisible || !heroVisible || manualPaused;
+  // Keep the sequence moving while the pointer rests over the visual stage.
+  // Explicit controls, keyboard focus, touch pause, visibility and reduced
+  // motion still pause it when appropriate.
+  const paused = reducedMotion || focused || touchPaused || !documentVisible || !heroVisible || manualPaused;
 
   useEffect(() => {
     if (previouslyPaused.current && !paused && !reducedMotion) {
@@ -88,11 +90,10 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
     if (manualPaused) return "paused-manual";
     if (touchPaused) return "paused-touch";
     if (focused) return "paused-focus";
-    if (hovered) return "paused-hover";
     if (resumeBlocked) return "paused-resume";
     if (transitioning) return "transitioning";
     return "playing";
-  }, [documentVisible, focused, heroVisible, hovered, manualPaused, reducedMotion, resumeBlocked, touchPaused, transitioning]);
+  }, [documentVisible, focused, heroVisible, manualPaused, reducedMotion, resumeBlocked, touchPaused, transitioning]);
 
   const advance = useCallback(() => {
     if (universeCount < 2) return;
@@ -132,7 +133,6 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
     playbackState,
     controlsRevealed,
     manualPaused,
-    setHovered,
     setFocused,
     pauseForTouch,
     toggleManualPause: () => setManualPaused((current) => !current),

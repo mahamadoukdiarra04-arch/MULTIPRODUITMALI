@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/package-lock.json
 /.pnp
 .pnp.*
 .yarn/*
@@ -44,3 +43,30 @@ yarn-error.log*
 /Direction/
 /.sites-dev*.log
 /.sites-preview-local*.log
+
+# Local deployment packages, generated builds and QA captures
+/.codex-tmp/
+/.output/
+/.qa/
+/tmp/
+/tsconfig.tsbuildinfo
+/.tmp-*.jpg
+/temp-*.jpg
+/~$*
+
+# Client working documents and heavyweight source deliverables
+/3D/
+/Contrat/
+/Livrables/
+/Questionnaire séance 1/
+/SIMPARA_DISTRIBUTION_APERCU_CLIENT.html
+
+# Production uses optimized WebP assets and standard 3D models.
+/public/media/mpm/**/*.avif
+/public/media/mpm/**/*.png
+!/public/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png
+!/public/media/mpm/delivery/fleet-triplex-front-alt.png
+!/public/media/mpm/delivery/fleet-triplex-front.png
+!/public/media/mpm/delivery/fleet-triplex-rear.png
+/public/models/mpm/*-hq.glb
+/public/models/mpm/hq-manifest.json

@@ -23,6 +23,14 @@ const sourcePath = path.join(
 );
 const outputPath = path.join(rootDir, "public", "models", "mpm", "vimto-sparkling-v2.glb");
 const manifestPath = path.join(rootDir, "public", "models", "mpm", "manifest.json");
+const labelPath = path.join(
+  rootDir,
+  "3D",
+  "Vimto_Guava_Flat_360_Complet_8K_TIFF",
+  "Vimto_Guava_Flat_360_Pack",
+  "Vimto_Flat_360",
+  "Vimto_360_BaseColor_4096x2048.png",
+);
 const TARGET_BYTES = 3.5 * 1024 * 1024;
 const MAX_BYTES = 4 * 1024 * 1024;
 const MAX_TRIANGLES = 33_000;
@@ -123,11 +131,11 @@ async function resizeTextures(document) {
     if (!image) continue;
     const assignedRoles = [...(roles.get(texture) ?? new Set(["auxiliary"]))];
     const isColor = assignedRoles.includes("baseColor") || assignedRoles.includes("emissive");
-    const width = isColor ? 4096 : 2048;
-    const height = isColor ? 2048 : 1024;
+    const width = isColor ? 2048 : 1024;
+    const height = isColor ? 1024 : 512;
     const output = await sharp(image)
       .resize(width, height, { fit: "fill", kernel: sharp.kernel.lanczos3 })
-      .jpeg({ quality: isColor ? 95 : 92, chromaSubsampling: isColor ? "4:4:4" : "4:2:0", mozjpeg: true })
+      .jpeg({ quality: isColor ? 94 : 90, chromaSubsampling: isColor ? "4:4:4" : "4:2:0", mozjpeg: true })
       .toBuffer();
     texture.setImage(output);
     texture.setMimeType("image/jpeg");
@@ -137,10 +145,58 @@ async function resizeTextures(document) {
   return details;
 }
 
+async function replaceBaseColor(document) {
+  const labelBuffer = await readFile(labelPath);
+  const metadata = await sharp(labelBuffer).metadata();
+  if (metadata.width !== 4096 || metadata.height !== 2048) {
+    throw new Error("Le developpe Vimto 360 doit mesurer 4096 x 2048 px.");
+  }
+
+  const textures = new Set();
+  for (const material of document.getRoot().listMaterials()) {
+    const texture = material.getBaseColorTexture();
+    if (texture) textures.add(texture);
+  }
+  if (textures.size !== 1) throw new Error(`Une Base Color Vimto etait attendue, ${textures.size} trouvee(s).`);
+  for (const texture of textures) {
+    texture.setImage(labelBuffer);
+    texture.setMimeType("image/png");
+    texture.setURI("");
+    texture.setName("Vimto 360 reconstructed Base Color source");
+  }
+
+  return {
+    path: path.relative(rootDir, labelPath).replaceAll("\\", "/"),
+    bytes: labelBuffer.byteLength,
+    width: metadata.width,
+    height: metadata.height,
+    sha256: sha256(labelBuffer),
+  };
+}
+
+function calibratePrintedMaterial(document) {
+  let calibrated = 0;
+  for (const material of document.getRoot().listMaterials()) {
+    if (!/printed|lacquer|can body/i.test(material.getName())) continue;
+    material.setMetallicFactor(0.02);
+    material.setRoughnessFactor(0.48);
+    material.setNormalScale(0.12);
+    material.setEmissiveTexture(material.getBaseColorTexture());
+    material.setEmissiveFactor([0.06, 0.06, 0.06]);
+    const clearcoat = material.getExtension("KHR_materials_clearcoat");
+    clearcoat?.setClearcoatFactor(0.1);
+    clearcoat?.setClearcoatRoughnessFactor(0.48);
+    calibrated += 1;
+  }
+  if (calibrated === 0) throw new Error("Aucun materiau imprime Vimto n'a ete trouve dans le GLB.");
+}
+
 const sourceBuffer = await readFile(sourcePath);
 const document = await io.readBinary(new Uint8Array(sourceBuffer));
 const beforeTriangles = triangleCount(document);
 const beforeRoots = rootRotations(document);
+const label = await replaceBaseColor(document);
+calibratePrintedMaterial(document);
 bakeRootRotation(document);
 correctFrontYaw(document);
 
@@ -178,6 +234,7 @@ const entry = {
     triangles: beforeTriangles,
     rootRotations: beforeRoots,
     immutable: true,
+    label,
   },
   web: {
     path: "/models/mpm/vimto-sparkling-v2.glb",

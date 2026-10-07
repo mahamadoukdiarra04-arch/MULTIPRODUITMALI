@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "http";
   const siteUrl = `${protocol}://${host}`;
   const title = "Multiproduit Mali | Tropicoul, Triplex et Vimto";
-  const description = "Découvrez Tropicoul, Triplex Original et Vimto Sparkling dans l’univers Multiproduit Mali : produits, identités visuelles et contacts commerciaux.";
+  const description = "Découvrez les boissons Tropicoul, Triplex Energy Drink et Vimto Sparkling dans l’univers Multiproduit Mali : produits, identités visuelles et contacts commerciaux.";
 
   return {
     metadataBase: new URL(siteUrl),

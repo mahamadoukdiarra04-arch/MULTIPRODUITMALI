@@ -1,36 +1,8 @@
-import type { CSSProperties } from "react";
 import Link from "./PlainLink";
 
-import { DecorativePicture } from "./DecorativePicture";
-import { DECORATIVE_DEPTHS, getDecorativeAssets, type DecorativeAsset } from "./decorative-assets";
 import { createProductPagePoster, type ProductPageContent } from "./product-page-data";
-import { productPageMotionDuration } from "./product-page-motion-config";
 import { ProductPageMotion } from "./ProductPageMotion";
 import type { Product } from "./products";
-
-function assetStyle(asset: DecorativeAsset) {
-  return {
-    "--asset-desktop-x": `${asset.desktop.x}%`,
-    "--asset-desktop-y": `${asset.desktop.y}%`,
-    "--asset-desktop-scale": asset.desktop.scale,
-    "--asset-desktop-rotate": `${asset.desktop.rotate}deg`,
-    "--asset-mobile-x": `${asset.mobile.x}%`,
-    "--asset-mobile-y": `${asset.mobile.y}%`,
-    "--asset-mobile-scale": asset.mobile.scale,
-    "--asset-mobile-rotate": `${asset.mobile.rotate}deg`,
-    "--asset-motion-duration": `${productPageMotionDuration(asset.motion.durationMs)}ms`,
-    "--asset-motion-declared-duration": `${asset.motion.durationMs}ms`,
-    "--asset-motion-delay": `${asset.motion.delayMs}ms`,
-    "--asset-motion-amplitude": `${Math.min(asset.motion.amplitude, 0.75)}rem`,
-  } as CSSProperties;
-}
-
-function heroAssets(product: Product, ids: readonly string[]) {
-  const assets = DECORATIVE_DEPTHS.flatMap((depth) =>
-    getDecorativeAssets(product.decorativeLayers, depth),
-  );
-  return ids.map((id) => assets.find((asset) => asset.id === id)).filter(Boolean) as DecorativeAsset[];
-}
 
 function ProductHeroPoster({ product }: { product: Product }) {
   const alt = product.heroAlt ?? `Canette ${product.brand} ${product.name} 330 ml.`;
@@ -38,9 +10,26 @@ function ProductHeroPoster({ product }: { product: Product }) {
   if (product.slug === "vimto-sparkling") {
     return (
       <picture className="product-page-hero__poster">
-        <source media="(max-width: 900px)" type="image/avif" srcSet={product.posterMobileAvif} width="1440" height="1920" />
+        <source media="(max-width: 900px)" type="image/webp" srcSet="/media/mpm/universes/vimto-sparkling/vimto-background-hero-mobile-v02.webp" width="1440" height="1920" />
+        <source type="image/webp" srcSet="/media/mpm/universes/vimto-sparkling/vimto-background-hero-desktop-v02.webp" width="2560" height="1440" />
+        <img
+          src="/media/mpm/universes/vimto-sparkling/vimto-background-hero-desktop-v02.webp"
+          alt=""
+          width="2560"
+          height="1440"
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
+    );
+  }
+
+  if (product.brand === "Vimto") {
+    return (
+      <picture className="product-page-hero__poster">
         <source media="(max-width: 900px)" type="image/webp" srcSet={product.posterMobileWebp} width="1440" height="1920" />
-        <source type="image/avif" srcSet={product.posterAvif} width="2560" height="1440" />
         <source type="image/webp" srcSet={product.posterWebp} width="2560" height="1440" />
         <img
           src={product.posterWebp}
@@ -61,26 +50,11 @@ function ProductHeroPoster({ product }: { product: Product }) {
     <picture className="product-page-hero__poster">
       <source
         media="(max-width: 900px)"
-        type="image/avif"
-        srcSet={poster.mobile.avifSrcSet}
-        sizes="100vw"
-        width={poster.mobile.width}
-        height={poster.mobile.height}
-      />
-      <source
-        media="(max-width: 900px)"
         type="image/webp"
         srcSet={poster.mobile.webpSrcSet}
         sizes="100vw"
         width={poster.mobile.width}
         height={poster.mobile.height}
-      />
-      <source
-        type="image/avif"
-        srcSet={poster.desktop.avifSrcSet}
-        sizes="100vw"
-        width={poster.desktop.width}
-        height={poster.desktop.height}
       />
       <source
         type="image/webp"
@@ -103,33 +77,125 @@ function ProductHeroPoster({ product }: { product: Product }) {
   );
 }
 
-export function ProductPageHero({ product, content }: { product: Product; content: ProductPageContent }) {
-  const layers = heroAssets(product, content.heroLayerIds).slice(0, 2);
+function VimtoHeroStillLife({ product }: { product: Product }) {
+  if (product.slug !== "vimto-sparkling") return null;
 
+  return (
+    <div className="product-page-hero__vimto-still-life">
+      <picture className="product-page-hero__vimto-fruit">
+        <source type="image/webp" srcSet="/media/mpm/universes/vimto/vimto-fruit-cluster-mid-v01.webp" />
+        <img
+          src="/media/mpm/universes/vimto/vimto-fruit-cluster-mid-v01.webp"
+          alt=""
+          width="1600"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <picture className="product-page-hero__vimto-can">
+        <source type="image/webp" srcSet={product.packshotWebp} />
+        <img
+          src={product.packshot}
+          alt={product.heroAlt ?? "Canette Vimto Sparkling 330 ml, vue de face."}
+          width={product.packshotWidth ?? 2400}
+          height={product.packshotHeight ?? 3200}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
+    </div>
+  );
+}
+
+const heroBrandLogos = {
+  Tropicoul: {
+    src: "/media/mpm/brand/tropicoul-wordmark-hero-v01.png",
+    webp: "/media/mpm/brand/tropicoul-wordmark-hero-v01.webp",
+    avif: "/media/mpm/brand/tropicoul-wordmark-hero-v01.avif",
+    alt: "Tropicoul",
+    width: 2170,
+    height: 725,
+    className: "product-page-hero__brand-logo--tropicoul",
+  },
+  Triplex: {
+    src: "/media/mpm/brand/triplex-emblem-hero-v01.png",
+    webp: "/media/mpm/brand/triplex-emblem-hero-v01.webp",
+    avif: "/media/mpm/brand/triplex-emblem-hero-v01.avif",
+    alt: "Triplex",
+    width: 1122,
+    height: 1402,
+    className: "product-page-hero__brand-logo--triplex",
+  },
+} as const;
+
+function ProductHeroBrandLogo({ product }: { product: Product }) {
+  if (product.slug === "vimto-sparkling") {
+    return (
+      <>
+        <img className="product-page-hero__brand-logo" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="Vimto" width="1536" height="1024" />
+        <span className="product-page-hero__brand-name">{product.brand} {product.name}</span>
+      </>
+    );
+  }
+
+  if (product.slug === "vimto-sirop") {
+    return (
+      <>
+        <span className="product-page-hero__vimto-syrup-lockup" aria-hidden="true">
+          <span className="product-page-hero__vimto-syrup-mark">
+            <span className="product-page-hero__vimto-syrup-arabic" lang="ar" dir="rtl">فيمتو</span>
+            <span className="product-page-hero__vimto-syrup-wordmark">VIMTO</span>
+          </span>
+          <span className="product-page-hero__brand-variant">Sirop</span>
+        </span>
+        <span className="product-page-hero__brand-name">Vimto Sirop</span>
+      </>
+    );
+  }
+
+  if (product.slug === "vimto-malt") {
+    return (
+      <>
+        <span className="product-page-hero__vimto-lockup" aria-hidden="true">
+          <img className="product-page-hero__brand-logo product-page-hero__brand-logo--vimto-variant" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="" width="1536" height="1024" />
+          <span className="product-page-hero__brand-variant">{product.name}</span>
+        </span>
+        <span className="product-page-hero__brand-name">{product.brand} {product.name}</span>
+      </>
+    );
+  }
+
+  const brandLogo = heroBrandLogos[product.brand as keyof typeof heroBrandLogos];
+  if (!brandLogo) return <>{product.brand} {product.name}</>;
+
+  return (
+    <>
+      <picture className={`product-page-hero__brand-logo ${brandLogo.className}`}>
+        <source type="image/webp" srcSet={brandLogo.webp} />
+        <img src={brandLogo.src} alt={brandLogo.alt} width={brandLogo.width} height={brandLogo.height} decoding="async" />
+      </picture>
+      <span className="product-page-hero__brand-name">{product.brand} {product.name}</span>
+    </>
+  );
+}
+
+export function ProductPageHero({ product, content }: { product: Product; content: ProductPageContent }) {
   return (
     <ProductPageMotion className="product-page-hero" labelledBy="product-page-title">
       <ProductHeroPoster product={product} />
-      <div className="product-page-hero__layers" aria-hidden="true">
-        {layers.map((asset, index) => (
-          <DecorativePicture
-            key={asset.id}
-            asset={asset}
-            className={`product-page-hero__layer product-page-hero__layer--${index + 1}`}
-            sizes="(max-width: 767px) 120vw, 74vw"
-            style={assetStyle(asset)}
-            loading="lazy"
-            fetchPriority="low"
-          />
-        ))}
-      </div>
+      <VimtoHeroStillLife product={product} />
       <div className="product-page-hero__veil" aria-hidden="true" />
       <div className="product-page-hero__copy">
         <p>{product.brand} / {product.name}</p>
-        <h1 id="product-page-title">{product.brand} {product.name}</h1>
+        <h1 id="product-page-title">
+          <ProductHeroBrandLogo product={product} />
+        </h1>
         <span>{content.heroLead}</span>
         <div className="product-page-hero__actions">
-          <Link className="product-page-hero__primary" href="#signature">Découvrir l’univers</Link>
-          <Link className="product-page-hero__secondary" href="/#marques">Voir toute la gamme</Link>
+          <Link className="product-page-hero__primary" href={`/produits/${product.slug}/univers`}>Découvrir l’univers</Link>
+          {product.brand !== "Triplex" ? <Link className="product-page-hero__secondary" href={`/gammes/${product.brand.toLocaleLowerCase()}`}>Voir toute la gamme</Link> : null}
         </div>
       </div>
     </ProductPageMotion>

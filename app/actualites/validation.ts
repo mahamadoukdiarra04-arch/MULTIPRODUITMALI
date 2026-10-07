@@ -18,7 +18,7 @@ function nullableDate(value: unknown) {
   return Number.isNaN(date.valueOf()) ? null : date.toISOString();
 }
 
-function cleanImageUrl(value: unknown) {
+function cleanMediaUrl(value: unknown) {
   const url = cleanText(value, 700);
   if (!url) return "";
   return url.startsWith("/") || /^https:\/\//i.test(url) ? url : "";
@@ -29,11 +29,11 @@ export function parsePublicationInput(value: unknown): Omit<EditorialPublication
   const record = value as Record<string, unknown>;
   const title = cleanText(record.title, 160);
   const slug = cleanText(record.slug, 100).toLocaleLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  const coverImage = cleanImageUrl(record.coverImage);
+  const coverImage = cleanMediaUrl(record.coverImage);
   if (!title || !slug || !coverImage) return null;
 
   const gallery = Array.isArray(record.gallery)
-    ? record.gallery.map(cleanImageUrl).filter(Boolean).slice(0, 12)
+    ? record.gallery.map(cleanMediaUrl).filter(Boolean).slice(0, 12)
     : [];
 
   return {

@@ -6,6 +6,7 @@ import {
   createPbrEnvironment,
   getThreeRuntime,
   loadModelClone,
+  prepareModelForPresentation,
 } from "./three-model-cache";
 
 type TurntableStatus = "waiting" | "loading" | "ready" | "fallback";
@@ -219,21 +220,21 @@ export function CatalogueTurntable() {
       try {
         const { THREE, RoomEnvironment } = await getThreeRuntime();
         if (cancelled) return;
-        const lowPowerDevice = (navigator.hardwareConcurrency ?? 8) <= 4 || window.innerWidth <= 720;
         const mobileViewport = window.innerWidth <= 720;
-        const pixelRatioCap = mobileViewport ? 1 : lowPowerDevice ? 1 : 1.1;
+        const constrainedHardware = (navigator.hardwareConcurrency ?? 8) <= 2;
+        const pixelRatioCap = mobileViewport ? 1.35 : constrainedHardware ? 1.4 : 1.75;
 
         renderer = new THREE.WebGLRenderer({
           canvas,
           alpha: true,
-          antialias: mobileViewport || !lowPowerDevice,
+          antialias: true,
           powerPreference: "high-performance",
         });
         renderer.autoClear = false;
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1;
+        renderer.toneMapping = THREE.NeutralToneMapping;
+        renderer.toneMappingExposure = 0.88;
         renderer.setClearColor(0x000000, 0);
 
         scene = new THREE.Scene();
@@ -242,10 +243,16 @@ export function CatalogueTurntable() {
         camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
         camera.position.set(0, 0.06, 6.2);
         camera.lookAt(0, 0, 0);
-        scene.add(new THREE.HemisphereLight(0xffffff, 0x63534b, 1.35));
-        const key = new THREE.DirectionalLight(0xffffff, 2.25);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x26282b, 0.32));
+        const key = new THREE.DirectionalLight(0xffffff, 0.9);
         key.position.set(3.5, 4.5, 5.5);
         scene.add(key);
+        const fill = new THREE.DirectionalLight(0xffffff, 0.3);
+        fill.position.set(-3.2, 1.1, 4.2);
+        scene.add(fill);
+        const rim = new THREE.DirectionalLight(0xffffff, 0.18);
+        rim.position.set(-4, 1.8, -2.5);
+        scene.add(rim);
 
         const resize = () => {
           if (!renderer) return;
@@ -263,6 +270,7 @@ export function CatalogueTurntable() {
         for (const src of modelSources) {
           const root = await loadModelClone(src);
           if (cancelled) return;
+          prepareModelForPresentation(root, renderer);
           const bounds = new THREE.Box3().setFromObject(root);
           const size = bounds.getSize(new THREE.Vector3());
           const center = bounds.getCenter(new THREE.Vector3());

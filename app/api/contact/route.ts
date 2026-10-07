@@ -18,9 +18,9 @@ const MAX_LENGTHS = {
   source: 180,
 } as const;
 
-const allowedBrands = new Set(["Tropicoul", "Triplex"]);
+const allowedBrands = new Set(["Tropicoul", "Triplex Energy Drink", "Vimto Sparkling"]);
 const allowedFlavours = new Set(["Ananas", "Mangue", "Orange", "Goyave", "Cocktail", "Tamarin", "Toute la gamme"]);
-const allowedCollaborationTypes = new Set(["Distribution", "Point de vente", "Événement", "Autre"]);
+const allowedCollaborationTypes = new Set(["Représentation", "Distribution", "Événement", "Autre"]);
 
 function stringValue(value: unknown, maximum: number) {
   return typeof value === "string" ? value.trim().slice(0, maximum) : "";
@@ -58,11 +58,19 @@ function parseContactRequest(value: unknown): ContactRequestInput | null {
   const collaborationType = stringValue(input.collaborationType, 80);
 
   if (!name) throw new Error("Indiquez votre nom.");
-  if (kind === "partnership" && (!company || !country || !brands.length)) {
-    throw new Error("Complétez votre entreprise, votre pays et les marques qui vous intéressent.");
+  if (kind === "partnership" && (!company || !country)) {
+    throw new Error("Complétez votre entreprise et votre pays.");
   }
-  if (kind === "partnership" && collaborationType && !allowedCollaborationTypes.has(collaborationType)) {
-    throw new Error("Le type de collaboration choisi n’est pas valide.");
+  if (kind === "partnership" && !allowedCollaborationTypes.has(collaborationType)) {
+    throw new Error(collaborationType
+      ? "Le type de partenariat choisi n’est pas valide."
+      : "Choisissez un type de partenariat.");
+  }
+  if (kind === "partnership" && !brands.length) {
+    throw new Error("Choisissez au moins une marque.");
+  }
+  if (kind === "partnership" && collaborationType === "Représentation" && (brands.length !== 1 || brands[0] !== "Tropicoul")) {
+    throw new Error("Seule la gamme Tropicoul est éligible à la représentation.");
   }
   if (preferredChannel === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     throw new Error("Indiquez une adresse e-mail valide.");
@@ -99,7 +107,7 @@ function createWhatsAppMessage(request: ContactRequestInput) {
     "Entreprise : " + request.company,
     "Pays : " + request.country,
     "Produits : " + request.brands.join(", "),
-    "Type de partenariat : " + (request.collaborationType || "À préciser"),
+    "Type de partenariat : " + request.collaborationType,
   ].join("\n");
 }
 

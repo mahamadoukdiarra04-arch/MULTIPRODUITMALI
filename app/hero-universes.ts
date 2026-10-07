@@ -4,8 +4,13 @@ import {
   type DecorativeLayers,
 } from "./decorative-assets";
 
-export const HERO_DISPLAY_MS = 5000;
-export const HERO_TRANSITION_MS = 800;
+// Keep each printed face on screen long enough for the label and fruit visual
+// to be read before the next can starts its handoff.
+export const HERO_DISPLAY_MS = 6200;
+// Match the 3D handoff (settle + readable hold + slide) so the label,
+// background and can arrive as one deliberate movement rather than the can
+// trailing behind the new universe.
+export const HERO_TRANSITION_MS = 1220;
 export const HERO_RESUME_DELAY_MS = 2000;
 export const HERO_TOUCH_PAUSE_MS = 8000;
 export const HERO_MIN_VISIBLE_RATIO = 0.55;
@@ -25,6 +30,7 @@ export type HeroUniverse = {
   packshotAvifSrc: string;
   packshotWebpSrc: string;
   modelSrc?: string;
+  modelHdSrc?: string;
   textureSrc?: string;
   palette: {
     background: string;
@@ -37,6 +43,8 @@ export type HeroUniverse = {
     enabled: boolean;
     scale: number;
     rotationOffset: number;
+    rotationSpan: number;
+    printedFaceInterval: number;
     mobileScale: number;
   };
 };
@@ -45,19 +53,44 @@ const webModel = {
   enabled: true,
   scale: 0.74,
   rotationOffset: 0,
+  rotationSpan: Math.PI,
+  printedFaceInterval: Math.PI,
   mobileScale: 1.05,
+} as const;
+
+// Each can GLB maps its printed logo/fruit face to local +Z, the camera-facing
+// axis. Starting all models at zero keeps the first frame and every transition
+// on the actual front label instead of the nutrition/barcode side panels.
+const tropicoulModel = { ...webModel, rotationOffset: 0 } as const;
+const triplexModel = { ...webModel, rotationOffset: 0 } as const;
+// Goyave has a single client-approved presentation face: the centred
+// Tropicoul/Guava label with the fruit artwork. Its nutrition panel is not a
+// second presentation face, so complete a full turn before every handoff.
+const goyaveModel = {
+  ...tropicoulModel,
+  rotationSpan: Math.PI * 2,
+  printedFaceInterval: Math.PI * 2,
+} as const;
+// Vimto has one approved presentation face: the large centred logo supplied
+// by the client. A complete turn keeps that face at both ends of the display
+// window instead of treating the nutrition/back panel as a valid stop.
+const vimtoModel = {
+  ...webModel,
+  rotationOffset: 0,
+  rotationSpan: Math.PI * 2,
+  printedFaceInterval: Math.PI * 2,
 } as const;
 
 function posterAssets(id: string) {
   const root = `/media/mpm/products/${id}`;
   return {
-    posterSrc: `${root}/poster.png`,
+    posterSrc: `${root}/poster.webp`,
     posterAvifSrc: `${root}/poster.avif`,
     posterWebpSrc: `${root}/poster.webp`,
-    posterMobileSrc: `${root}/poster-mobile.png`,
+    posterMobileSrc: `${root}/poster-mobile.webp`,
     posterMobileAvifSrc: `${root}/poster-mobile.avif`,
     posterMobileWebpSrc: `${root}/poster-mobile.webp`,
-    packshotSrc: `${root}/packshot.png`,
+    packshotSrc: `${root}/packshot.webp`,
     packshotAvifSrc: `${root}/packshot.avif`,
     packshotWebpSrc: `${root}/packshot.webp`,
   };
@@ -134,6 +167,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Goyave",
     ...posterAssets("tropicoul-goyave"),
     modelSrc: "/models/mpm/tropicoul-goyave.glb",
+    modelHdSrc: "/models/mpm/tropicoul-goyave.glb",
     palette: { background: "#f08aa5", backgroundDeep: "#c93f69", accent: "#365f31", foreground: "dark" },
     decorativeLayers: createDecorativeLayers([
       {
@@ -215,7 +249,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 8600, delayMs: 120, amplitude: 0.54 },
       },
     ]),
-    model: webModel,
+    model: goyaveModel,
   },
   {
     id: "tropicoul-ananas",
@@ -224,6 +258,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Ananas",
     ...posterAssets("tropicoul-ananas"),
     modelSrc: "/models/mpm/tropicoul-ananas.glb",
+    modelHdSrc: "/models/mpm/tropicoul-ananas.glb",
     palette: { background: "#ffd957", backgroundDeep: "#ea7d20", accent: "#1f7a39", foreground: "dark" },
     decorativeLayers: createHeroUniverse("tropicoul-ananas", "ananas", [
       {
@@ -257,7 +292,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 8600, delayMs: 0, amplitude: 0.54 },
       },
     ]),
-    model: webModel,
+    model: tropicoulModel,
   },
   {
     id: "tropicoul-orange",
@@ -266,6 +301,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Orange",
     ...posterAssets("tropicoul-orange"),
     modelSrc: "/models/mpm/tropicoul-orange.glb",
+    modelHdSrc: "/models/mpm/tropicoul-orange.glb",
     palette: { background: "#ffb139", backgroundDeep: "#e24e1c", accent: "#ffe27a", foreground: "dark" },
     decorativeLayers: createHeroUniverse("tropicoul-orange", "orange", [
       {
@@ -299,7 +335,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 8400, delayMs: 0, amplitude: 0.53 },
       },
     ]),
-    model: webModel,
+    model: tropicoulModel,
   },
   {
     id: "tropicoul-mangue",
@@ -308,6 +344,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Mangue",
     ...posterAssets("tropicoul-mangue"),
     modelSrc: "/models/mpm/tropicoul-mangue.glb",
+    modelHdSrc: "/models/mpm/tropicoul-mangue.glb",
     palette: { background: "#f5bd3e", backgroundDeep: "#e96b24", accent: "#6a8d2e", foreground: "dark" },
     decorativeLayers: createHeroUniverse("tropicoul-mangue", "mangue", [
       {
@@ -341,7 +378,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 8800, delayMs: 0, amplitude: 0.52 },
       },
     ]),
-    model: webModel,
+    model: tropicoulModel,
   },
   {
     id: "tropicoul-cocktail",
@@ -350,6 +387,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Cocktail",
     ...posterAssets("tropicoul-cocktail"),
     modelSrc: "/models/mpm/tropicoul-cocktail.glb",
+    modelHdSrc: "/models/mpm/tropicoul-cocktail.glb",
     palette: { background: "#0b5ea8", backgroundDeep: "#063a5b", accent: "#a9e6f4", foreground: "light" },
     decorativeLayers: createHeroUniverse("tropicoul-cocktail", "cocktail", [
       {
@@ -383,7 +421,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 9000, delayMs: 0, amplitude: 0.52 },
       },
     ]),
-    model: webModel,
+    model: tropicoulModel,
   },
   {
     id: "tropicoul-tamarin",
@@ -392,6 +430,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Tropicoul Tamarin",
     ...posterAssets("tropicoul-tamarin"),
     modelSrc: "/models/mpm/tropicoul-tamarin.glb",
+    modelHdSrc: "/models/mpm/tropicoul-tamarin.glb",
     palette: { background: "#67824b", backgroundDeep: "#2d4b31", accent: "#d98b45", foreground: "light" },
     decorativeLayers: createHeroUniverse("tropicoul-tamarin", "tamarin", [
       {
@@ -425,7 +464,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 8600, delayMs: 0, amplitude: 0.52 },
       },
     ]),
-    model: webModel,
+    model: tropicoulModel,
   },
   {
     id: "triplex",
@@ -434,6 +473,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     accessibleLabel: "Triplex Energy Drink",
     ...posterAssets("triplex"),
     modelSrc: "/models/mpm/triplex-energy-drink.glb",
+    modelHdSrc: "/models/mpm/triplex-energy-drink.glb",
     palette: { background: "#3d1514", backgroundDeep: "#120d0d", accent: "#e3402d", foreground: "light" },
     decorativeLayers: createDecorativeLayers([
       {
@@ -540,7 +580,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "pulse", durationMs: 3400, delayMs: 0, amplitude: 0.25 },
       },
     ]),
-    model: webModel,
+    model: triplexModel,
   },
   {
     id: "vimto",
@@ -557,6 +597,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     packshotAvifSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.avif",
     packshotWebpSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.webp",
     modelSrc: "/models/mpm/vimto-sparkling-v2.glb",
+    modelHdSrc: "/models/mpm/vimto-sparkling-v2.glb",
     palette: { background: "#B1172D", backgroundDeep: "#650B1A", accent: "#FDE002", foreground: "light" },
     decorativeLayers: createDecorativeLayers([
       {
@@ -590,6 +631,18 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "float", durationMs: 11600, delayMs: 80, amplitude: 0.58 },
       },
       {
+        id: "vimto-fruit-cluster-hero-v01",
+        ...universeMedia("vimto", "vimto-fruit-cluster-mid-v01", { width: 1600, height: 1600 }),
+        alt: "",
+        depth: "mid",
+        role: "fruit",
+        blend: "normal",
+        opacity: 0.94,
+        desktop: { x: 84, y: 74, scale: 0.5, rotate: -7 },
+        mobile: { x: 34, y: 80, scale: 0.52, rotate: -9 },
+        motion: { preset: "parallax", durationMs: 12400, delayMs: 120, amplitude: 0.54 },
+      },
+      {
         id: "vimto-bubble-particle-front-v02",
         ...universeMedia("vimto-sparkling", "vimto-bubble-particle-front-v02", { width: 2000, height: 1600 }),
         alt: "",
@@ -602,7 +655,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
         motion: { preset: "drift", durationMs: 13200, delayMs: 0, amplitude: 0.5 },
       },
     ]),
-    model: webModel,
+    model: vimtoModel,
   },
 ];
 

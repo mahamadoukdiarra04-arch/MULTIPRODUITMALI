@@ -9,8 +9,7 @@ import { useHeroAutoplay } from "./useHeroAutoplay";
 
 const heroCopy = {
   fr: {
-    eyebrow: "MULTIPRODUIT MALI",
-    headline: "Trois marques. Des goûts qui rassemblent.",
+    headline: "Multiproduit Mali, des goûts qui rassemblent.",
     introduction:
       "Tropicoul apporte l’évasion fruitée, Triplex garde le rythme et Vimto réveille les souvenirs. Des canettes pleines de caractère, faites pour les pauses fraîches, les tables animées et les moments qui comptent.",
     primaryCta: "Découvrir nos boissons",
@@ -54,14 +53,13 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
       }}
     >
       <div className="hero__copy">
-        <p className="eyebrow">{copy.eyebrow}</p>
         <h1>{copy.headline}</h1>
         <p className="hero__lead">{copy.introduction}</p>
         <div className="hero__actions">
           <Link className="hero__cta hero__cta--primary" href="/#marques" onClick={() => emitHeroEvent("hero_products_click", locale)}>
             {copy.primaryCta} <span aria-hidden="true">↗</span>
           </Link>
-          <Link className="hero__cta hero__cta--secondary" href="/contact?mode=general&source=hero" onClick={() => emitHeroEvent("hero_contact_click", locale)}>
+          <Link className="hero__cta hero__cta--secondary" href="/contact?source=hero" onClick={() => emitHeroEvent("hero_contact_click", locale)}>
             {copy.secondaryCta} <span aria-hidden="true">↗</span>
           </Link>
         </div>
@@ -71,8 +69,6 @@ export function HeroShowcase({ locale = "fr" }: HeroShowcaseProps) {
         activeIndex={autoplay.activeIndex}
         previousIndex={autoplay.previousIndex}
         transitioning={autoplay.transitioning}
-        onPointerEnter={() => autoplay.setHovered(true)}
-        onPointerLeave={() => autoplay.setHovered(false)}
       />
 
       <button

@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
 
 import { HERO_UNIVERSES } from "./hero-universes";
-import { getThreeRuntime, preloadModel } from "./three-model-cache";
+import {
+  getThreeRuntime,
+  preloadModel,
+  resolvePresentationModelSource,
+} from "./three-model-cache";
 
 const BRAND_LOGO_SRC = "/media/mpm/brand/multiproduit-mali-logo-512.webp";
 const MINIMUM_VISIBLE_MS = 680;
@@ -94,7 +98,10 @@ export function SiteExperienceLoader() {
     const warmCriticalAssets = async () => {
       await Promise.allSettled([
         getThreeRuntime(),
-        preloadModel(firstUniverse.modelSrc),
+        preloadModel(resolvePresentationModelSource(
+          firstUniverse.modelSrc,
+          firstUniverse.modelHdSrc,
+        )),
         preloadImage([
           firstUniverse.packshotAvifSrc,
           firstUniverse.packshotWebpSrc,
