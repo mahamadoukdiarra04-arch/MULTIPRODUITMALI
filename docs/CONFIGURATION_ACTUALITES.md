@@ -1,36 +1,42 @@
-# Actualités & événements — mise en service
+# Actualités & espace équipe — mise en service Hostinger
 
 ## Stockage
 
-Le site déclare maintenant le binding D1 `DB` dans `.openai/hosting.json`. La migration à appliquer est `drizzle/0000_shocking_loki.sql`. Les tables sont également initialisées de manière sûre au premier accès local pour faciliter l’aperçu.
+Les publications, commentaires, signalements, comptes administrateurs et sessions sont stockés dans MySQL. Les tables sont créées automatiquement au premier accès lorsque les variables `DB_*` sont présentes.
 
-Les publications de démonstration se créent une seule fois sur une base vide. Elles sont modifiables ou remplaçables dans `/actualites/back-office`.
+Les publications de démonstration restent visibles tant que la base ne contient pas de contenu. Elles peuvent ensuite être remplacées depuis l’espace interne.
 
 ## Accès équipe
 
-L’espace interne est `/actualites/back-office`. Il utilise l’identification de l’environnement Sites, puis vérifie côté serveur la variable secrète suivante :
+- Connexion : `/equipe/connexion`
+- Gestion des actualités : `/actualites/back-office`
+
+L’accès repose sur un compte administrateur MySQL et une session HTTP sécurisée. Pour créer le premier compte, renseigner dans hPanel :
 
 ```text
-MULTIPRODUIT_EDITOR_EMAILS=prenom.nom@entreprise.ml,autre.membre@entreprise.ml
+MULTIPRODUIT_BOOTSTRAP_ADMIN_EMAIL=adresse-administrateur@domaine.ml
+MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD=mot-de-passe-initial-d-au-moins-12-caracteres
+MULTIPRODUIT_BOOTSTRAP_ADMIN_NAME=Équipe Multiproduit Mali
 ```
 
-Sans cette liste, aucune adresse n’obtient l’accès ou le badge `ÉQUIPE MULTIPRODUIT MALI`. Elle ne doit pas être exposée dans le navigateur ni enregistrée dans le dépôt.
+Après la première connexion réussie, supprimer `MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD` dans hPanel, puis redéployer l’application. Le compte déjà créé dans MySQL reste utilisable.
 
-## Traduction automatique
+## Médias
 
-Le site détecte la langue des commentaires et conserve toujours le message source. Une traduction n’est déclenchée qu’au clic, puis elle est enregistrée dans D1 pour les demandes suivantes.
-
-Avant la mise en ligne, connecter un service de traduction français–anglais via ces variables secrètes :
+L’interface permet de préparer des publications avec images ou vidéos. Les fichiers sont envoyés directement vers Cloudinary après la configuration suivante dans hPanel :
 
 ```text
-TRANSLATION_API_URL=https://votre-service-de-traduction/translate
-TRANSLATION_API_TOKEN=jeton-optionnel
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 ```
 
-Le service doit accepter un `POST` JSON de la forme :
+Sans ces variables, les contenus existants restent consultables, mais l’import de nouveaux médias est volontairement désactivé.
 
-```json
-{ "q": "Texte du commentaire", "source": "fr", "target": "en", "format": "text" }
-```
+## Modération
 
-et retourner l’un des champs texte `translatedText`, `translation` ou `text`. Tant qu’un service n’est pas configuré, le bouton indique clairement que la traduction automatique doit être connectée ; le commentaire original reste consultable.
+Les visiteurs peuvent commenter sans compte. Depuis le back-office, l’équipe peut visualiser l’impact d’une publication, publier, archiver et modérer les commentaires signalés.
+
+## Mise en ligne
+
+Les réglages complets de l’application Hostinger sont documentés dans `docs/DEPLOIEMENT_HOSTINGER.md`. Les secrets ne doivent jamais être ajoutés au dépôt GitHub.

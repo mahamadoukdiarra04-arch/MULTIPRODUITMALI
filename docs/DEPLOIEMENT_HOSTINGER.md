@@ -44,7 +44,7 @@ Le mot de passe d’amorçage doit contenir au moins 12 caractères. Après la p
 2. Créer le compte Cloudinary gratuit et reporter les trois paramètres `CLOUDINARY_*`.
 3. Ajouter l’adresse administrateur dans les variables d’amorçage.
 4. Configurer l’envoi des formulaires avec Resend lorsque le domaine est relié.
-5. Relier le dépôt GitHub privé à l’application Node.js Hostinger.
+5. Relier la repository GitHub à l’application Node.js Hostinger si le déploiement automatique est souhaité.
 
 ## Domaine
 
