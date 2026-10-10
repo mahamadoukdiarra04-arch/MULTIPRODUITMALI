@@ -1,22 +1,13 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- Cloudinary media URLs are selected at runtime by the editorial team. */
+/* eslint-disable @next/next/no-img-element -- Uploaded media URLs are selected at runtime by the editorial team. */
 import { useRef, useState, type ChangeEvent } from "react";
 
 import { isVideoMedia } from "./media";
 
-type SignatureResponse = {
-  cloudName?: string;
-  apiKey?: string;
-  parameters?: Record<string, string>;
-  signature?: string;
-  error?: string;
-};
-
 type UploadResponse = {
-  secure_url?: string;
-  resource_type?: "image" | "video";
-  error?: { message?: string };
+  url?: string;
+  error?: string;
 };
 
 type MediaUploaderProps = {
@@ -27,47 +18,35 @@ type MediaUploaderProps = {
   onGalleryChange: (urls: string[]) => void;
 };
 
-const MAX_IMAGE_BYTES = 15 * 1024 * 1024;
-const MAX_VIDEO_BYTES = 200 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 20 * 1024 * 1024;
 
 function validateFile(file: File, cover: boolean) {
   const image = file.type.startsWith("image/");
   const video = file.type.startsWith("video/");
   if (cover && !image) return "La couverture doit être une image.";
   if (!image && !video) return "Choisissez une image ou une vidéo.";
-  if (image && file.size > MAX_IMAGE_BYTES) return "Cette image dépasse 15 Mo.";
-  if (video && file.size > MAX_VIDEO_BYTES) return "Cette vidéo dépasse 200 Mo.";
+  if (image && file.size > MAX_IMAGE_BYTES) return "Cette image dépasse 10 Mo.";
+  if (video && file.size > MAX_VIDEO_BYTES) return "Cette vidéo dépasse 20 Mo.";
   return "";
 }
 
-async function getSignature() {
-  const response = await fetch("/api/actualites/admin/media/sign", { method: "POST" });
-  const result = await response.json() as SignatureResponse;
-  if (!response.ok || !result.cloudName || !result.apiKey || !result.parameters || !result.signature) {
-    throw new Error(result.error ?? "L’envoi du média n’est pas disponible.");
-  }
-  return result as Required<Omit<SignatureResponse, "error">>;
-}
-
-function uploadToCloudinary(file: File, signature: Required<Omit<SignatureResponse, "error">>, progress: (value: number) => void) {
+function uploadToStorage(file: File, progress: (value: number) => void) {
   return new Promise<UploadResponse>((resolve, reject) => {
     const data = new FormData();
     data.append("file", file);
-    data.append("api_key", signature.apiKey);
-    data.append("signature", signature.signature);
-    for (const [key, value] of Object.entries(signature.parameters)) data.append(key, value);
 
     const request = new XMLHttpRequest();
-    request.open("POST", `https://api.cloudinary.com/v1_1/${encodeURIComponent(signature.cloudName)}/auto/upload`);
+    request.open("POST", "/api/actualites/admin/media/upload");
     request.upload.onprogress = (event) => {
       if (event.lengthComputable) progress(Math.round((event.loaded / event.total) * 100));
     };
     request.onerror = () => reject(new Error("L’envoi a été interrompu. Vérifiez votre connexion."));
     request.onload = () => {
       let result: UploadResponse = {};
-      try { result = JSON.parse(request.responseText) as UploadResponse; } catch { /* Cloudinary returned an unreadable response. */ }
-      if (request.status < 200 || request.status >= 300 || !result.secure_url) {
-        reject(new Error(result.error?.message ?? "Cloudinary a refusé ce média."));
+      try { result = JSON.parse(request.responseText) as UploadResponse; } catch { /* The server returned an unreadable response. */ }
+      if (request.status < 200 || request.status >= 300 || !result.url) {
+        reject(new Error(result.error ?? "Le serveur a refusé ce média."));
         return;
       }
       resolve(result);
@@ -93,11 +72,10 @@ export function EditorialMediaUploader({ coverImage, gallery, disabled = false, 
     try {
       const uploaded: string[] = [];
       for (let index = 0; index < files.length; index += 1) {
-        const signature = await getSignature();
-        const result = await uploadToCloudinary(files[index], signature, (fileProgress) => {
+        const result = await uploadToStorage(files[index], (fileProgress) => {
           setProgress(Math.round(((index + fileProgress / 100) / files.length) * 100));
         });
-        uploaded.push(result.secure_url!);
+        uploaded.push(result.url!);
       }
       if (asCover) onCoverChange(uploaded[0]);
       else onGalleryChange([...gallery, ...uploaded]);
@@ -120,13 +98,13 @@ export function EditorialMediaUploader({ coverImage, gallery, disabled = false, 
       <div className="editorial-media-manager__actions">
         <label className={disabled ? "is-disabled" : ""}>
           <strong>Ajouter la couverture</strong>
-          <span>Image JPG, PNG, WebP ou AVIF · 15 Mo max.</span>
+          <span>Image JPG, PNG, WebP ou AVIF · 10 Mo max.</span>
           <input ref={coverInput} type="file" accept="image/*" disabled={disabled || progress !== null} onChange={(event) => pick(event, true)} />
         </label>
         <label className={disabled ? "is-disabled" : ""}>
           <strong>Ajouter à la galerie</strong>
-          <span>Images ou vidéos · jusqu’à 12 médias.</span>
-          <input ref={galleryInput} type="file" accept="image/*,video/*" multiple disabled={disabled || progress !== null} onChange={(event) => pick(event, false)} />
+          <span>Images (10 Mo) ou vidéos MP4/WebM (20 Mo) · jusqu’à 12 médias.</span>
+          <input ref={galleryInput} type="file" accept="image/jpeg,image/png,image/webp,image/avif,video/mp4,video/webm" multiple disabled={disabled || progress !== null} onChange={(event) => pick(event, false)} />
         </label>
       </div>
       {progress !== null ? <div className="editorial-media-manager__progress" aria-live="polite"><span style={{ width: `${progress}%` }} /><strong>Envoi… {progress}%</strong></div> : null}

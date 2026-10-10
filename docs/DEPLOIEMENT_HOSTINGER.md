@@ -1,6 +1,6 @@
 # Déploiement Hostinger — Multiproduit Mali
 
-Ce projet est préparé pour une application Node.js Hostinger avec une base MySQL et Cloudinary pour les médias éditoriaux.
+Ce projet est préparé pour une application Node.js Hostinger avec une base MySQL et un stockage média local persistant.
 
 ## Configuration de l’application
 
@@ -26,9 +26,7 @@ MULTIPRODUIT_BOOTSTRAP_ADMIN_EMAIL=
 MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD=
 MULTIPRODUIT_BOOTSTRAP_ADMIN_NAME=Équipe Multiproduit Mali
 
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
+MEDIA_STORAGE_DIR=
 
 RESEND_API_KEY=
 CONTACT_RECIPIENT_EMAIL=
@@ -36,15 +34,16 @@ CONTACT_FROM_EMAIL=
 CONTACT_WHATSAPP_NUMBER=22376414349
 ```
 
-Le mot de passe d’amorçage doit contenir au moins 12 caractères. Après la première connexion et la création du compte administrateur, supprimer `MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD` des variables Hostinger.
+Le mot de passe d’amorçage doit contenir au moins 8 caractères ; aucune règle de casse ou de symbole n’est imposée. Après la première connexion et la création du compte administrateur, supprimer `MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD` des variables Hostinger.
+
+Les médias importés sont enregistrés par défaut dans `~/domains/multiproduitmali.ml/media-uploads`, un emplacement persistant hors du build. Images : 10 Mo maximum ; vidéos MP4/WebM : 20 Mo maximum. Si Hostinger utilise un chemin de compte différent, définir `MEDIA_STORAGE_DIR` sur un dossier persistant hors du dossier de déploiement.
 
 ## Services à préparer
 
 1. Créer une base MySQL dans hPanel puis reporter ses cinq paramètres `DB_*`.
-2. Créer le compte Cloudinary gratuit et reporter les trois paramètres `CLOUDINARY_*`.
-3. Ajouter l’adresse administrateur dans les variables d’amorçage.
-4. Configurer l’envoi des formulaires avec Resend lorsque le domaine est relié.
-5. Relier la repository GitHub à l’application Node.js Hostinger si le déploiement automatique est souhaité.
+2. Ajouter l’adresse et le mot de passe administrateur temporaire dans les variables d’amorçage ; le compte sera créé au premier accès authentifié à MySQL.
+3. Configurer l’envoi des formulaires avec Resend (`RESEND_API_KEY`, `CONTACT_RECIPIENT_EMAIL`, `CONTACT_FROM_EMAIL`). Le destinataire du site est `multiproduitmali@gmail.com`.
+4. Relier la repository GitHub à l’application Node.js Hostinger si le déploiement automatique est souhaité.
 
 ## Domaine
 

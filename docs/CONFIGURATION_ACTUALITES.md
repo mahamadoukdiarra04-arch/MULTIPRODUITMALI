@@ -15,7 +15,7 @@ L’accès repose sur un compte administrateur MySQL et une session HTTP sécuri
 
 ```text
 MULTIPRODUIT_BOOTSTRAP_ADMIN_EMAIL=adresse-administrateur@domaine.ml
-MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD=mot-de-passe-initial-d-au-moins-12-caracteres
+MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD=mot-de-passe-initial-d-au-moins-8-caracteres
 MULTIPRODUIT_BOOTSTRAP_ADMIN_NAME=Équipe Multiproduit Mali
 ```
 
@@ -23,15 +23,13 @@ Après la première connexion réussie, supprimer `MULTIPRODUIT_BOOTSTRAP_ADMIN_
 
 ## Médias
 
-L’interface permet de préparer des publications avec images ou vidéos. Les fichiers sont envoyés directement vers Cloudinary après la configuration suivante dans hPanel :
+L’interface permet de préparer des publications avec images ou vidéos. Les fichiers sont conservés sur le disque persistant de l’hébergement Hostinger, hors du répertoire remplacé lors des déploiements. La limite est de 10 Mo par image et 20 Mo par vidéo (MP4 ou WebM). `MEDIA_STORAGE_DIR` peut définir explicitement le dossier ; sinon l’application utilise `~/domains/multiproduitmali.ml/media-uploads`.
 
 ```text
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
+MEDIA_STORAGE_DIR=
 ```
 
-Sans ces variables, les contenus existants restent consultables, mais l’import de nouveaux médias est volontairement désactivé.
+Le dossier doit rester disponible après chaque redéploiement. Prévoir une sauvegarde des fichiers en plus de la sauvegarde MySQL.
 
 ## Modération
 

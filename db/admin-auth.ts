@@ -77,7 +77,7 @@ async function ensureSchema() {
 
     const bootstrapEmail = normalizeEmail(process.env.MULTIPRODUIT_BOOTSTRAP_ADMIN_EMAIL ?? "");
     const bootstrapPassword = process.env.MULTIPRODUIT_BOOTSTRAP_ADMIN_PASSWORD ?? "";
-    if (bootstrapEmail && bootstrapPassword.length >= 12) {
+    if (bootstrapEmail && bootstrapPassword.length >= 8) {
       const existing = await queryOne<RowDataPacket & { id: string }>("SELECT id FROM editorial_admins WHERE email = ?", [bootstrapEmail]);
       if (!existing) {
         const now = new Date().toISOString();
