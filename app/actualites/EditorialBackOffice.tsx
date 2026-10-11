@@ -295,7 +295,7 @@ export function EditorialBackOffice({ initialPublications, initialComments, disp
                 <label className="back-office__field--wide">Contenu<textarea value={draft.body} onChange={(event) => change("body", event.target.value)} maxLength={12000} rows={10} placeholder="Le récit complet, les informations utiles et les éventuels liens." /></label>
               </div></section>
 
-              <section className="back-office__form-section"><div><p>2. Visuels et vidéos</p><span>Ajoutez vos fichiers directement. Ils seront optimisés et hébergés dans l’espace médias.</span></div><div className="back-office__field-grid">
+              <section className="back-office__form-section"><div><p>2. Visuels et vidéos</p><span>Ajoutez vos fichiers directement. Ils seront contrôlés et hébergés dans l’espace médias du site.</span></div><div className="back-office__field-grid">
                 <div className="back-office__field--wide">
                   <EditorialMediaUploader
                     coverImage={draft.coverImage}
