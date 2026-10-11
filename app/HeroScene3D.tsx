@@ -9,6 +9,7 @@ import {
   loadModelClone,
   prepareModelForPresentation,
   resolvePresentationModelSource,
+  shouldUseStaticPresentation,
 } from "./three-model-cache";
 
 type HeroScene3DProps = {
@@ -17,7 +18,6 @@ type HeroScene3DProps = {
 };
 
 type SceneStatus = "loading" | "ready" | "fallback";
-type NavigatorWithConnection = Navigator & { connection?: { saveData?: boolean } };
 type ModelTransition = {
   incoming: import("three").Group;
   outgoing: import("three").Group;
@@ -83,11 +83,11 @@ export function HeroScene3D({ universe, onReady }: HeroScene3DProps) {
     if (!canvas) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saveData = (navigator as NavigatorWithConnection).connection?.saveData === true;
+    const staticPresentation = shouldUseStaticPresentation();
     let cancelled = false;
 
-    if (reducedMotion || saveData) {
-      const reason = reducedMotion ? "reduced-motion" : "save-data";
+    if (reducedMotion || staticPresentation) {
+      const reason = reducedMotion ? "reduced-motion" : "constrained-device-or-network";
       window.queueMicrotask(() => {
         if (cancelled) return;
         setStatus("fallback");

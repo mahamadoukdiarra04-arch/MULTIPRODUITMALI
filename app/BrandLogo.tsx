@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const BRAND_LOGO_SRC = "/media/mpm/brand/multiproduit-mali-logo-512.webp";
+const BRAND_LOGO_SRC = "/media/mpm/brand/multiproduit-mali-logo-192.webp";
 
 export function BrandLogo({ eager = true }: { eager?: boolean }) {
   return (
@@ -8,8 +8,8 @@ export function BrandLogo({ eager = true }: { eager?: boolean }) {
       <Image
         src={BRAND_LOGO_SRC}
         alt=""
-        width={512}
-        height={512}
+        width={192}
+        height={192}
         sizes="(max-width: 720px) 50px, 58px"
         decoding="async"
         loading={eager ? "eager" : "lazy"}

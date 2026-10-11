@@ -55,9 +55,9 @@ function TropicoulVisual() {
         sizes="(max-width: 720px) 100vw, 58vw"
       />
       <div className="brand-triptych__tropicoul-cans" aria-hidden="true">
-        <Image src="/media/mpm/products/tropicoul-ananas/packshot.png" alt="" width={2048} height={2048} sizes="16vw" />
-        <Image src="/media/mpm/products/tropicoul-mangue/packshot.png" alt="" width={2048} height={2048} sizes="14vw" />
-        <Image src="/media/mpm/products/tropicoul-orange/packshot.png" alt="" width={2048} height={2048} sizes="14vw" />
+        <Image src="/media/mpm/products/tropicoul-ananas/packshot.webp" alt="" width={2048} height={2048} sizes="16vw" />
+        <Image src="/media/mpm/products/tropicoul-mangue/packshot.webp" alt="" width={2048} height={2048} sizes="14vw" />
+        <Image src="/media/mpm/products/tropicoul-orange/packshot.webp" alt="" width={2048} height={2048} sizes="14vw" />
       </div>
     </>
   );
@@ -68,7 +68,7 @@ function TriplexVisual() {
     <>
       <Image
         className="brand-triptych__background"
-        src="/media/simpara/triplex/triplex-hero.png"
+        src="/media/simpara/triplex/triplex-hero.webp"
         alt=""
         fill
         sizes="(max-width: 720px) 100vw, 52vw"
@@ -100,7 +100,7 @@ function VimtoVisual() {
       <span className="brand-triptych__vimto-glow" aria-hidden="true" />
       <Image
         className="brand-triptych__vimto-can"
-        src="/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.png"
+        src="/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.webp"
         alt=""
         width={2400}
         height={3200}

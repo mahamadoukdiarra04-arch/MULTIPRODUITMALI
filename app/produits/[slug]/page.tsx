@@ -250,7 +250,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <section className="product-macro" data-product-section="macro" aria-labelledby="macro-title">
           {product.slug === "vimto-sparkling" ? (
             <div className="product-macro__media product-macro__media--vimto-logo">
-              <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="Logo Vimto" width="1536" height="1024" loading="lazy" decoding="async" />
+              <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.webp" alt="Logo Vimto" width="1536" height="1024" loading="lazy" decoding="async" />
             </div>
           ) : product.macroAvif && product.macroWebp ? (
             <picture className="product-macro__media">
@@ -283,7 +283,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <Link href={href} aria-current={!isVimtoRange && candidate.slug === product.slug ? "page" : undefined}>
                   {isVimtoRange ? (
                     <picture className="product-range__fallback product-range__fallback--vimto-logo">
-                      <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+                      <img src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
                     </picture>
                   ) : (
                     <picture className="product-range__fallback" data-turntable-model={candidate.modelSrc} data-turntable-rotation="180" data-turntable-state="waiting">

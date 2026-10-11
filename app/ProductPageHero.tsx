@@ -134,7 +134,7 @@ function ProductHeroBrandLogo({ product }: { product: Product }) {
   if (product.slug === "vimto-sparkling") {
     return (
       <>
-        <img className="product-page-hero__brand-logo" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="Vimto" width="1536" height="1024" />
+        <img className="product-page-hero__brand-logo" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.webp" alt="Vimto" width="1536" height="1024" />
         <span className="product-page-hero__brand-name">{product.brand} {product.name}</span>
       </>
     );
@@ -159,7 +159,7 @@ function ProductHeroBrandLogo({ product }: { product: Product }) {
     return (
       <>
         <span className="product-page-hero__vimto-lockup" aria-hidden="true">
-          <img className="product-page-hero__brand-logo product-page-hero__brand-logo--vimto-variant" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png" alt="" width="1536" height="1024" />
+          <img className="product-page-hero__brand-logo product-page-hero__brand-logo--vimto-variant" src="/media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.webp" alt="" width="1536" height="1024" />
           <span className="product-page-hero__brand-variant">{product.name}</span>
         </span>
         <span className="product-page-hero__brand-name">{product.brand} {product.name}</span>

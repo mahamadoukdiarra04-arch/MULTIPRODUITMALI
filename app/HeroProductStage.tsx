@@ -10,7 +10,7 @@ import {
 } from "./decorative-assets";
 import { HERO_UNIVERSES, type HeroUniverse } from "./hero-universes";
 import { HeroScene3D } from "./HeroScene3D";
-import { preloadModel, resolvePresentationModelSource } from "./three-model-cache";
+import { preloadModel, resolvePresentationModelSource, shouldUseStaticPresentation } from "./three-model-cache";
 
 type HeroProductStageProps = {
   activeIndex: number;
@@ -142,48 +142,23 @@ export function HeroProductStage({
   const handleModelReady = useCallback(() => setModelReadyId(activeUniverse.id), [activeUniverse.id]);
 
   useEffect(() => {
+    if (shouldUseStaticPresentation()) return;
     const nextUniverse = HERO_UNIVERSES[(activeIndex + 1) % HERO_UNIVERSES.length];
-    const cancelNextPackshot = preloadImageCandidates([
-      nextUniverse.packshotWebpSrc,
-      nextUniverse.packshotSrc,
-    ], "low");
-
-    void preloadModel(resolvePresentationModelSource(
-      activeUniverse.modelSrc,
-      activeUniverse.modelHdSrc,
-    )).catch(() => undefined);
-    void preloadModel(resolvePresentationModelSource(
-      nextUniverse.modelSrc,
-      nextUniverse.modelHdSrc,
-    )).catch(() => undefined);
-    const mobile = window.matchMedia("(max-width: 720px)").matches;
-    DECORATIVE_DEPTHS.flatMap((depth) => getDecorativeAssets(nextUniverse.decorativeLayers, depth))
-      .filter((asset) => asset.role === "background")
-      .forEach((asset) => {
-        const preload = new Image();
-        preload.fetchPriority = "low";
-        preload.src = getDecorativePreloadSource(asset, mobile);
-      });
-
-    return cancelNextPackshot;
-  }, [activeIndex, activeUniverse.modelHdSrc, activeUniverse.modelSrc]);
-
-  useEffect(() => {
-    if (modelReadyId !== activeUniverse.id) return;
-
-    const nextUniverse = HERO_UNIVERSES[(activeIndex + 2) % HERO_UNIVERSES.length];
-    const mobile = window.matchMedia("(max-width: 720px)").matches;
     let cancelled = false;
-
+    let cancelNextPackshot: () => void = () => undefined;
     const cancelIdlePreload = scheduleIdlePreload(() => {
       if (cancelled) return;
+      cancelNextPackshot = preloadImageCandidates([
+        nextUniverse.packshotWebpSrc,
+        nextUniverse.packshotSrc,
+      ], "low");
       void preloadModel(resolvePresentationModelSource(
         nextUniverse.modelSrc,
         nextUniverse.modelHdSrc,
       )).catch(() => undefined);
+      const mobile = window.matchMedia("(max-width: 720px)").matches;
       DECORATIVE_DEPTHS.flatMap((depth) => getDecorativeAssets(nextUniverse.decorativeLayers, depth))
-        .filter((asset) => asset.role !== "background")
-        .slice(0, 2)
+        .filter((asset) => asset.role === "background")
         .forEach((asset) => {
           const preload = new Image();
           preload.fetchPriority = "low";
@@ -194,8 +169,9 @@ export function HeroProductStage({
     return () => {
       cancelled = true;
       cancelIdlePreload();
+      cancelNextPackshot();
     };
-  }, [activeIndex, activeUniverse.id, modelReadyId]);
+  }, [activeIndex]);
 
   return (
     <div

@@ -7,10 +7,10 @@ import {
   getThreeRuntime,
   loadModelClone,
   prepareModelForPresentation,
+  shouldUseStaticPresentation,
 } from "./three-model-cache";
 
 type TurntableStatus = "waiting" | "loading" | "ready" | "fallback";
-type NavigatorWithConnection = Navigator & { connection?: { saveData?: boolean } };
 
 type RangeModel = {
   outer: import("three").Group;
@@ -67,10 +67,10 @@ export function ProductRangeTurntable() {
     if (!trigger) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saveData = (navigator as NavigatorWithConnection).connection?.saveData === true;
+    const staticPresentation = shouldUseStaticPresentation();
     let cancelled = false;
 
-    if (reducedMotion || saveData) {
+    if (reducedMotion || staticPresentation) {
       window.queueMicrotask(() => {
         if (!cancelled) setStatus("fallback");
       });

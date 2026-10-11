@@ -9,6 +9,7 @@ import {
   HERO_TOUCH_PAUSE_MS,
   HERO_TRANSITION_MS,
 } from "./hero-universes";
+import { isConstrainedNetwork } from "./three-model-cache";
 
 export type HeroPlaybackState =
   | "playing"
@@ -34,6 +35,7 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
   const [resumeBlocked, setResumeBlocked] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [controlsRevealed, setControlsRevealed] = useState(false);
+  const [slowConnection, setSlowConnection] = useState(false);
   const previouslyPaused = useRef(false);
   const touchPauseTimer = useRef<number | null>(null);
 
@@ -43,6 +45,10 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
     update();
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    setSlowConnection(isConstrainedNetwork());
   }, []);
 
   useEffect(() => {
@@ -106,9 +112,9 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
 
   useEffect(() => {
     if (playbackState !== "playing") return;
-    const timeout = window.setTimeout(advance, HERO_DISPLAY_MS);
+    const timeout = window.setTimeout(advance, slowConnection ? 14000 : HERO_DISPLAY_MS);
     return () => window.clearTimeout(timeout);
-  }, [advance, playbackState]);
+  }, [advance, playbackState, slowConnection]);
 
   useEffect(() => {
     if (!transitioning) return;

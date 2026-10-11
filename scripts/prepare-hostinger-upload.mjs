@@ -43,10 +43,9 @@ function requiredPngs() {
   // add roughly 49 MiB to the Hostinger upload without changing the rendering.
   return new Set([
     "og.png",
-    "media/mpm/universes/vimto-sparkling/vimto-wordmark-header-v03.png",
-    "media/mpm/delivery/fleet-triplex-front-alt.png",
-    "media/mpm/delivery/fleet-triplex-front.png",
-    "media/mpm/delivery/fleet-triplex-rear.png",
+    "favicon-32x32.png",
+    "favicon-192x192.png",
+    "apple-touch-icon.png",
   ]);
 }
 

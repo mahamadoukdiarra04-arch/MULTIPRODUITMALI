@@ -8,7 +8,6 @@ import { MobileMenu } from "./MobileMenu";
 import { ProductExplorer } from "./ProductExplorer";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";
 import { SiteFooter } from "./SiteFooter";
-import { SiteExperienceLoader } from "./SiteExperienceLoader";
 
 const navigation = [
   ["Notre entreprise", "#entreprise"],
@@ -26,7 +25,6 @@ export default async function Home() {
 
   return (
     <main id="main-content">
-      <SiteExperienceLoader />
       <ScrollAtmosphere />
       <header className="site-header">
         <a className="wordmark wordmark--logo" href="#accueil" aria-label="Multiproduit Mali, retour à l’accueil">

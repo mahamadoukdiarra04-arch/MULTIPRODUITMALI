@@ -2,7 +2,6 @@ import { BrandLogo } from "../BrandLogo";
 import { MobileMenu } from "../MobileMenu";
 import Link from "../PlainLink";
 import { ScrollAtmosphere } from "../ScrollAtmosphere";
-import { SiteExperienceLoader } from "../SiteExperienceLoader";
 import { SiteFooter } from "../SiteFooter";
 
 const navigation = [
@@ -20,12 +19,12 @@ const fleet = [
     label: "Flotte Tropicoul",
   },
   {
-    image: "/media/mpm/delivery/fleet-triplex-front.png",
+    image: "/media/mpm/delivery/fleet-triplex-front.webp",
     alt: "Camion de livraison Triplex photographié de face et de côté.",
     label: "Flotte Triplex",
   },
   {
-    image: "/media/mpm/delivery/fleet-triplex-rear.png",
+    image: "/media/mpm/delivery/fleet-triplex-rear.webp",
     alt: "Vue arrière d'un camion de livraison Triplex sur le terrain.",
     label: "Triplex sur le terrain",
   },
@@ -38,7 +37,6 @@ function Arrow() {
 export default function DeliveryPage() {
   return (
     <main id="main-content" className="delivery-page">
-      <SiteExperienceLoader />
       <ScrollAtmosphere />
 
       <header className="site-header">
@@ -71,8 +69,12 @@ export default function DeliveryPage() {
         </div>
         <figure className="delivery-page__hero-image">
           <img
-            src="/media/mpm/delivery/fleet-triplex-front-alt.png"
+            src="/media/mpm/delivery/fleet-triplex-front-alt.webp"
             alt="Camion de livraison Triplex aux couleurs de la marque."
+            width="1080"
+            height="636"
+            decoding="async"
+            fetchPriority="high"
           />
         </figure>
       </section>
@@ -90,7 +92,7 @@ export default function DeliveryPage() {
         <div className="delivery-page__fleet-grid">
           {fleet.map((item) => (
             <figure key={item.image}>
-              <img src={item.image} alt={item.alt} loading="lazy" />
+              <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
               <figcaption>{item.label}</figcaption>
             </figure>
           ))}

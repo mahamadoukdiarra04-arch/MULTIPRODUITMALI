@@ -7,13 +7,13 @@ import {
   getThreeRuntime,
   loadModelClone,
   prepareModelForPresentation,
+  shouldUseStaticPresentation,
 } from "./three-model-cache";
 
 type TriplexBrandCan3DProps = {
   onReady: () => void;
 };
 
-type NavigatorWithConnection = Navigator & { connection?: { saveData?: boolean } };
 
 const MODEL_SRC = "/models/mpm/triplex-energy-drink.glb";
 
@@ -34,8 +34,7 @@ export function TriplexBrandCan3D({ onReady }: TriplexBrandCan3DProps) {
     if (!trigger) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saveData = (navigator as NavigatorWithConnection).connection?.saveData === true;
-    if (reducedMotion || saveData) return;
+    if (reducedMotion || shouldUseStaticPresentation()) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {

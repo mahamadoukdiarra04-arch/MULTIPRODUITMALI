@@ -29,12 +29,28 @@ type PresentationMaterial = import("three").Material & {
 };
 
 type NavigatorWithHardwareProfile = Navigator & {
-  connection?: { effectiveType?: string; saveData?: boolean };
+  connection?: { effectiveType?: string; downlink?: number; saveData?: boolean };
   deviceMemory?: number;
 };
 
 let runtimePromise: Promise<ThreeRuntime> | null = null;
 const modelCache = new Map<string, Promise<CachedModel>>();
+
+export function isConstrainedNetwork() {
+  if (typeof navigator === "undefined") return false;
+  const connection = (navigator as NavigatorWithHardwareProfile).connection;
+  return connection?.saveData === true
+    || ["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "")
+    || (connection?.downlink !== undefined && connection.downlink < 1.5);
+}
+
+export function shouldUseStaticPresentation() {
+  if (typeof navigator === "undefined") return false;
+  const profile = navigator as NavigatorWithHardwareProfile;
+  return isConstrainedNetwork()
+    || (profile.deviceMemory !== undefined && profile.deviceMemory <= 2)
+    || (navigator.hardwareConcurrency !== undefined && navigator.hardwareConcurrency <= 2);
+}
 
 export function getThreeRuntime() {
   runtimePromise ??= Promise.all([
@@ -82,15 +98,11 @@ export function resolvePresentationModelSource(modelSrc?: string, modelHdSrc?: s
   if (!modelSrc || !modelHdSrc || typeof window === "undefined") return modelSrc;
 
   const profile = navigator as NavigatorWithHardwareProfile;
-  const effectiveType = profile.connection?.effectiveType ?? "";
-  const constrainedConnection = profile.connection?.saveData === true
-    || effectiveType === "slow-2g"
-    || effectiveType === "2g";
   const constrainedHardware = (profile.deviceMemory ?? 8) < 4
     || (navigator.hardwareConcurrency ?? 8) <= 2;
   const compactViewport = window.innerWidth <= 900;
 
-  return constrainedConnection || constrainedHardware || compactViewport ? modelSrc : modelHdSrc;
+  return isConstrainedNetwork() || constrainedHardware || compactViewport ? modelSrc : modelHdSrc;
 }
 
 /**
