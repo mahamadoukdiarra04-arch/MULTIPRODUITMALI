@@ -6,6 +6,7 @@ import { HomePointer } from "../HomePointer";
 import { ContactExperience } from "../ContactExperience";
 import { EditorialFooter } from "../actualites/EditorialFooter";
 import { MobileMenu } from "../MobileMenu";
+import { SITE_ORIGIN } from "../site-seo";
 
 const navigation = [
   ["Notre entreprise", "/#entreprise"],
@@ -17,6 +18,7 @@ const navigation = [
 export const metadata: Metadata = {
   title: "Contact | Multiproduit Mali",
   description: "Échangez avec Multiproduit Mali au sujet d’un partenariat, de la distribution de nos boissons ou de toute autre demande.",
+  alternates: { canonical: `${SITE_ORIGIN}/contact` },
 };
 
 type ContactPageProps = {

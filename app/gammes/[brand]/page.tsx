@@ -6,6 +6,7 @@ import { BrandLogo } from "../../BrandLogo";
 import { HomePointer } from "../../HomePointer";
 import { EditorialFooter } from "../../actualites/EditorialFooter";
 import { products } from "../../products";
+import { SITE_ORIGIN } from "../../site-seo";
 
 const brandLabels = {
   tropicoul: "Tropicoul",
@@ -23,9 +24,11 @@ export async function generateMetadata({ params }: RangePageProps): Promise<Meta
   const { brand: value } = await params;
   const brand = getBrand(value);
   const label = brand ? brandLabels[brand] : "Gamme";
+  if (!brand) return { title: "Gamme indisponible | Multiproduit Mali", robots: { index: false, follow: false } };
   return {
     title: `${label} | Multiproduit Mali`,
     description: `Découvrez toute la gamme ${label} proposée par Multiproduit Mali.`,
+    alternates: { canonical: `${SITE_ORIGIN}/gammes/${brand}` },
   };
 }
 

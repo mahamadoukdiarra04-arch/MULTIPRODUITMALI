@@ -8,6 +8,14 @@ import { MobileMenu } from "./MobileMenu";
 import { ProductExplorer } from "./ProductExplorer";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";
 import { SiteFooter } from "./SiteFooter";
+import { SITE_ORIGIN } from "./site-seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Multiproduit Mali | Tropicoul, Triplex et Vimto",
+  description: "Découvrez les boissons Tropicoul, Triplex Energy Drink et Vimto Sparkling dans l’univers Multiproduit Mali : produits, identités visuelles et contacts commerciaux.",
+  alternates: { canonical: `${SITE_ORIGIN}/` },
+};
 
 const navigation = [
   ["Notre entreprise", "#entreprise"],

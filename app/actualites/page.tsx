@@ -5,12 +5,14 @@ import { EditorialCard } from "./EditorialCard";
 import { EditorialFooter } from "./EditorialFooter";
 import { EditorialHeader } from "./EditorialHeader";
 import { NewsFilters } from "./NewsFilters";
+import { SITE_ORIGIN } from "../site-seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Actualités & événements | Multiproduit Mali",
   description: "Les actualités, événements et rencontres de Tropicoul, Triplex, Vimto et Multiproduit Mali.",
+  alternates: { canonical: `${SITE_ORIGIN}/actualites` },
 };
 
 export default async function NewsPage() {

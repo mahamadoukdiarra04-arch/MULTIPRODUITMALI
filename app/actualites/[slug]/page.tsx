@@ -9,6 +9,7 @@ import { EditorialFooter } from "../EditorialFooter";
 import { EditorialHeader } from "../EditorialHeader";
 import { EditorialMeta, formatEditorialDate } from "../EditorialMeta";
 import { isVideoMedia } from "../media";
+import { SITE_ORIGIN } from "../../site-seo";
 
 type PublicationPageProps = { params: Promise<{ slug: string }> };
 
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: PublicationPageProps): Promis
   return {
     title: `${publication.title} | Multiproduit Mali`,
     description: publication.excerpt,
+    alternates: { canonical: `${SITE_ORIGIN}/actualites/${publication.slug}` },
     openGraph: { title: publication.title, description: publication.excerpt, images: [publication.coverImage], type: "article" },
   };
 }

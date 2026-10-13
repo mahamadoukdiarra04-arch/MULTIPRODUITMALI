@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import Link from "../../PlainLink";
 
 import { BrandLogo } from "../../BrandLogo";
@@ -15,6 +14,7 @@ import { ProductRangeTurntable } from "../../ProductRangeTurntable";
 import { SiteFooter } from "../../SiteFooter";
 import { VimtoFormats } from "../../VimtoFormats";
 import { findProduct, products, type Product } from "../../products";
+import { SITE_ORIGIN } from "../../site-seo";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
@@ -137,21 +137,17 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const content = product ? productPageContent[product.slug] : undefined;
   if (!product || !content) return { title: "Produit indisponible | Multiproduit Mali", robots: { index: false, follow: false } };
 
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? "http";
-  const origin = `${protocol}://${host}`;
   const imagePath = product.brand === "Vimto"
     ? product.posterWebp
     : `/media/mpm/product-pages/${product.slug}/images/${product.slug}__hero-desktop__1280w.webp`;
-  const image = new URL(imagePath, origin).toString();
+  const image = new URL(imagePath, SITE_ORIGIN).toString();
   const title = `${product.pageTitle ?? `${product.brand} ${product.name} 330 ml`} | Multiproduit Mali`;
   const shouldIndex = product.publicationStatus === "published";
 
   return {
     title,
     description: content.metaDescription,
-    alternates: { canonical: new URL(`/produits/${product.slug}`, origin).toString() },
+    alternates: { canonical: `${SITE_ORIGIN}/produits/${product.slug}` },
     robots: { index: shouldIndex, follow: shouldIndex },
     openGraph: { title, description: content.metaDescription, images: [image], type: "website" },
     twitter: { card: "summary_large_image", title, description: content.metaDescription, images: [image] },

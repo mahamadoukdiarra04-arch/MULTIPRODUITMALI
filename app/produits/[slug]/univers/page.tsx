@@ -10,6 +10,7 @@ import { DECORATIVE_DEPTHS, getDecorativeAssets } from "../../../decorative-asse
 import { createProductPagePoster } from "../../../product-page-data";
 import { getProductUniverseStories, getProductUniverseSupportingStories, type ProductUniverseStory } from "../../../product-universe-gallery";
 import { findProduct, type Product } from "../../../products";
+import { SITE_ORIGIN } from "../../../site-seo";
 
 type ProductUniversePageProps = { params: Promise<{ slug: string }> };
 
@@ -194,10 +195,11 @@ function GalleryCard({ item }: { item: GalleryItem }) {
 export async function generateMetadata({ params }: ProductUniversePageProps): Promise<Metadata> {
   const { slug } = await params;
   const product = findProduct(slug);
-  if (!product) return { title: "Produit indisponible | Multiproduit Mali" };
+  if (!product || product.publicationStatus !== "published") return { title: "Produit indisponible | Multiproduit Mali", robots: { index: false, follow: false } };
   return {
     title: `${product.brand} ${product.name} — L’univers | Multiproduit Mali`,
     description: `Découvrez l’univers visuel de ${product.brand} ${product.name} et ses images en situation.`,
+    alternates: { canonical: `${SITE_ORIGIN}/produits/${product.slug}/univers` },
   };
 }
 

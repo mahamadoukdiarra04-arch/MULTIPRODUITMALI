@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+
 import { BrandLogo } from "../BrandLogo";
 import { MobileMenu } from "../MobileMenu";
 import Link from "../PlainLink";
 import { ScrollAtmosphere } from "../ScrollAtmosphere";
 import { SiteFooter } from "../SiteFooter";
+import { SITE_ORIGIN } from "../site-seo";
+
+export const metadata: Metadata = {
+  title: "Livraison et distribution | Multiproduit Mali",
+  description: "Découvrez les capacités de livraison et de distribution de Multiproduit Mali pour Tropicoul et Triplex au Mali.",
+  alternates: { canonical: `${SITE_ORIGIN}/livraison` },
+};
 
 const navigation = [
   ["Notre entreprise", "/#entreprise"],
