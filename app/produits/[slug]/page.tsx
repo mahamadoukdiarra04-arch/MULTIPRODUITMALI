@@ -235,11 +235,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="product-focus__stage">
             <ProductDecorLayer product={product} depth="back" />
             <ProductDecorLayer product={product} depth="mid" />
-            <PackshotPicture
-              product={product}
-              className="product-focus__packshot"
-              alt={product.packshotAlt ?? `Canette ${product.brand} ${product.name}, vue de face.`}
-            />
+            {product.slug === "tropicoul-mangue" ? (
+              <span
+                className="product-focus__packshot product-focus__packshot--mangue"
+                role="img"
+                aria-label={product.packshotAlt ?? "Canette Tropicoul Mangue 330 ml, vue de face."}
+              />
+            ) : (
+              <PackshotPicture
+                product={product}
+                className="product-focus__packshot"
+                alt={product.packshotAlt ?? `Canette ${product.brand} ${product.name}, vue de face.`}
+              />
+            )}
           </div>
         </ProductPageMotion>
 

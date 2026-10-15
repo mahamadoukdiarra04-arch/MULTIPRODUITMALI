@@ -15,10 +15,11 @@ const rootFiles = [
   "package.json",
   "package-lock.json",
   "postcss.config.mjs",
+  "scripts/verify-product-focus-assets.mjs",
   "tsconfig.json",
   "vite.config.ts",
 ];
-const productionExtensions = new Set([".webp", ".json", ".svg", ".jpg", ".jpeg"]);
+const productionExtensions = new Set([".webp", ".json", ".svg", ".jpg", ".jpeg", ".ico"]);
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
