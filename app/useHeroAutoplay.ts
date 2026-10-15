@@ -35,7 +35,7 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
   const [resumeBlocked, setResumeBlocked] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [controlsRevealed, setControlsRevealed] = useState(false);
-  const [slowConnection, setSlowConnection] = useState(false);
+  const slowConnection = isConstrainedNetwork();
   const previouslyPaused = useRef(false);
   const touchPauseTimer = useRef<number | null>(null);
 
@@ -45,10 +45,6 @@ export function useHeroAutoplay(rootRef: RefObject<HTMLElement | null>, universe
     update();
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    setSlowConnection(isConstrainedNetwork());
   }, []);
 
   useEffect(() => {

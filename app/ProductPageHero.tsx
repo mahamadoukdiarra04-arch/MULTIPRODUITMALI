@@ -111,7 +111,7 @@ function VimtoHeroStillLife({ product }: { product: Product }) {
 
 const heroBrandLogos = {
   Tropicoul: {
-    src: "/media/mpm/brand/tropicoul-wordmark-hero-v01.png",
+    src: "/media/mpm/brand/tropicoul-wordmark-hero-v01.webp",
     webp: "/media/mpm/brand/tropicoul-wordmark-hero-v01.webp",
     avif: "/media/mpm/brand/tropicoul-wordmark-hero-v01.avif",
     alt: "Tropicoul",
@@ -120,7 +120,7 @@ const heroBrandLogos = {
     className: "product-page-hero__brand-logo--tropicoul",
   },
   Triplex: {
-    src: "/media/mpm/brand/triplex-emblem-hero-v01.png",
+    src: "/media/mpm/brand/triplex-emblem-hero-v01.webp",
     webp: "/media/mpm/brand/triplex-emblem-hero-v01.webp",
     avif: "/media/mpm/brand/triplex-emblem-hero-v01.avif",
     alt: "Triplex",

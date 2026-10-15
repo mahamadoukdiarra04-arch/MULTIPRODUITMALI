@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { CSSProperties } from "react";
 
 import { CatalogueTurntable } from "./CatalogueTurntable";
@@ -34,10 +33,9 @@ function ProductLoop({ reverse = false }: { reverse?: boolean }) {
             data-turntable-phase={index % publishedProducts.length}
             style={{ "--product-tilt": `${editorialTilts[index % editorialTilts.length]}deg` } as CSSProperties}
           >
-            <picture className="product-loop__fallback">
-              <source type="image/webp" srcSet={product.packshotWebp} />
-              <Image src={product.packshot} alt="" width={2048} height={2048} sizes="(max-width: 760px) 104px, 128px" />
-            </picture>
+            <span className="product-loop__fallback">
+              <img src={product.packshotWebp} alt="" width={product.packshotWidth ?? 2048} height={product.packshotHeight ?? 2048} loading="lazy" decoding="async" />
+            </span>
             <span className="product-loop__explore" aria-hidden="true">↗</span>
           </span>
         </a>

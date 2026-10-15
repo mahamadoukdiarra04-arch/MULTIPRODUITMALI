@@ -149,7 +149,11 @@ async function ensureSchema() {
         }
       });
     }
-  })();
+  })().catch((error) => {
+    // A transient database outage must not poison every later request in this process.
+    schemaReady = null;
+    throw error;
+  });
   await schemaReady;
 }
 

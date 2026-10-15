@@ -593,7 +593,7 @@ const allHeroUniverses: readonly HeroUniverse[] = [
     posterMobileSrc: "/media/mpm/product-pages/vimto-sparkling/v2/hero-mobile.webp",
     posterMobileAvifSrc: "/media/mpm/product-pages/vimto-sparkling/v2/hero-mobile.avif",
     posterMobileWebpSrc: "/media/mpm/product-pages/vimto-sparkling/v2/hero-mobile.webp",
-    packshotSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.png",
+    packshotSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.webp",
     packshotAvifSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.avif",
     packshotWebpSrc: "/media/mpm/universes/vimto-sparkling/vimto-can-cutout-clean-v003.webp",
     modelSrc: "/models/mpm/vimto-sparkling-v2.glb",

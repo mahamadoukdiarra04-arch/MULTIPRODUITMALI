@@ -10,6 +10,7 @@ import { ScrollAtmosphere } from "./ScrollAtmosphere";
 import { SiteFooter } from "./SiteFooter";
 import { SITE_ORIGIN } from "./site-seo";
 import type { Metadata } from "next";
+import type { EditorialPublication } from "./actualites/types";
 
 export const metadata: Metadata = {
   title: "Multiproduit Mali | Tropicoul, Triplex et Vimto",
@@ -27,9 +28,35 @@ const navigation = [
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
+const FEATURE_CACHE_MS = 30_000;
+const FEATURE_WAIT_MS = 2_500;
+let featuredCache: EditorialPublication | null = null;
+let featuredFetchedAt = 0;
+let featuredRequest: Promise<EditorialPublication | null> | null = null;
+
+async function getFeaturedPublication(): Promise<EditorialPublication | null> {
+  if (featuredFetchedAt && Date.now() - featuredFetchedAt < FEATURE_CACHE_MS) return featuredCache;
+
+  featuredRequest ??= listPublications()
+    .then((publications) => {
+      featuredCache = publications.find((publication) => publication.isFeatured) ?? publications[0] ?? null;
+      featuredFetchedAt = Date.now();
+      return featuredCache;
+    })
+    .catch((error) => {
+      console.error("Impossible de charger la publication à la une :", error);
+      return featuredCache;
+    })
+    .finally(() => { featuredRequest = null; });
+
+  return Promise.race([
+    featuredRequest,
+    new Promise<EditorialPublication | null>((resolve) => setTimeout(() => resolve(featuredCache), FEATURE_WAIT_MS)),
+  ]);
+}
+
 export default async function Home() {
-  const publications = await listPublications();
-  const featuredPublication = publications.find((publication) => publication.isFeatured) ?? publications[0];
+  const featuredPublication = await getFeaturedPublication();
 
   return (
     <main id="main-content">
