@@ -77,6 +77,7 @@ test("server-renders the Multiproduit Mali homepage and progressive product expe
   const homePointerSource = await readFile(new URL("../app/HomePointer.tsx", import.meta.url), "utf8");
   const globalStyles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(html, /<title>Multiproduit Mali \| Tropicoul, Triplex et Vimto<\/title>/i);
+  assert.match(html, /"@type":"WebSite","@id":"https:\/\/multiproduitmali\.ml\/#website","name":"Multiproduit Mali"/);
   assert.match(html, /href="#main-content"/);
   assert.match(html, /<main id="main-content">/);
   assert.match(html, /packshot\.webp/);

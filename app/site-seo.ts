@@ -1,5 +1,16 @@
 export const SITE_ORIGIN = "https://multiproduitmali.ml";
 
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_ORIGIN}/#website`,
+  name: "Multiproduit Mali",
+  alternateName: "Multiproduit Mali SARL",
+  url: `${SITE_ORIGIN}/`,
+  inLanguage: "fr",
+  publisher: { "@id": `${SITE_ORIGIN}/#organization` },
+} as const;
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",

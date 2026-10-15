@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 import { ProductExplorer } from "./ProductExplorer";
 import { ScrollAtmosphere } from "./ScrollAtmosphere";
 import { SiteFooter } from "./SiteFooter";
-import { SITE_ORIGIN } from "./site-seo";
+import { SITE_ORIGIN, websiteSchema } from "./site-seo";
 import type { Metadata } from "next";
 import type { EditorialPublication } from "./actualites/types";
 
@@ -60,6 +60,7 @@ export default async function Home() {
 
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <ScrollAtmosphere />
       <header className="site-header">
         <a className="wordmark wordmark--logo" href="#accueil" aria-label="Multiproduit Mali, retour à l’accueil">
